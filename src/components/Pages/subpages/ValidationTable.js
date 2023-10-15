@@ -1,5 +1,5 @@
 import React from 'react'
-import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow } from '@mui/material'
+import { Table, TableBody, TableContainer, TableHead, TableRow } from '@mui/material'
 import { TableComponent,TableCellComponentBody, TableCellComponentHead } from '../../../styles/styles'
 import { useSelector } from 'react-redux';
 import { Failedresult, Successresult } from '../../../styles/styles';

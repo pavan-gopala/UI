@@ -46,6 +46,11 @@ export const Formcomponent1 = () => {
         }
     }
 
+    const handleClearButton = ()=>{
+           setInput('')
+           dispatch((setisValid(false)))
+    }
+
     
   return (
     <FormComponent elevation={4} >
@@ -60,7 +65,7 @@ export const Formcomponent1 = () => {
        </form>
         </Grid>
        <ButtonComponent onClick={()=>handleValidation(input)}>Validate</ButtonComponent>
-        <ClearButtonComponent variant='outlined'>Clear</ClearButtonComponent>
+        <ClearButtonComponent onClick={handleClearButton} variant='outlined'>Clear</ClearButtonComponent>
         </Grid>
 
         {isvalid&&<FormHelperText sx={{color:'red'}}>Invalid email</FormHelperText>}

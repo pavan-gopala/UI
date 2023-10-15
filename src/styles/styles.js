@@ -1,4 +1,4 @@
-import { Box, Button, Paper, Skeleton, Stack, TableCell, styled } from "@mui/material";
+import { Box, Button, Paper, Stack, TableCell, styled } from "@mui/material";
 import {Toolbar} from "@mui/material";
 
 export const Toolbarcomponent = styled(Toolbar)({
@@ -33,9 +33,8 @@ export const FormComponent = styled(Paper)({
 export const ButtonComponent = styled(Button)({
         color:'white',
         backgroundColor:'#0C356A',
-        marginTop:2,
-        padding:10, marginLeft:4, fontSize:11, width:'130px',transition: 'background-color 0.3s', // Add transition for a smooth effect
         marginTop:8,
+        padding:10, marginLeft:4, fontSize:11, width:'130px',transition: 'background-color 0.3s', // Add transition for a smooth effect
         borderRadius:0,
         '&:hover': {
           backgroundColor: '#15459A', // Change background color on hover
