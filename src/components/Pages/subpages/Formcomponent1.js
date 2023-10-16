@@ -50,6 +50,10 @@ export const Formcomponent1 = () => {
            setInput('')
            dispatch((setisValid(false)))
     }
+    const handleSubmit = (e)=>{
+          e.preventDefault();
+          handleValidation(input)
+    }
 
     
   return (
@@ -59,7 +63,7 @@ export const Formcomponent1 = () => {
       </Typography> 
        <Grid container sx={{width:'100%'}}>
         <Grid item xs={12} sm={8} >
-        <form style={{display:'flex', flexDirection:'row', justifyContent:'space-between', width:'100%', marginTop:8}}>
+        <form onSubmit={handleSubmit} style={{display:'flex', flexDirection:'row', justifyContent:'space-between', width:'100%', marginTop:8}}>
         <TextField error={isvalid} onChange={inputChange} value={input} variant='outlined' placeholder='Email address' fullWidth/>
         
        </form>
