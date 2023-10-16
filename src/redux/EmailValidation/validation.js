@@ -11,7 +11,7 @@ const mailvalidationslice = createSlice({
             state.isLoading = action.payload
         },
         setisValid:(state, action)=>{
-            state.isValid = action.payload
+            state.isinValid = action.payload
         },
         setEmail:(state,action)=>{
             state.email = action.payload

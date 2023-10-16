@@ -4,12 +4,12 @@ import { FormComponent,ButtonComponent,ClearButtonComponent } from '../../../sty
 import { handleinputChange } from '../../Functions/form.functions'
 import ResponseFetching from '../../EmailValidationForm';
 import { useDispatch,useSelector } from 'react-redux';
-import { setValidation , setEmail, setisValid,setLoading, setshowvalidation} from '../../../redux/EmailValidation/validation';
+import { setEmail, setisValid} from '../../../redux/EmailValidation/validation';
 
 
 export const Formcomponent1 = () => {
   const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-  const isvalid = useSelector((state)=>state.mailvalidation.isValid)
+  const isinvalid = useSelector((state)=>state.mailvalidation.isinValid)
     const dispatch = useDispatch();
     const [input, setInput] = useState('')
     const [disable, setdisable] = useState(true)
@@ -58,7 +58,7 @@ export const Formcomponent1 = () => {
        <Grid container sx={{width:'100%'}}>
         <Grid item xs={12} sm={8} >
         <form onSubmit={handleSubmit} style={{display:'flex', flexDirection:'row', justifyContent:'space-between', width:'100%', marginTop:8}}>
-        <TextField error={isvalid} onChange={inputChange} value={input} variant='outlined' placeholder='Email address' fullWidth/>
+        <TextField error={isinvalid} onChange={inputChange} value={input} variant='outlined' placeholder='Email address' fullWidth/>
         
        </form>
         </Grid>
@@ -66,7 +66,7 @@ export const Formcomponent1 = () => {
         <ClearButtonComponent onClick={handleClearButton} variant='outlined'>Clear</ClearButtonComponent>
         </Grid>
 
-        {isvalid&&<FormHelperText sx={{color:'red'}}>Invalid email</FormHelperText>}
+        {isinvalid&&<FormHelperText sx={{color:'red'}}>Invalid email</FormHelperText>}
        
     </FormComponent>
   )
