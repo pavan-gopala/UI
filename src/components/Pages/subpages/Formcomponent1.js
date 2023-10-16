@@ -32,12 +32,11 @@ export const Formcomponent1 = () => {
     const handleValidation = async(input)=>{
         if(disable === false){
             dispatch(setisValid(true))
-            dispatch(setEmail(input))
+            dispatch(setEmail({'email':input}))
         setInput('');
         dispatch((setisValid(disable)))
         dispatch((setLoading(true)))
         dispatch((setshowvalidation(false)))
-        const response = await ResponseFetching(input);
         dispatch(setValidation(response));
         dispatch((setLoading(false)))
         dispatch((setshowvalidation(true)))
