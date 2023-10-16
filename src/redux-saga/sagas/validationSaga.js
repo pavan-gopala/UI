@@ -1,5 +1,5 @@
-import {call, put, takeEvery, takeLatest} from  'redux-saga/effects';
-import { setValidation } from '../../redux/EmailValidation/validation';
+import {call, put, takeLatest,} from  'redux-saga/effects';
+import { setLoading, setValidation, setshowvalidation } from '../../redux/EmailValidation/validation';
 
 function * runvalidation(payload){
      const url = 'https://validate24x7.com/api/validateEmail';
@@ -10,26 +10,25 @@ function * runvalidation(payload){
       const options = {
         method: 'POST',
         headers,
-        body: JSON.stringify(payload),
+        body: JSON.stringify({email:payload}),
       };
     
       try {
         const response = yield call(fetch, url, options);
         const result = yield response.json();
-        console.log(result.data)
-        yield put(setValidation(result.data))
-    
-        // You can dispatch an action with the result here, e.g., yield put(getNewsSuccess(result));
+        yield put(setValidation(result))
       } catch (error) {
         console.error(error);
-    
-        // Handle the error, e.g., yield put(getNewsFailure(error.message));
       }
 }
 
 export function * validationSaga (){
     yield takeLatest('mailvalidation/setEmail', function *(action){
-         const payload = action.payload;
+         const payload =action.payload;
+         yield put(setLoading(true));
+         yield put(setshowvalidation(false));
          yield runvalidation(payload);
+         yield put(setLoading(false));
+         yield put(setshowvalidation(true));
     })
 }

@@ -25,21 +25,16 @@ export const Formcomponent1 = () => {
      else(setdisable(false))
     },[input])
 
-    useEffect(()=>{
-       setisValid((disable))
-    },[input])
+    // useEffect(()=>{
+    //    setisValid(disable)
+    // },[input])
 
     const handleValidation = async(input)=>{
         if(disable === false){
-            dispatch(setisValid(true))
-            dispatch(setEmail({'email':input}))
-        setInput('');
-        dispatch((setisValid(disable)))
-        dispatch((setLoading(true)))
-        dispatch((setshowvalidation(false)))
-        dispatch(setValidation(response));
-        dispatch((setLoading(false)))
-        dispatch((setshowvalidation(true)))
+          dispatch(setisValid(false))
+          dispatch(setEmail(input))
+           setInput('');
+          
         }else{
          dispatch((setisValid(disable)))
         }
