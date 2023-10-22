@@ -3,7 +3,7 @@ import { Navbar } from './Pages/MainPages/Navbar'
 import { Description } from './Pages/MainPages/Description'
 import { useTracking } from 'react-tracking'
 import { initGA, logPageView } from '../googleanalytics'
-
+import { useEffect } from 'react'
 
 export const Homepage = () => {
     
