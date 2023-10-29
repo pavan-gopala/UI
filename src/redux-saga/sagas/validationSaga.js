@@ -1,5 +1,5 @@
 import {call, put, takeLatest,} from  'redux-saga/effects';
-import { setLoading, setValidation, setshowvalidation } from '../../redux/EmailValidation/validation';
+import { setLoading, setValidation, setmxrecords, setshowvalidation } from '../../redux/EmailValidation/validation';
 
 function * runvalidation(payload){
      const url = 'https://validate24x7.com/api/validateEmail';
@@ -10,7 +10,7 @@ function * runvalidation(payload){
       const options = {
         method: 'POST',
         headers,
-        body: JSON.stringify({email:payload}),
+        body: JSON.stringify({email:payload.data}),
       };
     
       try {
@@ -18,8 +18,29 @@ function * runvalidation(payload){
         const result = yield response.json();
         yield put(setValidation(result))
       } catch (error) {
-        console.error(error);
+        
       }
+}
+function * runmxlookup(payload){
+  const url = 'https://validate24x7.com/api/mxrecord';
+  const headers = {
+     'Content-Type': 'application/json',
+   };
+ 
+   const options = {
+     method: 'POST',
+     headers,
+     body: JSON.stringify({domain:payload.data}),
+   };
+ 
+   try {
+     const response = yield call(fetch, url, options);
+     const result = yield response.json();
+     yield put(setmxrecords(result))
+    
+   } catch (error) {
+     
+   }
 }
 
 export function * validationSaga (){
@@ -27,7 +48,12 @@ export function * validationSaga (){
          const payload =action.payload;
          yield put(setLoading(true));
          yield put(setshowvalidation(false));
-         yield runvalidation(payload);
+         if(payload.type === 'mxrecord'){
+          yield runmxlookup(payload);
+         }else if(payload.type === 'email'){
+          yield runvalidation(payload)
+         }
+         
          yield put(setLoading(false));
          yield put(setshowvalidation(true));
     })

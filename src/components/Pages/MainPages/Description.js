@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {  DescriptionComponent } from '../../../styles/styles'
 import { Grid, } from '@mui/material'
 import { Description2 } from '../subpages/Descriptoin2'
@@ -7,12 +7,16 @@ import { Aboutus } from './Aboutus'
 import { Footer } from './Footer'
 import { ValidationTable } from '../subpages/ValidationTable'
 import { Loader } from '../subpages/Loader'
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import { setshowvalidation } from '../../../redux/EmailValidation/validation'
 
-export const Description = () => {
+export const EmailDescription = () => {
+  const dispatch = useDispatch();
   const loading = useSelector((state)=>state.mailvalidation.isLoading)
   const showvalidation = useSelector((state)=>state.mailvalidation.showvalidation)
-  
+  useEffect(()=>{
+    dispatch(setshowvalidation(false))
+  },[])
   return (<>
     <DescriptionComponent>
          <h2 style={{padding:15}}>Email validator</h2>
@@ -26,8 +30,7 @@ export const Description = () => {
         {loading&&<Loader/>}
         {showvalidation&&<ValidationTable/>}
          <Description2/>
-         <Aboutus/>
-         <Footer/>
+         
     </Grid>
     
     </Grid>

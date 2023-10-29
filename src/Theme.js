@@ -4,18 +4,19 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#BDD892',
+      main: '#1CE783',
     },
     secondary: {
-      main: '#474747',
+      main: '#1D252C',
     },
 
     background: {
-      default: '#FEFEFE',
+      default: '#F9FAFA',
+      primary:'#1F4172',
     },
   },
   typography: {
-    fontFamily: 'monospace',
+    fontFamily: 'Peppins',
   },
   // Add more theme properties as needed
 });

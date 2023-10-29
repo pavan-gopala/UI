@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { Typography,TextField,Grid, FormHelperText, } from '@mui/material'
-import { FormComponent,ButtonComponent,ClearButtonComponent } from '../../../styles/styles'
-import { handleinputChange } from '../../Functions/form.functions'
-import ResponseFetching from '../../EmailValidationForm';
+import { FormComponent,ButtonComponent,ClearButtonComponent } from '../../../../styles/styles'
+import { handleinputChange } from '../../../Functions/form.functions'
 import { useDispatch,useSelector } from 'react-redux';
-import { setEmail, setisValid,setValidation} from '../../../redux/EmailValidation/validation';
+import { setEmail, setValidation, setisValid} from '../../../../redux/EmailValidation/validation';
 
 
-export const Formcomponent1 = () => {
-  const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+export const MxForm = () => {
+    const domainPattern = /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const isinvalid = useSelector((state)=>state.mailvalidation.isinValid)
     const dispatch = useDispatch();
     const [input, setInput] = useState('')
@@ -19,22 +18,18 @@ export const Formcomponent1 = () => {
     }
 
     useEffect(()=>{
-      dispatch(setisValid(false))
-     
-    },[])
-
-    useEffect(()=>{
-      if (!emailRegex.test(input)) {
+      if (!domainPattern.test(input)) {
         setdisable(true)
      }
      else(setdisable(false))
     },[input])
 
+
     const handleValidation = async(input)=>{
-      const emaildata = {type:'email', data:input}
+        const mxRecord = { type: 'mxrecord', data: input };
         if(disable === false){
           dispatch(setisValid(false))
-          dispatch(setEmail(emaildata))
+          dispatch(setEmail(mxRecord))
            setInput('');
           
         }else{
@@ -51,24 +46,29 @@ export const Formcomponent1 = () => {
           handleValidation(input)
     }
 
+    useEffect(()=>{
+        dispatch(setisValid(false))
+       
+    },[])
+
     
   return (
     <FormComponent elevation={0} >
      <Typography fontSize={'small'} sx={{paddingBottom:1}}>
-     <label>Input email address</label>
+     <label>Input domain</label>
       </Typography> 
        <Grid container sx={{width:'100%'}}>
         <Grid item xs={12} sm={8} >
         <form onSubmit={handleSubmit} style={{display:'flex', flexDirection:'row', justifyContent:'space-between', width:'100%', marginTop:8}}>
-        <TextField error={isinvalid} onChange={inputChange} value={input} variant='outlined' placeholder='Email address' fullWidth/>
+        <TextField error={isinvalid} onChange={inputChange} value={input} variant='outlined' placeholder='Enter domain' fullWidth/>
         
        </form>
         </Grid>
-       <ButtonComponent onClick={()=>handleValidation(input)}>Validate</ButtonComponent>
+       <ButtonComponent onClick={()=>handleValidation(input)}>Lookup</ButtonComponent>
         <ClearButtonComponent onClick={handleClearButton} variant='outlined'>Clear</ClearButtonComponent>
         </Grid>
 
-        {isinvalid&&<FormHelperText sx={{color:'red'}}>Invalid email</FormHelperText>}
+        {isinvalid&&<FormHelperText sx={{color:'red'}}>Invalid Domain</FormHelperText>}
        
     </FormComponent>
   )

@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { Failedresult, Successresult } from '../../../styles/styles';
 export const ValidationTable = () => {
   const data = useSelector((state)=>state.mailvalidation.validationResult)
-  const email = useSelector((state)=>state.mailvalidation.email)
+  const email = useSelector((state)=>state.mailvalidation.email.data)
  
   return (
     <TableComponent>

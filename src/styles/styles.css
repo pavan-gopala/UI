@@ -1,5 +1,60 @@
+
 .spanelement{
     font-weight: bolder;
     
 
 }
+.HomepageContainer{
+    width: 100%;
+    font-family:'Peppins';
+    font-style:calc();
+    font-size: larger;
+   
+}
+@keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+.Menulist{
+    font-size: 12;
+     border-end-end-radius: 0px;
+    color: white;
+}
+.GridHome{
+     padding: 4%;
+     text-align: left;
+     
+}
+.homepagespan{
+    font-weight:bolder;
+    color:#1CE783 ;
+    font-family: 'Peppins';
+}
+.GridImage{
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+   
+}
+.homepagespan1{
+    font-weight: bold;
+    color: black;
+    font-size: medium;
+}
+/* styles.css */
+
+.shield-container {
+    position: relative;
+  }
+  
+  .shield-image {
+    width: 50%;
+    height: 50%;
+    position: relative;
+  }
+  
+

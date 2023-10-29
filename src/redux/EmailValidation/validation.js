@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const mailvalidationslice = createSlice({
     name:'mailvalidation',
-    initialState:{validationResult:'', isinValid:false,isLoading:false,email:'',showvalidation:false,},
+    initialState:{mxresult:'',validationResult:'', isinValid:false,isLoading:false,email:'',showvalidation:false,showTools:false},
     reducers:{
         setValidation:(state,action)=>{
            state.validationResult = action.payload
@@ -18,9 +18,15 @@ const mailvalidationslice = createSlice({
         },
         setshowvalidation:(state,action)=>{
             state.showvalidation = action.payload
+        },
+        setshowTools:(state,action)=>{
+            state.showTools = action.payload
+        },
+        setmxrecords:(state,action)=>{
+            state.mxresult = action.payload
         }
     }
 });
 
-export const {setValidation,setLoading,setisValid,setEmail,setshowvalidation} = mailvalidationslice.actions;
+export const {setValidation,setLoading,setisValid,setEmail,setshowvalidation,setshowTools, setmxrecords} = mailvalidationslice.actions;
 export default mailvalidationslice.reducer;
