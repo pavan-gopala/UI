@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 export const SiteInfoTable = () => {
   const data1 = useSelector((state) => state.mailvalidation.siteinfo.ip);
-  const data = data1.info
+  const data = data1 ? data1.info : null;
   const propertiesToDisplay = [
     { property: 'query', label: 'IP Address' },
     { property: 'city', label: 'City' },
@@ -33,6 +33,7 @@ export const SiteInfoTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
+        
             { data1 !== false && propertiesToDisplay.map((property) => (
               <TableRow key={property.property}>
                 <TableCellComponentBody>{property.label}</TableCellComponentBody>
