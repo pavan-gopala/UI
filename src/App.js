@@ -12,6 +12,7 @@ import {Grid} from '@mui/material';
 import { EmailDescription } from './components/Pages/MainPages/Description';
 import {Box} from '@mui/material';
 import { Mxrecordslookup } from './components/Pages/subpages/mxrecords/mxrecordslookup';
+import { SiteInfo } from './components/Pages/subpages/siteinfoscanner/SiteInfo';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route path='/' element={<Homepage/>}/>
             <Route path='/emailvalidation' element ={<EmailDescription/>}/>
             <Route path='/mxrecordslookup' element={<Mxrecordslookup/>}/>
+            <Route path='/site/serverInfocheck' element={<SiteInfo/>}/>
           </Routes>
           <Grid container sx={{width:'100%', alignItems:'center', justifyContent:'center', marginTop:'10vh'}}>
       <Grid item xs={12}>

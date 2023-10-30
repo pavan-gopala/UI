@@ -61,6 +61,9 @@ export const Toolsmenumobile = () => {
     <ListItem onClick={handleToolsClose}>
       <NavLink to='/mxrecordslookup'><Button sx={{color:'white',borderRadius:0,}} disableRipple >Mx Record Lookup</Button></NavLink>
     </ListItem>
+    <ListItem>
+      <NavLink to='/site/serverInfocheck'><Button sx={{color:'white',borderRadius:0}} disableRipple onClick={handleToolsClose}>server/site info Scan</Button></NavLink>
+    </ListItem>
     {/* Add more custom menu items as needed */}
   </List>
 </Popover>

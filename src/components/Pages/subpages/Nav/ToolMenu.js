@@ -56,10 +56,13 @@ export const Toolsmenu = () => {
 >
   <List sx={{width:'100%',height:'100%'}} onMouseLeave={handleToolsClose}>
     <ListItem onClick={handleToolsClose}>
-      <NavLink to={'/emailvalidation'}><Button sx={{color:'white',borderRadius:0,fontSize:12}} disableRipple>Email validation</Button></NavLink>
+      <NavLink to={'/emailvalidation'}><Button sx={{color:'white',borderRadius:0,}} disableRipple>Email validation</Button></NavLink>
     </ListItem>
     <ListItem >
-      <NavLink to='/mxrecordslookup'><Button sx={{color:'white',borderRadius:0, fontSize:12}} disableRipple onClick={handleToolsClose}>Mx Record Lookup</Button></NavLink>
+      <NavLink to='/mxrecordslookup'><Button sx={{color:'white',borderRadius:0, }} disableRipple onClick={handleToolsClose}>Mx Record Lookup</Button></NavLink>
+    </ListItem>
+    <ListItem>
+      <NavLink to='/site/serverInfocheck'><Button sx={{color:'white',borderRadius:0,}} disableRipple onClick={handleToolsClose}>server/site info Scan</Button></NavLink>
     </ListItem>
   </List>
 </Popover>

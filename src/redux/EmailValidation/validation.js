@@ -24,9 +24,12 @@ const mailvalidationslice = createSlice({
         },
         setmxrecords:(state,action)=>{
             state.mxresult = action.payload
+        },
+        setsiteinfo:(state,action)=>{
+            state.siteinfo = action.payload
         }
     }
 });
 
-export const {setValidation,setLoading,setisValid,setEmail,setshowvalidation,setshowTools, setmxrecords} = mailvalidationslice.actions;
+export const {setValidation,setLoading,setisValid,setEmail,setshowvalidation,setshowTools, setmxrecords,setsiteinfo} = mailvalidationslice.actions;
 export default mailvalidationslice.reducer;
