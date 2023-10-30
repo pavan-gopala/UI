@@ -59,10 +59,7 @@ export const Toolsmenumobile = () => {
       <NavLink to={'/emailvalidation'}><Button sx={{color:'white',borderRadius:0}} disableRipple>Email validation</Button></NavLink>
     </ListItem>
     <ListItem onClick={handleToolsClose}>
-      <Button sx={{color:'white',borderRadius:0}} disableRipple>Domain validation</Button>
-    </ListItem>
-    <ListItem >
-     <NavLink to={'/mxrecordslookup'}> <Button sx={{color:'white',borderRadius:0}} disableRipple onClick={handleToolsClose}>Mx Record Lookup</Button></NavLink>
+      <NavLink to='/mxrecordslookup'><Button sx={{color:'white',borderRadius:0,}} disableRipple >Mx Record Lookup</Button></NavLink>
     </ListItem>
     {/* Add more custom menu items as needed */}
   </List>

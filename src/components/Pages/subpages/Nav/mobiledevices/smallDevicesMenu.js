@@ -4,6 +4,7 @@ import { Hidden, IconButton, List, ListItem, Popover } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import {Button} from '@mui/material';
 import { Toolsmenumobile } from './ToolsMenumobile';
+import { HomeNavlink } from '../HomeNavlink';
 
 export const SmallDevicesMenu = () => {
     const [anchorEl, setanchorEl] = useState(null)
@@ -16,7 +17,7 @@ export const SmallDevicesMenu = () => {
     }
   return (
     <Hidden mdUp={true}>
-         <IconButton onClick={handleopen} sx={{color:theme.palette.primary.main}}><AppsIcon/></IconButton>
+         <IconButton onClick={handleopen} sx={{color:theme.palette.primary.main}}><Button>Menu</Button><AppsIcon/></IconButton>
     <Popover
     anchorEl={anchorEl}
     open={Boolean(anchorEl)}
@@ -39,6 +40,7 @@ export const SmallDevicesMenu = () => {
       }}>
         <List sx={{height:'100%'}}>
             <ListItem>
+            <HomeNavlink/>
                 <Toolsmenumobile/>
             </ListItem>
         </List>

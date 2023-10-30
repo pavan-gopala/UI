@@ -19,7 +19,10 @@ export const Navbar = () => {
            <Stack direction={'row'}>
            <Hidden mdDown={true}>
             <Toolsmenu style={{ zIndex: 1, }}/></Hidden>
-         <HomeNavlink/>
+            <Hidden mdDown={true}>
+              <HomeNavlink/>
+            </Hidden>
+       
            </Stack>
           <Button  sx={{color:theme.palette.background.default,marginRight:2 }}></Button>
           <SmallDevicesMenu/>
