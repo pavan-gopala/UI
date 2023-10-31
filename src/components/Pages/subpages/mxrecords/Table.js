@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 export const MxTable = () => {
   const data = useSelector((state)=>state.mailvalidation.mxresult.mxrecords)
   const domain = useSelector((state)=>state.mailvalidation.email.data)
- 
+
   console.log(data)
   return (
     <TableComponent>
@@ -22,7 +22,7 @@ export const MxTable = () => {
                 </TableRow>
                </TableHead>
                <TableBody >
-               {data !== '' || undefined ? (
+               {data !== '' || undefined || data.length !== 0 ? (
               data.map((key, index) => (
                 <TableRow key={index}>
                   <TableCellComponentBody>{key.exchange}</TableCellComponentBody>
