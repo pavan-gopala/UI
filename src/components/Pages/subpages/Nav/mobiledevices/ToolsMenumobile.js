@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { Button, Popover, List, ListItem,useTheme, Box, IconButton, Portal } from '@mui/material';
+import { Button, Popover, List, ListItem,useTheme, Box, IconButton, Portal,Fade } from '@mui/material';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
 import { NavLink } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux'
 import { setshowTools } from '../../../../../redux/EmailValidation/validation';
 
-export const Toolsmenumobile = () => {
+export const Toolsmenumobile = ({handleclose}) => {
   const theme = useTheme();
   const [anchorEl, setanchorEl] = useState(null);
   const showTools = useSelector((state)=>state.mailvalidation.showTools)
@@ -18,6 +18,7 @@ export const Toolsmenumobile = () => {
   const handleToolsClose = () => {
     setanchorEl(null);
     dispatch(setshowTools(null))
+    handleclose();
   };
 
   return (
@@ -31,10 +32,11 @@ export const Toolsmenumobile = () => {
 
        
 <Popover
-
+  TransitionComponent={Fade}
   open={Boolean(showTools)}
   anchorEl={showTools}
   onClose={handleToolsClose}
+  disableScrollLock={true}
   anchorOrigin={{
    
     vertical: 'bottom',

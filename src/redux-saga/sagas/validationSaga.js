@@ -22,7 +22,7 @@ function * runvalidation(payload){
       }
 }
 function * runmxlookup(payload){
-  const url = 'https://validate24x7.com/api/mxrecord';
+  const url = 'http://localhost:4000/api/mxrecord';
   const headers = {
      'Content-Type': 'application/json',
    };

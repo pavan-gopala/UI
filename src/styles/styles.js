@@ -79,7 +79,6 @@ export const FooterComponent = styled(Box)({
            padding:10,
            backgroundColor:'#1D252C',
            color:'white',
-          
 
 });
 

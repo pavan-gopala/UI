@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import AppsIcon from '@mui/icons-material/Apps';
-import { Hidden, IconButton, List, ListItem, Popover } from '@mui/material';
+import { Hidden, IconButton, List, ListItem, Popover,Fade } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import {Button} from '@mui/material';
 import { Toolsmenumobile } from './ToolsMenumobile';
@@ -19,29 +19,30 @@ export const SmallDevicesMenu = () => {
     <Hidden mdUp={true}>
          <IconButton onClick={handleopen} sx={{color:theme.palette.primary.main}}><Button>Menu</Button><AppsIcon/></IconButton>
     <Popover
+    TransitionComponent={Fade}
+   
     anchorEl={anchorEl}
     open={Boolean(anchorEl)}
     onClose={handleclose}
     anchorOrigin={{
-   
-        vertical: 'bottom',
-        horizontal: 'left',
-      }}
-      transformOrigin={{
-        vertical: 'top',
-        horizontal: 'left',
-      
-      }}
+      vertical: 'center',
+      horizontal: 'center',
+    }}
+    transformOrigin={{
+      vertical: 'top',
+      horizontal: 'center',
+    }}
       PaperProps={{
         style:{
           width:'100%',
-          backgroundColor:theme.palette.secondary.main
+          backgroundColor:theme.palette.secondary.main,
+          marginTop: 20,
         }
       }}>
         <List sx={{height:'100%'}}>
             <ListItem>
-            <HomeNavlink/>
-                <Toolsmenumobile/>
+            <HomeNavlink handleclose={handleclose}/>
+                <Toolsmenumobile handleclose={handleclose}/>
             </ListItem>
         </List>
       
