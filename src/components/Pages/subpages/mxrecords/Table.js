@@ -35,8 +35,6 @@ export const MxTable = () => {
                 <TableCellComponentBody>Not found</TableCellComponentBody>
               </TableRow>
             )}
-               
-                
                </TableBody>
            </Table>
        </TableContainer>
