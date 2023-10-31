@@ -4,13 +4,16 @@ import { TableComponent,TableCellComponentBody, TableCellComponentHead } from '.
 import { useSelector } from 'react-redux';
 
 export const MxTable = () => {
-  const data = useSelector((state)=>state.mailvalidation.mxresult.mxrecords)
+  const  data = useSelector((state)=>state.mailvalidation.mxresult.mxrecords)
   const domain = useSelector((state)=>state.mailvalidation.email.data)
-
-  console.log(data)
+  let datalength = 0
+  if(data !== undefined){
+    datalength = data.length;
+  }
   return (
     <TableComponent>
         <h3>Mx Record{'(s)'}</h3>
+        <h5>Domain:{domain}</h5>
        <TableContainer>
            <Table>
                <TableHead>
@@ -22,7 +25,7 @@ export const MxTable = () => {
                 </TableRow>
                </TableHead>
                <TableBody >
-               {data !== '' || undefined || data.length !== 0 ? (
+               {data !== '' && data !== undefined && datalength !== 0 ? (
               data.map((key, index) => (
                 <TableRow key={index}>
                   <TableCellComponentBody>{key.exchange}</TableCellComponentBody>

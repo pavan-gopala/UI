@@ -55,16 +55,23 @@ export const Toolsmenumobile = () => {
     }}
 >
   <List  onMouseLeave={handleToolsClose} sx={{height:'100%',}}>
-    <ListItem onClick={handleToolsClose}>
-      <NavLink to={'/emailvalidation'}><Button sx={{color:'white',borderRadius:0}} disableRipple>Email validation</Button></NavLink>
-    </ListItem>
-    <ListItem onClick={handleToolsClose}>
-      <NavLink to='/mxrecordslookup'><Button sx={{color:'white',borderRadius:0,}} disableRipple >Mx Record Lookup</Button></NavLink>
-    </ListItem>
-    <ListItem>
-      <NavLink to='/site/serverInfocheck'><Button sx={{color:'white',borderRadius:0}} disableRipple onClick={handleToolsClose}>server/site info Scan</Button></NavLink>
-    </ListItem>
-    {/* Add more custom menu items as needed */}
+  <ListItem onClick={handleToolsClose}>
+      <Button
+  component={NavLink}
+  to="/emailvalidation"sx={{  color: 'white', borderRadius: 0,}}disableRipple aria-label='Emailvalidation'>
+       Email validation
+       </Button>
+      </ListItem>
+      <ListItem>
+        <Button to='/mxrecordslookup' sx={{ color: 'white', borderRadius: 0 }} aria-label='Mxrecordlookup' component={NavLink} disableRipple onClick={handleToolsClose}>
+          Mx Record Lookup
+        </Button>
+      </ListItem>
+      <ListItem>
+        <Button to='/site/serverInfocheck' sx={{ color: 'white', borderRadius: 0 }} aria-label='server/site infoscan' component={NavLink}  disableRipple onClick={handleToolsClose}>
+          Server/Site Info Scan
+        </Button>
+      </ListItem>
   </List>
 </Popover>
 </Portal>
