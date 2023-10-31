@@ -22,7 +22,7 @@ export const MxTable = () => {
                 </TableRow>
                </TableHead>
                <TableBody >
-               {data ? (
+               {data !== '' || undefined ? (
               data.map((key, index) => (
                 <TableRow key={index}>
                   <TableCellComponentBody>{key.exchange}</TableCellComponentBody>

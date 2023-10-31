@@ -4,8 +4,10 @@ import { TableComponent, TableCellComponentBody, TableCellComponentHead } from '
 import { useSelector } from 'react-redux';
 
 export const SiteInfoTable = () => {
-  const data1 = useSelector((state) => state.mailvalidation.siteinfo.ip);
-  const data = data1 ? data1.info : null;
+
+  let data1 = useSelector((state)=>state.mailvalidation.siteinfo);
+   data1 = data1 ? data1.ip:false
+  const data = data1 ? data1.info : false;
   const propertiesToDisplay = [
     { property: 'query', label: 'IP Address' },
     { property: 'city', label: 'City' },
@@ -33,7 +35,6 @@ export const SiteInfoTable = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-        
             { data1 !== false && propertiesToDisplay.map((property) => (
               <TableRow key={property.property}>
                 <TableCellComponentBody>{property.label}</TableCellComponentBody>
