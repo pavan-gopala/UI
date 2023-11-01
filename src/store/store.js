@@ -12,6 +12,7 @@ const store = configureStore({
         mailvalidation:mailValidationReducer,
     },
     middleware:(getDefaultMiddleware)=>getDefaultMiddleware().concat(saga),
+    devTools: process.env.NODE_ENV !== 'production',
 });
 
 saga.run(rootSaga);
