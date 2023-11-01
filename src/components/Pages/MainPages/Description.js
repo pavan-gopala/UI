@@ -19,14 +19,6 @@ export const EmailDescription = () => {
   useEffect(() => {
     dispatch(setshowvalidation(false));
   }, []);
-
- 
-
-   
-
-
-
-
   return (
     <>
       <DescriptionComponent>
