@@ -3,15 +3,20 @@ import { Typography,TextField,Grid, FormHelperText, } from '@mui/material'
 import { FormComponent,ButtonComponent,ClearButtonComponent } from '../../../../styles/styles'
 import { handleinputChange } from '../../../Functions/form.functions'
 import { useDispatch,useSelector } from 'react-redux';
-import { setEmail, setValidation, setisValid} from '../../../../redux/EmailValidation/validation';
+import { fetchstatus, runFetching, setEmail, setValidation, setisValid} from '../../../../redux/EmailValidation/validation';
+import useFetchData from '../../../customhook/reduxFetching';
 
 
 export const MxForm = () => {
     const domainPattern = /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const isinvalid = useSelector((state)=>state.mailvalidation.isinValid)
+  const fetching = useSelector((state)=>state.mailvalidation.fetching)
     const dispatch = useDispatch();
     const [input, setInput] = useState('')
     const [disable, setdisable] = useState(true)
+
+
+
    
     const inputChange =async (e)=>{
          handleinputChange(e,setInput)
@@ -37,6 +42,8 @@ export const MxForm = () => {
         }
     }
 
+    
+
     const handleClearButton = ()=>{
            setInput('')
            dispatch((setisValid(false)))
@@ -48,9 +55,7 @@ export const MxForm = () => {
 
     useEffect(()=>{
         dispatch(setisValid(false))
-       
     },[])
-
     
   return (
     <FormComponent elevation={0} >
