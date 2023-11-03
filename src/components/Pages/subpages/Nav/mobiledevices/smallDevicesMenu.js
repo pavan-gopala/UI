@@ -44,8 +44,8 @@ export const SmallDevicesMenu = () => {
             <ListItem>
             <HomeNavlink handleclose={handleclose}/>
                 <Toolsmenumobile handleclose={handleclose}/>
-               <Box sx={{margin:'auto'}}> <NavLink  to='/toolrequest'><Button sx={{color:'white',borderRadius:0,}} disableRipple onClick={handleclose}>Toolrequest</Button></NavLink></Box>
-            </ListItem>
+               {/* <Box sx={{margin:'auto'}}> <NavLink  to='/toolrequest'><Button sx={{color:'white',borderRadius:0,}} disableRipple onClick={handleclose}>Toolrequest</Button></NavLink></Box>
+            */} </ListItem>
         </List>
     </Popover>
     </Hidden>

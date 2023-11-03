@@ -15,8 +15,8 @@ export const Navbar = () => {
     <Toolbarcomponent >
         <Typography fontSize={'large'} margin={'auto'} marginLeft={'2vw'} flexGrow={1} fontWeight={'bold'} color={theme.palette.primary.main} >Validate24x7</Typography>
            <Stack direction={'row'} margin={'auto'} justifyContent={'space-between'} >
-           <Hidden mdDown={true}><Box sx={{margin:'auto'}}> <NavLink  to='/toolrequest'><Button sx={{color:'white',borderRadius:0,}} disableRipple >Toolrequest</Button></NavLink></Box></Hidden>
-           <Hidden mdDown={true}>
+            {/* <Hidden mdDown={true}><Box sx={{margin:'auto'}}> <NavLink  to='/toolrequest'><Button sx={{color:'white',borderRadius:0,}} disableRipple >Toolrequest</Button></NavLink></Box></Hidden> */}
+           <Hidden mdDown={true}> 
             <Toolsmenu style={{ zIndex: 1, }}/></Hidden>
             <Hidden mdDown={true}>
               <HomeNavlink/>
