@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom'
 
 export const HomeNavlink = ({handleclose}) => {
   return (
-    <Box sx={{margin:'auto'}} >
+    <Box sx={{margin:'auto', paddingRight:2}} >
            <NavLink to={'/'} onClick={handleclose}><Button variant='contained' sx={{marginLeft:2}}>Home</Button></NavLink>
     </Box>
    

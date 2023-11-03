@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import AppsIcon from '@mui/icons-material/Apps';
-import { Hidden, IconButton, List, ListItem, Popover,Fade } from '@mui/material';
+import { Hidden, IconButton, List, ListItem, Popover,Fade,Box, } from '@mui/material';
 import { useTheme } from '@emotion/react';
 import {Button} from '@mui/material';
 import { Toolsmenumobile } from './ToolsMenumobile';
 import { HomeNavlink } from '../HomeNavlink';
+import { NavLink } from 'react-router-dom';
 
 export const SmallDevicesMenu = () => {
     const [anchorEl, setanchorEl] = useState(null)
@@ -43,9 +44,9 @@ export const SmallDevicesMenu = () => {
             <ListItem>
             <HomeNavlink handleclose={handleclose}/>
                 <Toolsmenumobile handleclose={handleclose}/>
+               <Box sx={{margin:'auto'}}> <NavLink  to='/toolrequest'><Button sx={{color:'white',borderRadius:0,}} disableRipple onClick={handleclose}>Toolrequest</Button></NavLink></Box>
             </ListItem>
         </List>
-      
     </Popover>
     </Hidden>
   )

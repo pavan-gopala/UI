@@ -4,10 +4,11 @@ import {Toolbar} from "@mui/material";
 
 
 export const Toolbarcomponent = styled(Box)({
-   textAlign:'left',
+
    width:'100%',
    display:'flex',
    flexDirection:'row',
+   textAlign:'left',
    zIndex:1,
    position:'sticky',
    backgroundColor:'#1D252C',
@@ -52,7 +53,6 @@ export const ClearButtonComponent = styled(Button)({
                   width:'130px', 
                   marginTop:8,
                   borderRadius:0,
-                 
                   padding:10, marginLeft:6, fontsize:11, transition:'background-color 0.3s',
                   '&:hover':{
                     backgroundColor:'#1D252C', color:'white'
@@ -86,6 +86,7 @@ export const TableComponent = styled(Stack)({
         fontFamily:'Peppins',
         textAlign:'left',
         marginBottom:40,
+
         
 }); 
 

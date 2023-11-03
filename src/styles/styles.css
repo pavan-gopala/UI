@@ -119,7 +119,34 @@ transform-origin: 0 0; /* see note above */
     height: 50%;
     position: relative;
   }
+ .toolrequestform{
  
+   display: flex;
+   text-align:left;
+   width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5%;
+    font-family: 'Peppins';
+    
+ }
+
+ /*Tool Request Form*/
+/* Assuming your TextField has a class name of 'myTextField' */
+.myTextField .MuiOutlinedInput-root {
+  border-radius: 0;
+}
+
+.myTextField .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(0, 0, 0, 0.23); /* default border color */
+}
+
+.myTextField .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #1CE783; /* default border color */
+}
+
+
  
 
  
