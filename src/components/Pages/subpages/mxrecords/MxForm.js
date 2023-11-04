@@ -4,8 +4,7 @@ import { FormComponent,ButtonComponent,ClearButtonComponent } from '../../../../
 import { handleinputChange } from '../../../Functions/form.functions'
 import { useDispatch,useSelector } from 'react-redux';
 import { fetchstatus, runFetching, setEmail, setValidation, setisValid} from '../../../../redux/EmailValidation/validation';
-import useFetchData from '../../../customhook/reduxFetching';
-
+import '../../../../styles/styles.css';
 
 export const MxForm = () => {
     const domainPattern = /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -14,10 +13,6 @@ export const MxForm = () => {
     const dispatch = useDispatch();
     const [input, setInput] = useState('')
     const [disable, setdisable] = useState(true)
-
-
-
-   
     const inputChange =async (e)=>{
          handleinputChange(e,setInput)
     }
@@ -65,7 +60,7 @@ export const MxForm = () => {
        <Grid container sx={{width:'100%'}}>
         <Grid item xs={12} sm={8} >
         <form onSubmit={handleSubmit} style={{display:'flex', flexDirection:'row', justifyContent:'space-between', width:'100%', marginTop:8}}>
-        <TextField error={isinvalid} onChange={inputChange} value={input} variant='outlined' placeholder='Enter domain' fullWidth/>
+        <TextField className='myTextField' error={isinvalid} onChange={inputChange} value={input} variant='outlined' placeholder='Enter domain' fullWidth/>
         
        </form>
         </Grid>

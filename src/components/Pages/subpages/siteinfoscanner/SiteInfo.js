@@ -19,7 +19,7 @@ export const SiteInfo = () => {
   
   return (<div style={{minHeight:'75vh'}}>
     <DescriptionComponent>
-         <h2 style={{padding:15}}>Site/server Info scanner</h2>
+         <h2 style={{padding:15, color:'#00684A'}}>Site/server Info scanner</h2>
          <p style={{paddingTop:0, paddingLeft:10, paddingRight:10, paddingBottom:40}}>SiteInfoScanner is a web tool that quickly provides essential details about websites and servers, including IP addresses, geographic location, ISP, and more. It's your go-to resource for web insights in a snap.</p>
     </DescriptionComponent>
     <Grid container>

@@ -14,7 +14,15 @@ import {Box} from '@mui/material';
 import { Mxrecordslookup } from './components/Pages/subpages/mxrecords/mxrecordslookup';
 import { SiteInfo } from './components/Pages/subpages/siteinfoscanner/SiteInfo';
 import { Newtoolrequest } from './components/Pages/subpages/Requests/Newtoolrequest';
-
+import { Register } from './components/Authentication/Register';
+import { Login } from './components/Authentication/Login';
+const PageWrapper = ({ children }) => {
+  return (
+    <div style={{ marginTop: '9vh', minHeight:'91vh' }}>
+      {children}
+    </div>
+  );
+}
 function App() {
   return (
     <div className="App">
@@ -22,13 +30,15 @@ function App() {
         <Router>
           <Navbar/>
           <Routes>
-            <Route path='/' element={<Homepage/>}/>
-            <Route path='/emailvalidation' element ={<EmailDescription/>}/>
-            <Route path='/mxrecordslookup' element={<Mxrecordslookup/>}/>
-            <Route path='/site/serverInfocheck' element={<SiteInfo/>}/>
-            <Route path='/toolrequest' element={<Newtoolrequest/>}/>
+            <Route path='/' element={<PageWrapper><Homepage/></PageWrapper>}/>
+            <Route path='/emailvalidation' element ={<PageWrapper><EmailDescription/></PageWrapper>}/>
+            <Route path='/mxrecordslookup' element={<PageWrapper><Mxrecordslookup/></PageWrapper>}/>
+            <Route path='/site/serverInfocheck' element={<PageWrapper><SiteInfo/></PageWrapper>}/>
+            <Route path='/register' element={<PageWrapper><Register/></PageWrapper>}/>
+            <Route path='/login' element={<PageWrapper><Login/></PageWrapper>}/>
+            
           </Routes>
-          <Grid container sx={{width:'100%', alignItems:'center', justifyContent:'center', marginTop:'10vh'}}>
+          <Grid container sx={{width:'100%', alignItems:'center', justifyContent:'center',}}>
       <Grid item xs={12}>
     <Footer/>
       </Grid>

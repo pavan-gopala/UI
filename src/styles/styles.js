@@ -10,9 +10,9 @@ export const Toolbarcomponent = styled(Box)({
    flexDirection:'row',
    textAlign:'left',
    zIndex:1,
-   position:'sticky',
+   position:'fixed',
    backgroundColor:'#1D252C',
-   
+   height:'9vh'
   });
 
 export const DescriptionComponent = styled(Box)({
@@ -42,7 +42,7 @@ export const ButtonComponent = styled(Button)({
         padding:10, marginLeft:4, fontSize:11, width:'130px',transition: 'background-color 0.3s', // Add transition for a smooth effect
         borderRadius:0,
         '&:hover': {
-          backgroundColor: '#1CE783', // Change background color on hover
+          backgroundColor: '#00684A', // Change background color on hover
         },
       
 });
@@ -55,7 +55,7 @@ export const ClearButtonComponent = styled(Button)({
                   borderRadius:0,
                   padding:10, marginLeft:6, fontsize:11, transition:'background-color 0.3s',
                   '&:hover':{
-                    backgroundColor:'#1D252C', color:'white'
+                    backgroundColor:'#00684A', color:'white'
                   },
 });
 

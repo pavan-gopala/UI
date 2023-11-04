@@ -4,7 +4,7 @@ import { FormComponent,ButtonComponent,ClearButtonComponent } from '../../../../
 import { handleinputChange } from '../../../Functions/form.functions'
 import { useDispatch,useSelector } from 'react-redux';
 import { setEmail, setValidation, setisValid} from '../../../../redux/EmailValidation/validation';
-
+import '../../../../styles/styles.css'
 
 export const SiteInfoForm = () => {
     const domainPattern = /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -67,7 +67,7 @@ export const SiteInfoForm = () => {
        <Grid container sx={{width:'100%'}}>
         <Grid item xs={12} sm={8} >
         <form onSubmit={handleSubmit} style={{display:'flex', flexDirection:'row', justifyContent:'space-between', width:'100%', marginTop:8}}>
-        <TextField error={isinvalid} onChange={inputChange} value={input} variant='outlined' placeholder='Enter domain/url' fullWidth/>
+        <TextField className='myTextField' error={isinvalid} onChange={inputChange} value={input} variant='outlined' placeholder='Enter domain/url' fullWidth/>
         
        </form>
         </Grid>

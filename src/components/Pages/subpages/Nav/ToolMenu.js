@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Button, Hidden, Popover,Fade, List, ListItem,useTheme, Box, IconButton, Portal } from '@mui/material';
+import { Button, Hidden, Popover,Fade, List, ListItem,useTheme, Box, IconButton, Portal, Typography } from '@mui/material';
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import { NavLink } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux'
 import { setshowTools } from '../../../../redux/EmailValidation/validation';
@@ -24,9 +25,10 @@ export const Toolsmenu = () => {
   return (
    <>
      
-     <Button variant='outlined'  sx={{position:'inherit', marginTop:1, marginBottom:1}}   onMouseMoveCapture={handleToolsMenu}  endIcon={  <IconButton sx={{color:theme.palette.primary.main, transform:anchorEl?'rotate(180deg)':'rotate(0deg)',transition:'transform 0.3s ease',}}>
-        <KeyboardArrowUpIcon/>
-     </IconButton>}>Tools</Button>
+     <Typography sx={{position:'relative', padding:2, fontSize:'medium' , fontWeight:500,color:'white'}}   onMouseMoveCapture={handleToolsMenu}  >Tools</Typography>
+     <IconButton>
+        <KeyboardArrowDownIcon sx={{color:'primary.main',position:'absolute' , right:'50%'}}/>
+     </IconButton>
      
     
 

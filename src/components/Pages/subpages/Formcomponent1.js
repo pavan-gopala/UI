@@ -4,7 +4,7 @@ import { FormComponent,ButtonComponent,ClearButtonComponent } from '../../../sty
 import { handleinputChange } from '../../Functions/form.functions'
 import { useDispatch,useSelector } from 'react-redux';
 import { setEmail, setisValid} from '../../../redux/EmailValidation/validation';
-
+import '../../../styles/styles.css';
 
 
 export const Formcomponent1 = () => {
@@ -57,7 +57,7 @@ export const Formcomponent1 = () => {
        <Grid container sx={{width:'100%'}}>
         <Grid item xs={12} sm={8} >
         <form onSubmit={handleSubmit} style={{display:'flex', flexDirection:'row', justifyContent:'space-between', width:'100%', marginTop:8}}>
-        <TextField error={isinvalid} onChange={inputChange} value={input} variant='outlined' placeholder='Email address' fullWidth/>
+        <TextField className='myTextField' error={isinvalid} onChange={inputChange} value={input} variant='outlined' placeholder='Email address' fullWidth/>
        </form>
         </Grid>
        <ButtonComponent onClick={()=>handleValidation(input)}>Validate</ButtonComponent>

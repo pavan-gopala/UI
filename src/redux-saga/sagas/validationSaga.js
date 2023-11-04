@@ -3,7 +3,7 @@ import {
   setLoading,
   setshowvalidation,
 } from '../../redux/EmailValidation/validation';
-import { runmxlookup, runserverinfoscan, runvalidation } from './Functions/sagafetching.functions';
+import { runmxlookup, runserverinfoscan, runvalidation,runregister } from './Functions/sagafetching.functions';
 
  
 
@@ -18,6 +18,9 @@ export function* validationSaga() {
       yield runvalidation(payload);
     } else if (payload.type === 'siteinfo') {
       yield runserverinfoscan(payload);
+    } else if(payload.type === 'register'){
+      const {values} = payload;
+      yield runregister(values);
     }
     yield put(setLoading(false));
     yield put(setshowvalidation(true));

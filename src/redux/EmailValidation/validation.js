@@ -4,7 +4,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const mailvalidationslice = createSlice({
    
     name:'mailvalidation',
-    initialState:{mxresult:'',validationResult:'', isinValid:false,isLoading:false,email:'',showvalidation:false,showTools:false,fetching:'',fetchstatus:false,siteinfo:''},
+    initialState:{mxresult:'',validationResult:'', isinValid:false,isLoading:false,email:'',showvalidation:false,showTools:false,fetching:'',fetchstatus:false,siteinfo:'',register:'',login:false},
     reducers:{
         setValidation:(state,action)=>{
            state.validationResult = action.payload
@@ -30,8 +30,14 @@ const mailvalidationslice = createSlice({
         setsiteinfo:(state,action)=>{
             state.siteinfo = action.payload
         },
+        setregister:(state,action)=>{
+            state.register = action.payload
+        },
+        setlogin:(state,action)=>{
+            state.login = action.payload
+        }
     }
 });
 
-export const {setValidation,setLoading,setisValid,setEmail,setshowvalidation,setshowTools,setmxrecords,setsiteinfo,} = mailvalidationslice.actions;
+export const {setValidation,setLoading,setisValid,setEmail,setshowvalidation,setshowTools,setmxrecords,setsiteinfo,setregister,setlogin} = mailvalidationslice.actions;
 export default mailvalidationslice.reducer;

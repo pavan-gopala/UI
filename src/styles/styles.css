@@ -143,8 +143,17 @@ transform-origin: 0 0; /* see note above */
 }
 
 .myTextField .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-  border-color: #1CE783; /* default border color */
+  border-color:#00684A; /* default border color */
+  /* #1CE783; */
 }
+
+/* Register Form */
+.registerimage{
+  width:80%;
+  height:80%;
+  padding-top: 4%;
+}
+
 
 
  

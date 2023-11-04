@@ -3,7 +3,7 @@ import { AppBar, Button,Grid, Hidden, Stack, Typography, useTheme ,Box} from '@m
 import { Toolbarcomponent } from '../../../styles/styles';
 import { Link, NavLink } from 'react-router-dom';
 import { Toolsmenu } from '../subpages/Nav/ToolMenu';
-import { HomeNavlink } from '../subpages/Nav/HomeNavlink';
+import { HomeNavlink, Registerlink } from '../subpages/Nav/HomeNavlink';
 import { SmallDevicesMenu } from '../subpages/Nav/mobiledevices/smallDevicesMenu';
 
 
@@ -11,9 +11,9 @@ import { SmallDevicesMenu } from '../subpages/Nav/mobiledevices/smallDevicesMenu
 export const Navbar = () => {
     const theme = useTheme();
   return (
-  <div style={{position:'sticky', width:'100%',top:0, zIndex:1, }}>
+  <div style={{position:'fixed', width:'100%',top:0, zIndex:1, }}>
     <Toolbarcomponent >
-        <Typography fontSize={'large'} margin={'auto'} marginLeft={'2vw'} flexGrow={1} fontWeight={'bold'} color={theme.palette.primary.main} >Validate24x7</Typography>
+        <Typography fontSize={'large'} margin={'auto'} marginLeft={'2vw'} flexGrow={1} fontWeight={'bold'} color={'white'} >Validate24x7</Typography>
            <Stack direction={'row'} margin={'auto'} justifyContent={'space-between'} >
             {/* <Hidden mdDown={true}><Box sx={{margin:'auto'}}> <NavLink  to='/toolrequest'><Button sx={{color:'white',borderRadius:0,}} disableRipple >Toolrequest</Button></NavLink></Box></Hidden> */}
            <Hidden mdDown={true}> 
@@ -21,8 +21,11 @@ export const Navbar = () => {
             <Hidden mdDown={true}>
               <HomeNavlink/>
             </Hidden>
+            <Hidden mdDown={true}>
+                <Registerlink/>
+            </Hidden>
           </Stack>
-
+            
           <SmallDevicesMenu/>
     </Toolbarcomponent>
     </div>

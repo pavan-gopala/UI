@@ -19,7 +19,7 @@ export const Mxrecordslookup = () => {
   
   return (<div style={{minHeight:'75vh'}}>
     <DescriptionComponent>
-         <h2 style={{padding:15}}>Mx Record Lookup</h2>
+         <h2 style={{padding:15, color:'#00684A'}}>Mx Record Lookup</h2>
          <p style={{paddingTop:0, paddingLeft:10, paddingRight:10, paddingBottom:40}}>MX Record Lookup: Discover the email servers responsible for a domain. Essential for email delivery, MX records show where emails are received.</p>
     </DescriptionComponent>
     <Grid container>
