@@ -3,7 +3,7 @@ import {  Box, Button, Paper, Stack, TableCell, styled } from "@mui/material";
 import {Toolbar} from "@mui/material";
 
 
-export const Toolbarcomponent = styled(Box)({
+export const Toolbarcomponent = styled(Toolbar)({
 
    width:'100%',
    display:'flex',

@@ -24,10 +24,10 @@ export const Toolsmenumobile = ({handleclose}) => {
   return (
    <>
      
-     <Typography sx={{position:'relative', padding:2, fontSize:'medium' , fontWeight:500,color:'white'}}   onClick={handleToolsMenu}  >Tools</Typography>
-     <IconButton>
-        <KeyboardArrowDown sx={{color:'primary.main',position:'absolute' , right:'50%'}}/>
-     </IconButton>
+     <Button sx={{paddingLeft:0, paddingRight:2,  backgroundColor:anchorEl?'white':'primary.main', color:anchorEl?'primary.main':'white'}}   onClick={handleToolsMenu} startIcon={<IconButton>
+        <KeyboardArrowDown sx={{color:anchorEl?'primary.main':'white',transform: anchorEl ? 'rotate(90deg)' : 'none'}}/>
+     </IconButton>} >Tools</Button>
+    
      <Portal>
 
        
@@ -43,16 +43,14 @@ export const Toolsmenumobile = ({handleclose}) => {
     horizontal: 'left',
   }}
   transformOrigin={{
-    vertical: 'top',
-    horizontal: 'left',
+    vertical: 'center',
+    horizontal: 'right',
   
   }}
   PaperProps={{
       style: {
        borderRadius:0,
         backgroundColor:theme.palette.secondary.main,
-        
-       
       },
     }}
 >

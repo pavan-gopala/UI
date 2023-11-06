@@ -3,9 +3,7 @@ import {
   setLoading,
   setshowvalidation,
 } from '../../redux/EmailValidation/validation';
-import { runmxlookup, runserverinfoscan, runvalidation,runregister } from './Functions/sagafetching.functions';
-
- 
+import { runmxlookup, runserverinfoscan, runvalidation,runregister,runlogin } from './Functions/sagafetching.functions';
 
 export function* validationSaga() {
   yield takeLatest('mailvalidation/setEmail', function* (action) {
@@ -21,6 +19,9 @@ export function* validationSaga() {
     } else if(payload.type === 'register'){
       const {values} = payload;
       yield runregister(values);
+    }else if(payload.type === 'login'){
+      const {values} = payload;
+      yield runlogin(values);
     }
     yield put(setLoading(false));
     yield put(setshowvalidation(true));

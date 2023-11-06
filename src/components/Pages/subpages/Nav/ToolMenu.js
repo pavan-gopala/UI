@@ -25,10 +25,10 @@ export const Toolsmenu = () => {
   return (
    <>
      
-     <Typography sx={{position:'relative', padding:2, fontSize:'medium' , fontWeight:500,color:'white'}}   onMouseMoveCapture={handleToolsMenu}  >Tools</Typography>
-     <IconButton>
-        <KeyboardArrowDownIcon sx={{color:'primary.main',position:'absolute' , right:'50%'}}/>
-     </IconButton>
+     <Button sx={{position:'relative',color:'white'}}   onMouseMoveCapture={handleToolsMenu}  endIcon={ <IconButton>
+        <KeyboardArrowDownIcon sx={{color:'primary.main',position:'absolute' , right:'20%'}}/>
+     </IconButton>} >Tools</Button>
+    
      
     
 
@@ -47,7 +47,7 @@ export const Toolsmenu = () => {
   }}
   transformOrigin={{
     vertical: 'top',
-    horizontal: 'left',
+    horizontal: 'center',
   }}
   PaperProps={{
       style: {

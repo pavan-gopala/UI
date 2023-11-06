@@ -8,11 +8,12 @@ import { setEmail, setlogin, setregister } from '../../redux/EmailValidation/val
 import { useDispatch,useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
+
 const emailRegex =  /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
 const validationSchema = Yup.object({
   email: Yup.string().required('Email is required')
   .matches(emailRegex, 'Invalid email address'),
-  password: Yup.string().required('Password is required').min(6, 'Password must be at least 8 characters'),
+  password: Yup.string().required('Password is required').min(6, 'Password must be at least 6 characters'),
 });
 export const LoginForm = () => {
     const register = useSelector((state)=>state.mailvalidation.register)
@@ -20,8 +21,11 @@ export const LoginForm = () => {
     const dispatch = useDispatch();
     const [warn, setwarn] = useState(false);
     const [disable, setdisable] = useState(false);
+    const [valid, setvalid] = useState(false);
 
-   
+    const handleInputChange = () => {
+      setvalid(false);
+    }
 
     const formik = useFormik({
         initialValues: {
@@ -29,20 +33,26 @@ export const LoginForm = () => {
           password: '',
         },
         validationSchema: validationSchema,
+        
         onSubmit: async(values) => {
          setdisable(true)
-         dispatch(setEmail({values,type:'register'})); // replace with your actual action
+         setvalid(false)
+         dispatch(setEmail({values,type:'login'})); // replace with your actual action
         },
       });
       useEffect(() => {
-        if (register.message === 'User already exists') {
+        if (register.message === 'Email not registered') {
             setwarn(true);
             setdisable(false);
-        } else if (register.message === 'User Registered') {
+            
+        } else if (register.message === 'login successful') {
           formik.resetForm();
           setdisable(false);
           dispatch(setlogin(true))
           navigate('/');
+        } else if(register.message === 'Incorrect password'){
+            setdisable(false);
+            setvalid(true)
         }
       }, [register]);
       const handleClose = (event, reason) => {
@@ -57,7 +67,7 @@ export const LoginForm = () => {
 
       const handleloginNav = ()=>{  
         dispatch(setregister(''))
-        navigate('/login');
+        navigate('/register');
       }
     return (
    <>
@@ -73,7 +83,7 @@ export const LoginForm = () => {
     id="email"
     name="email"
     value={formik.values.email}
-    onChange={formik.handleChange}
+    onChange={(e)=>{formik.handleChange(e); handleInputChange()}}
     error={formik.touched.email && Boolean(formik.errors.email)}
     helperText={formik.touched.email && formik.errors.email}
   />
@@ -85,20 +95,20 @@ export const LoginForm = () => {
     id="Password"
     name="password"
     value={formik.values.password}
-    onChange={formik.handleChange}
+    onChange={(e)=>{formik.handleChange(e); handleInputChange()}}
     error={formik.touched.password && Boolean(formik.errors.password)}
     helperText={
         formik.touched.password 
-          ? formik.errors.password
-            : "If you lost your password, you can't access your account"
+          && formik.errors.password
       }/>
-  <Button  disabled={disable} sx={{width:'100%', marginTop:2}} variant="contained" color="primary" type="submit">Registser</Button>
+      {valid && <p style={{color:'red', fontFamily:'Peppins', fontSize:'small',}}>Incorrect password</p>}
+  <Button  disabled={disable} sx={{width:'100%', marginTop:2}} variant="contained" color="primary" type="submit">Login</Button>
   </Stack>
 </form>
 </Stack>
 <Snackbar open={warn} autoHideDuration={11000} onClose={handleClose} > 
         <Alert onClose={handleClose} variant='filled' severity="warning" sx={{ width: '100%', }}>
-            Email already registered! click here to  <Button onClick={handleloginNav} sx={{bgcolor:'white'}}>Login</Button>
+            Email is not registered! click here to  <Button onClick={handleloginNav} sx={{bgcolor:'white'}}>Register</Button>
         </Alert>
       </Snackbar>
            </>

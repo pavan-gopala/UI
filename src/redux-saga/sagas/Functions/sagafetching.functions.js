@@ -35,7 +35,15 @@ export function* runserverinfoscan(payload) {
 }
 
 export function* runregister(payload) {
-  const url = 'http://localhost:5000/user/register';
+  const url = 'https://validate24x7.com/user/register';
+  try { 
+     const response = yield axios.post(url, payload, { headers });
+     yield put(setregister(response.data));
+  } catch (error) {}
+}
+
+export function* runlogin(payload) {
+  const url = 'https://validate24x7.com/user/login';
   try { 
      const response = yield axios.post(url, payload, { headers });
      yield put(setregister(response.data));
