@@ -16,6 +16,8 @@ import { SiteInfo } from './components/Pages/subpages/siteinfoscanner/SiteInfo';
 import { Newtoolrequest } from './components/Pages/subpages/Requests/Newtoolrequest';
 import { Register } from './components/Authentication/Register';
 import { Login } from './components/Authentication/Login';
+import { PrivateRoute } from './PrivateRoutes/Privateroutes';
+
 const PageWrapper = ({ children }) => {
   return (
     <div style={{ marginTop: '9vh', minHeight:'91vh' }}>
@@ -23,15 +25,19 @@ const PageWrapper = ({ children }) => {
     </div>
   );
 }
+
+
 function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
         <Router>
           <Navbar/>
+          
           <Routes>
+           
             <Route path='/' element={<PageWrapper><Homepage/></PageWrapper>}/>
-            <Route path='/emailvalidation' element ={<PageWrapper><EmailDescription/></PageWrapper>}/>
+            <Route path='/emailvalidation' element ={<PrivateRoute><PageWrapper><EmailDescription/></PageWrapper></PrivateRoute>}/>
             <Route path='/mxrecordslookup' element={<PageWrapper><Mxrecordslookup/></PageWrapper>}/>
             <Route path='/site/serverInfocheck' element={<PageWrapper><SiteInfo/></PageWrapper>}/>
             <Route path='/register' element={<PageWrapper><Register/></PageWrapper>}/>

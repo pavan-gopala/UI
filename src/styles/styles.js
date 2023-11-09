@@ -11,8 +11,9 @@ export const Toolbarcomponent = styled(Toolbar)({
    textAlign:'left',
    zIndex:1,
    position:'fixed',
-   backgroundColor:'#1D252C',
-   height:'9vh'
+   backgroundColor:'secondary.main',
+   height:'9vh',
+   borderBottom:'1px secondary.main solid',
   });
 
 export const DescriptionComponent = styled(Box)({
@@ -24,6 +25,7 @@ export const DescriptionComponent = styled(Box)({
      fontSize:'large',
      position:'static',
      fontFamily:'Peppins',
+     
 });
 
 export const FormComponent = styled(Paper)({

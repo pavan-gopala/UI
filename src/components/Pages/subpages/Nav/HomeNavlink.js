@@ -8,15 +8,15 @@ import { setlogin, setregister } from '../../../../redux/EmailValidation/validat
 
 export const HomeNavlink = ({handleclose}) => {
   return (
-           <Box sx={{ display:'inline',backgroundColor:'white',borderRadius:100,}}  component={NavLink} to={'/'} onClick={handleclose}>{({isActive})=>(<IconButton sx={{margin:1,padding:1,'&:hover': {
-            backgroundColor: '#00684A', // Change background color on hover
-          }, backgroundColor: isActive ? 'primary.main' : 'white', color:isActive?'white':'primary.main'}}><Home/></IconButton>)}</Box>
+           <Box sx={{ display:'inline',backgroundColor:'white',borderRadius:50,}}  component={NavLink} to={'/'} onClick={handleclose}>{({isActive})=>(<IconButton sx={{margin:1,padding:1,'&:hover': {
+            backgroundColor: 'primary.main', // Change background color on hover
+          }, backgroundColor: isActive ? 'primary.main' : 'background.default', color:isActive?'white':'primary.main'}}><Home/></IconButton>)}</Box>
   )
 }
 export const Registerlink = ({handleclose}) => {
   return (
            <Box component={NavLink} to={'/register'} onClick={handleclose}>{({ isActive }) => (
-            <Button variant='contained' sx={{margin:1, backgroundColor: isActive ? 'primary.main' : 'white', color:isActive?'white':'secondary.main'}}>
+            <Button variant='contained' sx={{margin:1,borderRadius:0,width:'120px', backgroundColor: isActive ? 'primary.main' : 'white', color:isActive?'white':'secondary.main'}}>
               Register
             </Button>
           )}</Box>
@@ -26,9 +26,8 @@ export const Registerlink = ({handleclose}) => {
 
 export const Loginlink = ({handleclose}) => {
   return (
-   
            <Box sx={{marginRight:'2vw'}} component={NavLink} to={'/login'} onClick={handleclose}>{({ isActive }) => (
-            <Button variant='contained' sx={{margin:1,  backgroundColor: isActive ? 'primary.main' : 'white', color:isActive?'white':'secondary.main'}}>
+            <Button variant='contained' sx={{margin:1, borderRadius:0,width:'120px', backgroundColor: isActive ? 'primary.main' : 'white', color:isActive?'white':'secondary.main'}}>
                Login
             </Button>
           )}</Box>
@@ -40,15 +39,14 @@ export const LogoutButton = () => {
   const handlelogout = () => {
     dispatch(setlogin(false));
     dispatch(setregister(''));
+    document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
   }
   return (
-    
            <Box sx={{margin:'auto', paddingRight:0}}  onClick={handlelogout}>
             <IconButton variant='contained' sx={{margin:1,  color:'white', bgcolor:'primary.main'}}>
                 <LogoutSharp/>
             </IconButton>
           </Box>
-
   )
 }
 

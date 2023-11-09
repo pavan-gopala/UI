@@ -6,10 +6,12 @@ import {Button} from '@mui/material';
 import { Toolsmenumobile } from './ToolsMenumobile';
 import { HomeNavlink, Loginlink, LogoutButton, Registerlink } from '../HomeNavlink';
 import { NavLink } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import { setlogin, setregister } from '../../../../../redux/EmailValidation/validation';
 
 
 export const SmallDevicesMenu = () => {
+  const dispatch = useDispatch();
     const [anchorEl, setanchorEl] = useState(null)
     const logged = useSelector((state)=>state.mailvalidation.login)
     const theme = useTheme()
@@ -18,6 +20,11 @@ export const SmallDevicesMenu = () => {
     }
     const handleclose = ()=>{
         setanchorEl(null)
+    }
+    const handlelogout = () => {
+      dispatch(setlogin(false));
+      dispatch(setregister(''));
+      document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
     }
   return (
     <Hidden mdUp={true}>
@@ -60,12 +67,12 @@ export const SmallDevicesMenu = () => {
             </ListItem>
             <ListItem sx={{flexDirection:'column', alignItems:'center'}}>
             {logged &&
-  <Button 
-    sx={{ color:'white', backgroundColor:'primary.main', paddingLeft:0, paddingRight:4, borderRadius:0, }}   
-    startIcon={ 
-      <IconButton>
+  <Button  onClick={handlelogout}
+    sx={{ width:'120px',color:'white',height:'4vh', backgroundColor:'primary.main',}}   
+    startIcon={
+   
         <LogoutButton sx={{ color:'primary.main' }}/>
-      </IconButton>
+     
     } 
   >
     Logout

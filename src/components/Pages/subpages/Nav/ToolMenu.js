@@ -25,8 +25,8 @@ export const Toolsmenu = () => {
   return (
    <>
      
-     <Button sx={{position:'relative',color:'white'}}   onMouseMoveCapture={handleToolsMenu}  endIcon={ <IconButton>
-        <KeyboardArrowDownIcon sx={{color:'primary.main',position:'absolute' , right:'20%'}}/>
+     <Button sx={{position:'relative',color:'background.default',backgroundColor:'primary.main',borderRadius:0,height:'5vh',margin:'auto',width:'120px'}}   onMouseMoveCapture={handleToolsMenu}  endIcon={ <IconButton>
+        <KeyboardArrowDownIcon sx={{color:'background.default',position:'absolute' , }}/>
      </IconButton>} >Tools</Button>
     
      
@@ -52,23 +52,24 @@ export const Toolsmenu = () => {
   PaperProps={{
       style: {
        borderRadius:0,
-        backgroundColor:theme.palette.secondary.main,
+        backgroundColor:'#00684A',
         zIndex:1,
+        
       },
     
     }}
 >
-  <List sx={{width:'100%',height:'100%'}} onMouseLeave={handleToolsClose}>
+  <List sx={{width:'100%',height:'100%',}} onMouseLeave={handleToolsClose}>
     <ListItem onClick={handleToolsClose}>
-      <NavLink to={'/emailvalidation'}><Button sx={{color:'white',borderRadius:0,}} disableRipple>Email validation</Button></NavLink>
+      <NavLink to={'/emailvalidation'}><Button sx={{color:'background.default',borderColor:'background.default', borderRadius:0,}} variant='outlined' disableRipple>Email validation</Button></NavLink>
     </ListItem>
     <ListItem >
-      <NavLink to='/mxrecordslookup'><Button sx={{color:'white',borderRadius:0, }} disableRipple onClick={handleToolsClose}>Mx Record Lookup</Button></NavLink>
+      <NavLink to='/mxrecordslookup'><Button sx={{color:'background.default',borderColor:'background.default',borderRadius:0, }} variant='outlined' disableRipple onClick={handleToolsClose}>Mx Record Lookup</Button></NavLink>
     </ListItem>
     <ListItem>
-      <NavLink to='/site/serverInfocheck'><Button sx={{color:'white',borderRadius:0,}} disableRipple onClick={handleToolsClose}>server/site info Scan</Button></NavLink>
+      <NavLink to='/site/serverInfocheck'><Button sx={{color:'background.default',borderColor:'background.default',borderRadius:0,}} variant='outlined' disableRipple onClick={handleToolsClose}>server/site info Scan</Button></NavLink>
     </ListItem>
-   
+    
   </List>
 </Popover>
 

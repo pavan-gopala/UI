@@ -1,16 +1,82 @@
-import { Grid, Hidden, IconButton } from '@mui/material'
-import React from 'react'
+import { Grid, Hidden, IconButton,Button } from '@mui/material'
+import React, { useEffect } from 'react'
 import '../styles/styles.css'
 import shieldimage from '../Images/shield_check.png'
 import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-
-
+import Dialog from '@mui/material/Dialog';
+import DialogTitle from '@mui/material/DialogTitle';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogActions from '@mui/material/DialogActions';
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { showDialog } from '../redux/EmailValidation/validation';
+import { showregistration } from '../redux/EmailValidation/validation';
 
 export const Homepage = () => {
+  const dispatch = useDispatch();
+  const showdialog = useSelector((state)=>state.mailvalidation.showDialog)
+  const showregis= useSelector((state)=>state.mailvalidation.showregistration)
+
+  const navigate = useNavigate();
+  const [open, setOpen] = React.useState(true);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+ 
+
+  const handleClose = () => {
+     dispatch(showDialog(false))
+  };
+  const handleregisterClose = () => { 
+     dispatch(showregistration(false))
+  }
+  const handlesignin = () => {
+    dispatch(showDialog(false))
+      navigate('/register')
+  }
 
   return (
     <Grid container className='HomepageContainer'>
       <Grid item xs={12} sm={6} className='GridHome' >
+      <Dialog open={showdialog} onClose={handleClose}>
+          <DialogTitle>{"Important Note"}</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+              currently we are not accepting Toolrequest from users.
+            </DialogContentText>
+            <DialogContentText sx={{color:'primary.main', fontSize:16, fontWeight:500}}>
+              we are going to launch pay per use program.Every time you use our tool you're going to get paid for it.
+             
+            </DialogContentText>
+
+          </DialogContent>
+          <DialogActions sx={{margin:'auto'}}>
+            <Button variant='outlined' onClick={handlesignin}>Intrested</Button>
+            <Button variant='contained' onClick={handleClose}>Don't show it again</Button>
+          </DialogActions>
+         
+        </Dialog>
+        <Dialog open={showregis} onClose={handleregisterClose}>
+          <DialogTitle>{"Congratulations"}</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+               Yor are successfully registered.
+            </DialogContentText>
+            <DialogContentText sx={{color:'primary.main', fontSize:16, fontWeight:500}}>
+              we will send an email once we launch our get paid per use program.
+              or you can check our website for updates.
+             
+            </DialogContentText>
+
+          </DialogContent>
+          <DialogActions sx={{margin:'auto'}}>
+            
+            <Button variant='contained' sx={{borderRadius:0}} onClick={handleregisterClose}>close</Button>
+          </DialogActions>
+         
+        </Dialog>
             <h4> AI-powered data validation tools that are easy to use <span className='homepagespan'>free</span> and <span className='homepagespan'>affordable</span> provide real-time results. </h4>
           <Hidden mdDown={true}>
           <p>Our AI-powered data validation tools can help you improve the accuracy and reliability of your data, which can lead to better decision-making, increased efficiency, and reduced risk.

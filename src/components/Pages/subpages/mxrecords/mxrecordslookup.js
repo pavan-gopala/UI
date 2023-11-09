@@ -14,7 +14,6 @@ export const Mxrecordslookup = () => {
   const dispatch = useDispatch();
   useEffect(()=>{
      dispatch(setshowvalidation(false))
-      
   },[])
   
   return (<div style={{minHeight:'75vh'}}>

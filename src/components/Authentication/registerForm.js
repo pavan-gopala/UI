@@ -4,7 +4,7 @@ import {React, useEffect} from 'react'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useState } from 'react';
-import { setEmail, setlogin, setregister } from '../../redux/EmailValidation/validation';
+import { setEmail, setlogin, setregister, showregistration } from '../../redux/EmailValidation/validation';
 import { useDispatch,useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -44,6 +44,7 @@ export const RegistrationForm = () => {
           formik.resetForm();
           setdisable(false);
           dispatch(setlogin(true))
+          dispatch(showregistration(true))
           navigate('/');
         }
       }, [register]);
