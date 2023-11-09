@@ -14,7 +14,7 @@ export const PrivateRoute = ({ children }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:5000/user/protected', { withCredentials: true })
+    axios.get('https://validate24x7.com/user/protected', { withCredentials: true })
       .then(res => {
         setIsAuthenticated(true);
         setIsLoading(false);
