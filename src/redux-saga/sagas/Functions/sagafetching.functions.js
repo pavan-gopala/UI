@@ -37,7 +37,7 @@ export function* runserverinfoscan(payload) {
 }
 
 export function* runregister(payload) {
-  const url = 'https://validate24x7.com/user/register';
+  const url = 'https://www.validate24x7.com/user/register';
  
   try { 
      const response = yield axios.post(url, payload, { headers, withCredentials: true });
@@ -46,7 +46,7 @@ export function* runregister(payload) {
 }
 
 export function* runlogin(payload) {
-  const url = 'https://validate24x7.com/user/login';
+  const url = 'https://www.validate24x7.com/user/login';
  
   try {
   
