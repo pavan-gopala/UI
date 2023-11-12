@@ -36,8 +36,13 @@ export const Loginlink = ({handleclose}) => {
 export const LogoutButton = () => {
   const dispatch = useDispatch();
   const handlelogout = () => {
-    dispatch(setlogin(false));
-    dispatch(setregister(''));
+    if (document.cookie.includes('jwt')) {
+      dispatch(setlogin(false));
+      dispatch(setregister(''));
+    } else {
+      dispatch(setlogin(true));
+      
+    }
     document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
    
   }
