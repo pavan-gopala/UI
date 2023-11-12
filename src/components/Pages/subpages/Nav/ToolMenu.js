@@ -28,11 +28,7 @@ export const Toolsmenu = () => {
      <Button sx={{position:'relative',color:'background.default',backgroundColor:'primary.main',borderRadius:0,height:'5vh',margin:'auto',width:'120px'}}   onMouseMoveCapture={handleToolsMenu}  endIcon={ <IconButton>
         <KeyboardArrowDownIcon sx={{color:'background.default',position:'absolute' , }}/>
      </IconButton>} >Tools</Button>
-    
      
-    
-
-       
 <Popover
   disableScrollLock={true}
   className="popover"
@@ -60,9 +56,9 @@ export const Toolsmenu = () => {
     }}
 >
   <List sx={{width:'100%',height:'100%',}} onMouseLeave={handleToolsClose}>
-    <ListItem onClick={handleToolsClose}>
+    {/* <ListItem onClick={handleToolsClose}>
       <NavLink to={'/emailvalidation'}><Button sx={{color:'background.default',borderColor:'background.default', borderRadius:0,}} variant='outlined' disableRipple>Email validation</Button></NavLink>
-    </ListItem>
+    </ListItem> */}
     <ListItem >
       <NavLink to='/mxrecordslookup'><Button sx={{color:'background.default',borderColor:'background.default',borderRadius:0, }} variant='outlined' disableRipple onClick={handleToolsClose}>Mx Record Lookup</Button></NavLink>
     </ListItem>
