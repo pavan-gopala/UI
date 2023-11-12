@@ -12,7 +12,11 @@ export const Navbar = () => {
     const theme = useTheme();
     const dispatch  = useDispatch();
      const logged = useSelector((state)=>state.mailvalidation.login)
-    
+     useEffect(()=>{
+      if(document.cookie.includes('jwt')){
+        dispatch(setlogin(true))
+      }else{dispatch(setlogin(false))}
+    })
   return (
   <div style={{position:'fixed', width:'100%', zIndex:10,backgroundColor:'white',backgroundColor:'secondary.main' }}>
     <Toolbarcomponent >

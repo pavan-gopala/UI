@@ -26,6 +26,11 @@ export const SmallDevicesMenu = () => {
       dispatch(setregister(''));
       document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
     }
+    useEffect(()=>{
+      if(document.cookie.includes('jwt')){
+        dispatch(setlogin(true))
+      }else{dispatch(setlogin(false))}
+    })
   return (
     <Hidden mdUp={true}>
          <IconButton onClick={handleopen} sx={{color:theme.palette.primary.main, marginRight:2}}><Button>Menu</Button><AppsIcon/></IconButton>
