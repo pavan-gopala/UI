@@ -55,13 +55,13 @@ export const Toolsmenumobile = ({handleclose}) => {
     }}
 >
   <List  onMouseLeave={handleToolsClose} sx={{height:'100%',}}>
-  <ListItem onClick={handleToolsClose}>
+  {/* <ListItem onClick={handleToolsClose}>
       <Button
   component={NavLink}
   to="/emailvalidation"sx={{  color: 'white', borderRadius: 0,}}disableRipple aria-label='Emailvalidation'>
        Email validation
        </Button>
-      </ListItem>
+      </ListItem> */}
       <ListItem>
         <Button to='/mxrecordslookup' sx={{ color: 'white', borderRadius: 0 }} aria-label='Mxrecordlookup' component={NavLink} disableRipple onClick={handleToolsClose}>
           Mx Record Lookup
