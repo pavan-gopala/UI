@@ -20,13 +20,7 @@ export const Homepage = () => {
 
   const navigate = useNavigate();
   const [open, setOpen] = React.useState(true);
-  useEffect(()=>{
-    if (document.cookie.includes('jwt')) {
-      dispatch(showDialog(false))
-    } else {
-      dispatch(showDialog(true))
-    }
-  },[])
+ 
 
   const handleClickOpen = () => {
     setOpen(true);
