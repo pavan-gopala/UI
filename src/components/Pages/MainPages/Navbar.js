@@ -12,6 +12,12 @@ import { LogoutButton } from '../subpages/Nav/HomeNavlink';
 export const Navbar = () => {
     const theme = useTheme();
      const logged = useSelector((state)=>state.mailvalidation.login)
+     if (document.cookie.includes('jwt')) {
+      dispatch(setlogin(false));
+      dispatch(setregister(''));
+    } else {
+      dispatch(setlogin(true));
+    }
   return (
   <div style={{position:'fixed', width:'100%', zIndex:10,backgroundColor:'white',backgroundColor:'secondary.main' }}>
     <Toolbarcomponent >
