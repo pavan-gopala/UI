@@ -7,10 +7,10 @@ import { HomeNavlink, Loginlink, PaddingButton, Registerlink } from '../subpages
 import { SmallDevicesMenu } from '../subpages/Nav/mobiledevices/smallDevicesMenu';
 import { useDispatch, useSelector } from 'react-redux';
 import { LogoutButton } from '../subpages/Nav/HomeNavlink';  
-
-
+import { setlogin, setregister } from '../../../redux/EmailValidation/validation';
 export const Navbar = () => {
     const theme = useTheme();
+    const dispatch  = useDispatch();
      const logged = useSelector((state)=>state.mailvalidation.login)
      if (document.cookie.includes('jwt')) {
       dispatch(setlogin(false));
