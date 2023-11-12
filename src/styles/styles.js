@@ -10,8 +10,9 @@ export const Toolbarcomponent = styled(Toolbar)({
    flexDirection:'row',
    textAlign:'left',
    zIndex:1,
+
    position:'fixed',
-   backgroundColor:'secondary.main',
+   backgroundColor:'#F9FAFA',
    height:'9vh',
    borderBottom:'1px secondary.main solid',
   });
