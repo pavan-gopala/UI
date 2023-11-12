@@ -17,6 +17,7 @@ import { Newtoolrequest } from './components/Pages/subpages/Requests/Newtoolrequ
 import { Register } from './components/Authentication/Register';
 import { Login } from './components/Authentication/Login';
 import { PrivateRoute } from './PrivateRoutes/Privateroutes';
+import { Notfound } from './components/Pages/subpages/Notfound';
 
 const PageWrapper = ({ children }) => {
   return (
@@ -25,6 +26,7 @@ const PageWrapper = ({ children }) => {
     </div>
   );
 }
+
 
 
 function App() {
@@ -37,12 +39,12 @@ function App() {
           <Routes>
            
             <Route path='/' element={<PageWrapper><Homepage/></PageWrapper>}/>
-            <Route path='/emailvalidation' element ={<PrivateRoute><PageWrapper><EmailDescription/></PageWrapper></PrivateRoute>}/>
+            {/* <Route path='/emailvalidation' element ={<PrivateRoute><PageWrapper><EmailDescription/></PageWrapper></PrivateRoute>}/> */}
             <Route path='/mxrecordslookup' element={<PageWrapper><Mxrecordslookup/></PageWrapper>}/>
             <Route path='/site/serverInfocheck' element={<PageWrapper><SiteInfo/></PageWrapper>}/>
             <Route path='/register' element={<PageWrapper><Register/></PageWrapper>}/>
             <Route path='/login' element={<PageWrapper><Login/></PageWrapper>}/>
-            
+            <Route path='*' element={<PageWrapper><Notfound/></PageWrapper>}/>
           </Routes>
           <Grid container sx={{width:'100%', alignItems:'center', justifyContent:'center',}}>
       <Grid item xs={12}>
