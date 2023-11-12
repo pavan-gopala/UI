@@ -8,7 +8,7 @@ import { setlogin, setregister } from '../../../../redux/EmailValidation/validat
 
 export const HomeNavlink = ({handleclose}) => {
   return (
-           <Box sx={{ display:'inline',backgroundColor:'white',borderRadius:50,}}  component={NavLink} to={'/'} onClick={handleclose}>{({isActive})=>(<IconButton sx={{margin:1,padding:1,'&:hover': {
+           <Box sx={{ display:'inline',backgroundColor:'background.default',borderRadius:0,margin:0, padding:0}}  component={NavLink} to={'/'} onClick={handleclose}>{({isActive})=>(<IconButton sx={{margin:1,padding:1,'&:hover': {
             backgroundColor: 'primary.main', // Change background color on hover
           }, backgroundColor: isActive ? 'primary.main' : 'background.default', color:isActive?'white':'primary.main'}}><Home/></IconButton>)}</Box>
   )
@@ -20,7 +20,6 @@ export const Registerlink = ({handleclose}) => {
               Register
             </Button>
           )}</Box>
-
   )
 }
 
@@ -40,6 +39,7 @@ export const LogoutButton = () => {
     dispatch(setlogin(false));
     dispatch(setregister(''));
     document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
+   
   }
   return (
            <Box sx={{margin:'auto', paddingRight:0}}  onClick={handlelogout}>
