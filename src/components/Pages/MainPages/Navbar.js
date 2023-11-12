@@ -1,5 +1,4 @@
 import React from 'react'
-import { useEffect } from 'react';
 import { AppBar, Button,Grid, Hidden, Stack, Typography, useTheme ,Box} from '@mui/material'
 import { Toolbarcomponent } from '../../../styles/styles';
 import { Link, NavLink } from 'react-router-dom';
@@ -13,13 +12,7 @@ export const Navbar = () => {
     const theme = useTheme();
     const dispatch  = useDispatch();
      const logged = useSelector((state)=>state.mailvalidation.login)
-    useEffect(()=>{
-      if (document.cookie.includes('jwt')) {
-        dispatch(setlogin(false));
-      } else {
-        dispatch(setlogin(true));
-      }
-    })
+    
   return (
   <div style={{position:'fixed', width:'100%', zIndex:10,backgroundColor:'white',backgroundColor:'secondary.main' }}>
     <Toolbarcomponent >

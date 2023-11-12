@@ -18,10 +18,21 @@ import { Register } from './components/Authentication/Register';
 import { Login } from './components/Authentication/Login';
 import { PrivateRoute } from './PrivateRoutes/Privateroutes';
 import { Notfound } from './components/Pages/subpages/Notfound';
-
+import { setlogin } from './redux/EmailValidation/validation';
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 const PageWrapper = ({ children }) => {
+  const dispatch = useDispatch();
+   useEffect(()=>{
+    if(document.cookie.includes('jwt')){
+      dispatch(setlogin(true))
+    }else{
+      dispatch(setlogin(false))
+    }
+   })
   return (
     <div style={{ marginTop: '9vh', minHeight:'91vh' }}>
+      
       {children}
     </div>
   );

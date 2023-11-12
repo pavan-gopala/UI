@@ -22,14 +22,8 @@ export const SmallDevicesMenu = () => {
         setanchorEl(null)
     }
     const handlelogout = () => {
-      if (document.cookie.includes('jwt')) {
-        dispatch(setlogin(false));
-        dispatch(setregister(''));
-      } else {
-        dispatch(setlogin(true));
-      }
-      
-    
+      dispatch(setlogin(false));
+      dispatch(setregister(''));
       document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
     }
   return (
