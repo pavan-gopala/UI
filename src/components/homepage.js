@@ -53,9 +53,9 @@ export const Homepage = () => {
             <DialogContentText>
               currently we are not accepting Toolrequest from users.
             </DialogContentText>
-            <DialogContentText sx={{color:'primary.main', fontSize:16, fontWeight:500}}>
+            <DialogContentText sx={{color:'primary.main', fontSize:16, fontWeight:900}}>
               we are going to launch  new program.Every time you use our tool you're going to get paid for it.
-             
+              <Button>Limited to first 10,000 users only</Button>
             </DialogContentText>
 
           </DialogContent>
