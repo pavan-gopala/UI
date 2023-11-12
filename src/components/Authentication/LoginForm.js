@@ -47,6 +47,7 @@ export const LoginForm = () => {
             
         } else if (register.message === 'login successful') {
           formik.resetForm();
+          dispatch(setlogin(true));
           setdisable(false);
           dispatch(setlogin(true))
           navigate('/');
