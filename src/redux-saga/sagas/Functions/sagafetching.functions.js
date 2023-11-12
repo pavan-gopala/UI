@@ -51,6 +51,7 @@ export function* runlogin(payload) {
   try {
   
     const response = yield axios.post(url, payload, { headers,withCredentials: true });
+    console.log(response)
     yield put(setregister(response.data));
   } catch (error) {
     if (error.response) {
