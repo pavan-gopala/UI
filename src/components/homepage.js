@@ -20,6 +20,13 @@ export const Homepage = () => {
 
   const navigate = useNavigate();
   const [open, setOpen] = React.useState(true);
+  useEffect(()=>{
+    if (document.cookie.includes('jwt')) {
+      dispatch(showDialog(false))
+    } else {
+      dispatch(showDialog(true))
+    }
+  },[])
 
   const handleClickOpen = () => {
     setOpen(true);
@@ -36,7 +43,7 @@ export const Homepage = () => {
     dispatch(showDialog(false))
       navigate('/register')
   }
-
+ 
   return (
     <Grid container className='HomepageContainer'>
       <Grid item xs={12} sm={6} className='GridHome' >
@@ -47,14 +54,14 @@ export const Homepage = () => {
               currently we are not accepting Toolrequest from users.
             </DialogContentText>
             <DialogContentText sx={{color:'primary.main', fontSize:16, fontWeight:500}}>
-              we are going to launch pay per use program.Every time you use our tool you're going to get paid for it.
+              we are going to launch  new program.Every time you use our tool you're going to get paid for it.
              
             </DialogContentText>
 
           </DialogContent>
           <DialogActions sx={{margin:'auto'}}>
             <Button variant='outlined' onClick={handlesignin}>Intrested</Button>
-            <Button variant='contained' onClick={handleClose}>Don't show it again</Button>
+            <Button variant='contained' onClick={handleClose}>Remind me later</Button>
           </DialogActions>
          
         </Dialog>
