@@ -47,11 +47,9 @@ export function* runregister(payload) {
 
 export function* runlogin(payload) {
   const url = 'https://www.validate24x7.com/user/login';
- 
   try {
   
     const response = yield axios.post(url, payload, { headers,withCredentials: true });
-  
     yield put(setregister(response.data));
   } catch (error) {
     if (error.response) {
