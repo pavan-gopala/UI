@@ -10,11 +10,12 @@ import DialogContentText from '@mui/material/DialogContentText';
 import DialogActions from '@mui/material/DialogActions';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { showDialog } from '../redux/EmailValidation/validation';
+import { showDialog, showloginstatus } from '../redux/EmailValidation/validation';
 import { showregistration } from '../redux/EmailValidation/validation';
 
 export const Homepage = () => {
   const dispatch = useDispatch();
+  const loginstatus = useSelector((state)=> state.mailvalidation.loginstatus)
   const showdialog = useSelector((state)=>state.mailvalidation.showDialog)
   const showregis= useSelector((state)=>state.mailvalidation.showregistration)
 
@@ -22,6 +23,8 @@ export const Homepage = () => {
   const [open, setOpen] = React.useState(true);
  
 
+
+ 
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -37,6 +40,9 @@ export const Homepage = () => {
     dispatch(showDialog(false))
       navigate('/register')
   }
+ const handleloginstatusClose = ()=>{
+     dispatch(showloginstatus(false))
+ }
  
   return (
     <Grid container className='HomepageContainer'>
@@ -49,7 +55,7 @@ export const Homepage = () => {
             </DialogContentText>
             <DialogContentText sx={{color:'primary.main', fontSize:16, fontWeight:900}}>
               we are going to launch  new program.Every time you use our tool you're going to get paid for it.
-              <Button>Limited to first 10,000 users only</Button>
+              <Button>Limited to first 10,000 registered users only</Button>
             </DialogContentText>
 
           </DialogContent>
@@ -65,10 +71,24 @@ export const Homepage = () => {
             <DialogContentText>
                Yor are successfully registered.
             </DialogContentText>
+          
+
+          </DialogContent>
+          <DialogActions sx={{margin:'auto'}}>
+            
+            <Button variant='contained' sx={{borderRadius:0}} onClick={handleregisterClose}>close</Button>
+          </DialogActions>
+         
+        </Dialog>
+        <Dialog open={loginstatus} onClose={handleloginstatusClose}>
+          <DialogTitle>{"Congratulations"}</DialogTitle>
+          <DialogContent>
+            <DialogContentText>
+               Yor are successfully logged.
+            </DialogContentText>
             <DialogContentText sx={{color:'primary.main', fontSize:16, fontWeight:500}}>
               we will send an email once we launch our get paid per use program.
               or you can check our website for updates.
-             
             </DialogContentText>
 
           </DialogContent>

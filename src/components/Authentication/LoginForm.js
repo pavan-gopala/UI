@@ -4,7 +4,7 @@ import {React, useEffect} from 'react'
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { useState } from 'react';
-import { setEmail, setlogin, setregister } from '../../redux/EmailValidation/validation';
+import { setEmail, setlogin, setregister, showloginstatus } from '../../redux/EmailValidation/validation';
 import { useDispatch,useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 
@@ -48,6 +48,7 @@ export const LoginForm = () => {
         } else if (register.message === 'login successful') {
           formik.resetForm();
           dispatch(setlogin(true));
+          dispatch(showloginstatus(true))
           setdisable(false);
           dispatch(setlogin(true))
           navigate('/');
