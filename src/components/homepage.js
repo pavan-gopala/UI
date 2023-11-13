@@ -71,7 +71,10 @@ export const Homepage = () => {
             <DialogContentText>
                Yor are successfully registered.
             </DialogContentText>
-          
+            <DialogContentText sx={{color:'primary.main', fontSize:16, fontWeight:500}}>
+              we will send an email once we launch our get paid per use program.
+              or you can check our website for updates.
+            </DialogContentText>
 
           </DialogContent>
           <DialogActions sx={{margin:'auto'}}>
@@ -87,14 +90,13 @@ export const Homepage = () => {
                Yor are successfully logged.
             </DialogContentText>
             <DialogContentText sx={{color:'primary.main', fontSize:16, fontWeight:500}}>
-              we will send an email once we launch our get paid per use program.
-              or you can check our website for updates.
+              More Tools will come soon.
             </DialogContentText>
 
           </DialogContent>
           <DialogActions sx={{margin:'auto'}}>
             
-            <Button variant='contained' sx={{borderRadius:0}} onClick={handleregisterClose}>close</Button>
+            <Button variant='contained' sx={{borderRadius:0}} onClick={handleloginstatusClose}>close</Button>
           </DialogActions>
          
         </Dialog>

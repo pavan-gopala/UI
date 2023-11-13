@@ -42,7 +42,7 @@ const mailvalidationslice = createSlice({
         showregistration:(state,action)=>{
             state.showregistration = action.payload
         },
-        showloginstatus:(()=>{
+        showloginstatus:((state,action)=>{
             state.loginstatus = action.payload
         })
     }
