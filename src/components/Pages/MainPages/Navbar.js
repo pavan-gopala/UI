@@ -12,7 +12,7 @@ export const Navbar = () => {
     const theme = useTheme();
     const dispatch  = useDispatch();
      const logged = useSelector((state)=>state.mailvalidation.login)
-     useEffect(()=>{
+     React.useEffect(()=>{
       if(document.cookie.includes('jwt')){
         dispatch(setlogin(true))
       }else{dispatch(setlogin(false))}
@@ -41,7 +41,6 @@ export const Navbar = () => {
             {<PaddingButton/>}
           <SmallDevicesMenu/>
     </Toolbarcomponent>
-
     </div>
     
     

@@ -12,7 +12,7 @@ export const Toolsmenumobile = ({handleclose}) => {
  const dispatch = useDispatch();
   const handleToolsMenu = (e) => {
     setanchorEl(e.currentTarget);
-    dispatch(setshowTools(e.currentTarget))
+    dispatch(setshowTools(e.currentTarget)) 
   };
 
   const handleToolsClose = () => {
