@@ -8,7 +8,7 @@ import { HomeNavlink, Loginlink, LogoutButton, Registerlink } from '../HomeNavli
 import { NavLink } from 'react-router-dom';
 import { useSelector,useDispatch } from 'react-redux';
 import { setlogin, setregister } from '../../../../../redux/EmailValidation/validation';
-
+import CloseIcon from '@mui/icons-material/Close';
 
 export const SmallDevicesMenu = () => {
   const dispatch = useDispatch();
@@ -37,7 +37,7 @@ export const SmallDevicesMenu = () => {
     <Drawer
     TransitionComponent={Fade}
    
-    anchor='right'
+    anchor='top'
     open={Boolean(anchorEl)}
     onClose={handleclose}
     anchorOrigin={{
@@ -50,11 +50,12 @@ export const SmallDevicesMenu = () => {
     }}
       PaperProps={{
         style:{
-          width:'50%',
-          backgroundColor:theme.palette.secondary.main,
-          top: '9vh',
+          width:'100%',
+          backgroundColor:theme.palette.background.default,
+         
+         
         }
-      }}>
+      }}><IconButton onClick={handleclose}  sx={{marginLeft:'85%', marginTop:'2vh', fontWeight:'bold', color:'gray'}}><CloseIcon/></IconButton>
           <List >
             <ListItem sx={{flexDirection:'column', alignItems:'center'}}>
            <HomeNavlink handleclose={handleclose} mobile={true}/>
@@ -67,7 +68,7 @@ export const SmallDevicesMenu = () => {
             </ListItem>
                 
                {/* <Box sx={{margin:'auto'}}> <NavLink  to='/toolrequest'><Button sx={{color:'white',borderRadius:0,}} disableRipple onClick={handleclose}>Toolrequest</Button></NavLink></Box>} */}
-            <ListItem sx={{flexDirection:'column', alignItems:'center'}}>
+            <ListItem  sx={{flexDirection:'column', alignItems:'center', width:'98%'}}>
             <Toolsmenumobile handleclose={handleclose}/>
             </ListItem>
             <ListItem sx={{flexDirection:'column', alignItems:'center'}}>

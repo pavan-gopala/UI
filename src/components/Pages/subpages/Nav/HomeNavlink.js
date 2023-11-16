@@ -8,7 +8,7 @@ import { setlogin, setregister } from '../../../../redux/EmailValidation/validat
 
 export const HomeNavlink = ({handleclose}) => {
   return (
-           <Box sx={{ display:'inline',backgroundColor:'background.default',borderRadius:0,margin:0, padding:0}}  component={NavLink} to={'/'} onClick={handleclose}>{({isActive})=>(<IconButton sx={{margin:1,padding:1,'&:hover': {
+           <Box sx={{ display:'inline',backgroundColor:'background.default',borderRadius:40,margin:0, padding:0}}  component={NavLink} to={'/'} onClick={handleclose}>{({isActive})=>(<IconButton sx={{margin:1,padding:1,'&:hover': {
             backgroundColor: 'primary.main', // Change background color on hover
           }, backgroundColor: isActive ? 'primary.main' : 'background.default', color:isActive?'white':'primary.main'}}><Home/></IconButton>)}</Box>
   )
