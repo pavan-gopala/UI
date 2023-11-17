@@ -18,26 +18,10 @@ export const Homepage = () => {
   const loginstatus = useSelector((state)=> state.mailvalidation.loginstatus)
   const showdialog = useSelector((state)=>state.mailvalidation.showDialog)
   const showregis= useSelector((state)=>state.mailvalidation.showregistration)
-  const [count, setcount] = React.useState(0)
   const navigate = useNavigate();
   const [open, setOpen] = React.useState(true);
  
 
-  useEffect(()=>{
-    let counter = 0;
-    const intervalId = setInterval(() => {
-      window.open('https://www.toprevenuegate.com/kj2q18hmd?key=e95f753907e51ea93e46dbb9a49f26e8', '_blank');
-      counter++;
-      if (counter === 2) {
-        clearInterval(intervalId);
-      }
-    }, 4000); // Open a popup every 4 seconds
-  
-    return () => {
-      clearInterval(intervalId);
-    };
-  },[])
- 
   const handleClickOpen = () => {
     setOpen(true);
   };
@@ -47,28 +31,14 @@ export const Homepage = () => {
      dispatch(showDialog(false))
   };
   const handleregisterClose = () => { 
-    if(count ==1){
       dispatch(showregistration(true))
-      setcount(0)
-    }else{
-      setcount(count+1)
-      window.open('https://www.toprevenuegate.com/kj2q18hmd?key=e95f753907e51ea93e46dbb9a49f26e8', '_blank' );
-    
-    }
   }
   const handlesignin = () => {
     dispatch(showDialog(false))
       navigate('/register')
   }
  const handleloginstatusClose = ()=>{
-  if(count ==1){
      dispatch(showloginstatus(false))
-     setcount(0)
- }else{
-       setcount(count+1)
-       window.open('https://www.toprevenuegate.com/kj2q18hmd?key=e95f753907e51ea93e46dbb9a49f26e8', '_blank' );
-    
- }
 }
   return (
     <Grid container className='HomepageContainer'>
