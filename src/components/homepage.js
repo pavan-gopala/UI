@@ -43,7 +43,7 @@ export const Homepage = () => {
   return (
     <Grid container className='HomepageContainer'>
       <Grid item xs={12} sm={6} className='GridHome' >
-      <Dialog open={showdialog} onClose={handleClose}>
+      <Dialog open={false} onClose={handleClose}>
           <DialogTitle>{"Important Note"}</DialogTitle>
           <DialogContent>
             <DialogContentText>
