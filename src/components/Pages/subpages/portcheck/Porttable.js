@@ -27,7 +27,7 @@ export const PortTable = () => {
                   <TableCellComponentBody>{domain.values.port}</TableCellComponentBody>
                   <TableCellComponentBody>{data.available?<Successresult>Available</Successresult>:<Failedresult>Not available</Failedresult>}</TableCellComponentBody>
             </TableRow>
-
+    
                </TableBody>
            </Table>
        </TableContainer>

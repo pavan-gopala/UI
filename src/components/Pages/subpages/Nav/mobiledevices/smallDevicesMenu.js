@@ -74,10 +74,9 @@ export const SmallDevicesMenu = () => {
             <Toolsmenumobile handleclose={handleclose}/>
             </ListItem>
             <ListItem sx={{flexDirection:'column', alignItems:'center'}}>
-            <LogoutButton sx={{ color:'primary.main' }}/>
             {logged &&
  
- <LogoutButton sx={{ color:'primary.main' }}/>
+        <LogoutButton sx={{ color:'primary.main' }}/>
 }
 </ListItem>
           
