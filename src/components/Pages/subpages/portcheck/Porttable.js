@@ -12,8 +12,7 @@ export const PortTable = () => {
  console.log(data.available)
   return (
     <TableComponent>
-        <h3> Availabily Result</h3>
-        <h5>Domain</h5>
+        <h5>Domain:<span style={{fontSize:'medium', color:'green'}}>{domain.values.domain}</span></h5>
        <TableContainer>
            <Table>
                <TableHead>

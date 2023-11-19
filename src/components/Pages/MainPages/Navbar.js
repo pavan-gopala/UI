@@ -39,6 +39,9 @@ export const Navbar = () => {
       <Stack >
         <HomeNavlink/>
       </Stack>
+     {logged&&<Hidden mdDown={true}> <Stack marginLeft={'40px'} >
+        <LogoutButton/>
+        </Stack></Hidden>}
     
       </Hidden>
         {!logged && <Hidden mdDown={true}>
@@ -52,10 +55,12 @@ export const Navbar = () => {
          </Stack>
         </Hidden>}
     
-        {logged&&<Hidden mdDown={true} sx={{marginLeft: 4}}>
-          <LogoutButton />
-        </Hidden>}
+   
         </Stack>
+       
+       
+         
+       
       </Grid>
       
       <SmallDevicesMenu/>
