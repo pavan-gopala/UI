@@ -12,7 +12,7 @@ const headers = {
 
 export function* runvalidation(payload) {
   const {values,type} = payload;
-  const url = `http://localhost:4000/api/${type}`;
+  const url = `https://validate24x7.com/api/${type}`;
 
   try {
     const response = yield axios.post(url, values, { headers });

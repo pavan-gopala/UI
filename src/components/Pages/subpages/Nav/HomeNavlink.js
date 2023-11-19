@@ -1,13 +1,10 @@
 import React from 'react'
 import { Button,Box, IconButton } from '@mui/material'
-import { NavLink } from 'react-router-dom'
 import { Home, Logout } from '@mui/icons-material'
-import { LogoutSharp } from '@mui/icons-material'
 import { useDispatch } from 'react-redux'
 import { setlogin, setregister } from '../../../../redux/EmailValidation/validation';
 import '../../../../styles/styles.css';
-import { Login } from '@mui/icons-material'
-import VpnKeyIcon from '@mui/icons-material/VpnKey';
+import { Login } from '@mui/icons-material';
 
 export const HomeNavlink = () => {
   return (
@@ -41,7 +38,7 @@ export const LogoutButton = () => {
   }
   return (
           
-    <a href='/' className='navauth' style={{textDecoration:'none',}}><Box display={'flex' } sx={{justifyContent:'center', alignItems:'center'}}><h4>Logout</h4><Logout/></Box></a>
+    <a onClick={handlelogout} href='/' className='navauth' style={{textDecoration:'none',}}><Box display={'flex' } sx={{justifyContent:'center', alignItems:'center'}}><h4>Logout</h4><Logout/></Box></a>
       
   )
 }

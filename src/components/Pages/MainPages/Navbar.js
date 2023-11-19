@@ -1,7 +1,5 @@
 import React from 'react'
-import { AppBar, Button, Grid, Hidden, Stack, Typography, useTheme, Box, Toolbar, Paper } from '@mui/material'
-import { Toolbarcomponent } from '../../../styles/styles';
-import { Link, NavLink } from 'react-router-dom';
+import {  Grid, Hidden, Stack, Typography, useTheme, Box,  Paper } from '@mui/material'
 import { Toolsmenu } from '../subpages/Nav/ToolMenu';
 import { HomeNavlink, Loginlink, PaddingButton, Registerlink } from '../subpages/Nav/HomeNavlink';
 import { SmallDevicesMenu } from '../subpages/Nav/mobiledevices/smallDevicesMenu';
@@ -54,7 +52,7 @@ export const Navbar = () => {
          </Stack>
         </Hidden>}
     
-        {logged&&<Hidden mdDown={true}>
+        {logged&&<Hidden mdDown={true} sx={{marginLeft: 4}}>
           <LogoutButton />
         </Hidden>}
         </Stack>

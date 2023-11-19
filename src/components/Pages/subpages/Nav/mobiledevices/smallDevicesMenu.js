@@ -21,11 +21,6 @@ export const SmallDevicesMenu = () => {
     const handleclose = ()=>{
         setanchorEl(null)
     }
-    const handlelogout = () => {
-      dispatch(setlogin(false));
-      dispatch(setregister(''));
-      document.cookie = "jwt=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;"
-    }
     useEffect(()=>{
       if(document.cookie.includes('jwt')){
         dispatch(setlogin(true))
@@ -71,7 +66,7 @@ export const SmallDevicesMenu = () => {
                 
                {/* <Box sx={{margin:'auto'}}> <NavLink  to='/toolrequest'><Button sx={{color:'white',borderRadius:0,}} disableRipple onClick={handleclose}>Toolrequest</Button></NavLink></Box>} */}
             <ListItem  sx={{flexDirection:'column', alignItems:'center', width:'98%'}}>
-            <Toolsmenumobile handleclose={handleclose}/>
+            <Toolsmenumobile />
             </ListItem>
             <ListItem sx={{flexDirection:'column', alignItems:'center'}}>
             {logged &&
