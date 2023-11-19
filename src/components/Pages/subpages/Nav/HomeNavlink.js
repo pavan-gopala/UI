@@ -1,35 +1,28 @@
 import React from 'react'
 import { Button,Box, IconButton } from '@mui/material'
 import { NavLink } from 'react-router-dom'
-import { Home } from '@mui/icons-material'
+import { Home, Logout } from '@mui/icons-material'
 import { LogoutSharp } from '@mui/icons-material'
 import { useDispatch } from 'react-redux'
-import { setlogin, setregister } from '../../../../redux/EmailValidation/validation'
+import { setlogin, setregister } from '../../../../redux/EmailValidation/validation';
+import '../../../../styles/styles.css';
+import { Login } from '@mui/icons-material'
+import VpnKeyIcon from '@mui/icons-material/VpnKey';
 
-export const HomeNavlink = ({handleclose}) => {
+export const HomeNavlink = () => {
   return (
-           <Box sx={{ display:'inline',backgroundColor:'background.default',borderRadius:40,margin:0, padding:0}}  component={NavLink} to={'/'} onClick={handleclose}>{({isActive})=>(<IconButton sx={{margin:1,padding:1,'&:hover': {
-            backgroundColor: 'primary.main', // Change background color on hover
-          }, backgroundColor: isActive ? 'primary.main' : 'background.default', color:isActive?'white':'primary.main'}}><Home/></IconButton>)}</Box>
-  )
+                <a href='/'  style={{textDecoration:'none'}}><span style={{fontSize:'x-large'}}>🏠</span></a>   
+    )
 }
 export const Registerlink = ({handleclose}) => {
   return (
-           <Box component={NavLink} to={'/register'} onClick={handleclose}>{({ isActive }) => (
-            <Button variant='contained' sx={{margin:1,borderRadius:0,width:'120px', backgroundColor: isActive ? 'primary.main' : 'white', color:isActive?'white':'secondary.main'}}>
-              Register
-            </Button>
-          )}</Box>
+          <a href='/register' className='navauth' style={{textDecoration:'none',textAlign:'center'}}><button className='navbutton'>Register</button></a>
   )
 }
 
 export const Loginlink = ({handleclose}) => {
   return (
-           <Box sx={{marginRight:'2vw'}} component={NavLink} to={'/login'} onClick={handleclose}>{({ isActive }) => (
-            <Button variant='contained' sx={{margin:1, borderRadius:0,width:'120px', backgroundColor: isActive ? 'primary.main' : 'white', color:isActive?'white':'secondary.main'}}>
-               Login
-            </Button>
-          )}</Box>
+           <a href='/login' className='navauth' style={{textDecoration:'none'}}><Box display={'flex' } sx={{justifyContent:'center', alignItems:'center'}}><h4>Login</h4><Login/></Box></a>
   )
 }
 
@@ -47,11 +40,9 @@ export const LogoutButton = () => {
    
   }
   return (
-           <Box sx={{margin:'auto', paddingRight:0}}  onClick={handlelogout}>
-            <IconButton variant='contained' sx={{margin:1,  color:'white', bgcolor:'primary.main'}}>
-                <LogoutSharp/>
-            </IconButton>
-          </Box>
+          
+    <a href='/' className='navauth' style={{textDecoration:'none',}}><Box display={'flex' } sx={{justifyContent:'center', alignItems:'center'}}><h4>Logout</h4><Logout/></Box></a>
+      
   )
 }
 

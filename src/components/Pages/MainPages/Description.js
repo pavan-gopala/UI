@@ -22,7 +22,7 @@ export const EmailDescription = () => {
   return (
     <>
       <DescriptionComponent>
-        <h2 style={{ padding: 15 , color:'#00684A'}}>Email validator</h2>
+        <h2 style={{ padding: 15 , color:'primary.main'}}>Email validator</h2>
         <p style={{ paddingTop: 0, paddingLeft: 10, paddingRight: 10, paddingBottom: 40, }}>
           This tool will verify the validity of an email address and confirms whether it exists or not.The tool will
           connect with the email server,and confirms the validity of the email id that you entered.

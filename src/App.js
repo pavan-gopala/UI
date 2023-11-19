@@ -21,6 +21,8 @@ import { Notfound } from './components/Pages/subpages/Notfound';
 import { setlogin } from './redux/EmailValidation/validation';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
+import { PortCheck } from './components/Pages/subpages/portcheck/Portcheck';
+import { ImportantNote } from './components/Pages/MainPages/ImportantNote';
 const PageWrapper = ({ children }) => {
   const dispatch = useDispatch();
    useEffect(()=>{
@@ -31,7 +33,7 @@ const PageWrapper = ({ children }) => {
     }
    })
   return (
-    <div style={{ marginTop: '9vh', minHeight:'91vh' }}>
+    <div style={{ marginTop: '2vh', minHeight:'91vh' }}>
       
       {children}
     </div>
@@ -45,6 +47,7 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <Router>
+          <ImportantNote/>
           <Navbar/>
           
           <Routes>
@@ -56,6 +59,7 @@ function App() {
             <Route path='/register' element={<PageWrapper><Register/></PageWrapper>}/>
             <Route path='/login' element={<PageWrapper><Login/></PageWrapper>}/>
             <Route path='*' element={<PageWrapper><Notfound/></PageWrapper>}/>
+            <Route path='/portavailabilitycheck' element={<PageWrapper><PortCheck/></PageWrapper>}/>
           </Routes>
           <Grid container sx={{width:'100%', alignItems:'center', justifyContent:'center',}}>
       <Grid item xs={12}>

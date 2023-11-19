@@ -50,7 +50,7 @@ export const Toolsmenu = () => {
   PaperProps={{
       style: {
        borderRadius:0,
-        backgroundColor:'#00684A',
+        backgroundColor:theme.palette.primary.main,
         zIndex:1,
         
       },
@@ -61,11 +61,15 @@ export const Toolsmenu = () => {
     {/* <ListItem onClick={handleToolsClose}>
       <NavLink to={'/emailvalidation'}><Button sx={{color:'background.default',borderColor:'background.default', borderRadius:0,}} variant='outlined' disableRipple>Email validation</Button></NavLink>
     </ListItem> */}
-    <ListItem >
-      <NavLink to='/mxrecordslookup'><Button sx={{color:'background.default',borderColor:'background.default',borderRadius:0, }} variant='outlined' disableRipple onClick={handleToolsClose}>Mx Record Lookup</Button></NavLink>
+   
+    <ListItem>
+      <a href='/mxrecordslookup'  className='anchor'  rel="noreferrer">Mxrecord lookup</a>
     </ListItem>
     <ListItem>
-      <NavLink to='/site/serverInfocheck'><Button sx={{color:'background.default',borderColor:'background.default',borderRadius:0,}} variant='outlined' disableRipple onClick={handleToolsClose}>server/site info Scan</Button></NavLink>
+      <a href='/site/serverInfocheck'  className='anchor'  rel="noreferrer">Server/site info</a>
+    </ListItem>
+    <ListItem>
+      <a href='/portavailabilitycheck'  className='anchor'  rel="noreferrer">Port availability check</a>
     </ListItem>
     
   </List>

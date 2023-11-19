@@ -36,7 +36,7 @@ export const SmallDevicesMenu = () => {
          <IconButton onClick={handleopen} sx={{color:theme.palette.primary.main, marginRight:2}}><Button>Menu</Button><AppsIcon/></IconButton>
     <Drawer
     TransitionComponent={Fade}
-   
+    disableScrollLock={true}
     anchor='top'
     open={Boolean(anchorEl)}
     onClose={handleclose}
@@ -50,12 +50,14 @@ export const SmallDevicesMenu = () => {
     }}
       PaperProps={{
         style:{
-          width:'100%',
-          backgroundColor:theme.palette.background.default,
+          height:'60%',
+          width:'40%',
+          marginTop:'8vh',
+          backgroundColor:theme.palette.secondary.main,
          
-         
+        
         }
-      }}><IconButton onClick={handleclose}  sx={{marginLeft:'85%', marginTop:'2vh', fontWeight:'bold', color:'gray'}}><CloseIcon/></IconButton>
+      }}><IconButton onClick={handleclose}  sx={{ marginTop:'2vh', fontWeight:'bold', color:'gray'}}><span style={{fontSize:'x-large'}}>❎</span></IconButton>
           <List >
             <ListItem sx={{flexDirection:'column', alignItems:'center'}}>
            <HomeNavlink handleclose={handleclose} mobile={true}/>
@@ -72,17 +74,10 @@ export const SmallDevicesMenu = () => {
             <Toolsmenumobile handleclose={handleclose}/>
             </ListItem>
             <ListItem sx={{flexDirection:'column', alignItems:'center'}}>
+            <LogoutButton sx={{ color:'primary.main' }}/>
             {logged &&
-  <Button  onClick={handlelogout}
-    sx={{ width:'120px',color:'white',height:'4vh', backgroundColor:'primary.main',}}   
-    startIcon={
-   
-        <LogoutButton sx={{ color:'primary.main' }}/>
-     
-    } 
-  >
-    Logout
-  </Button>
+ 
+ <LogoutButton sx={{ color:'primary.main' }}/>
 }
 </ListItem>
           

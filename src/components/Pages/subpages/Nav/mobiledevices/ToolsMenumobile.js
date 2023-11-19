@@ -24,9 +24,9 @@ export const Toolsmenumobile = ({handleclose}) => {
   return (
    <>
      
-     <Button sx={{ width:'120px', borderRadius:'80px',  backgroundColor:anchorEl?'white':'primary.main', color:anchorEl?'primary.main':'white'}}   onClick={handleToolsMenu} startIcon={<IconButton>
-        <KeyboardArrowDown sx={{color:anchorEl?'primary.main':'white',transform: anchorEl ? 'rotate(90deg)' : 'none'}}/>
-     </IconButton>} >Tools</Button>
+     <button className='navtoolbuttonmobile' style={{ padding:0, marigin:0, display:'inline-flex', flexDirection:'row',justifyContent:'center', alignItems:'center',  }}   onClick={handleToolsMenu} >
+        <KeyboardArrowDown sx={{color:'white'}}/>
+     <h4 style={{padding:3}}>Tools</h4></button>
      <Portal>
 
        
@@ -42,8 +42,8 @@ export const Toolsmenumobile = ({handleclose}) => {
     horizontal: 'left',
   }}
   transformOrigin={{
-    vertical: 'center',
-    horizontal: 'right',
+    vertical: 'right',
+    horizontal: 'left',
   
   }}
   PaperProps={{
@@ -61,16 +61,16 @@ export const Toolsmenumobile = ({handleclose}) => {
        Email validation
        </Button>
       </ListItem> */}
-      <ListItem>
-        <Button to='/mxrecordslookup' sx={{ color: 'white', borderRadius: 0 }} aria-label='Mxrecordlookup' component={NavLink} disableRipple onClick={handleToolsClose}>
-          Mx Record Lookup
-        </Button>
-      </ListItem>
-      <ListItem>
-        <Button to='/site/serverInfocheck' sx={{ color: 'white', borderRadius: 0 }} aria-label='server/site infoscan' component={NavLink}  disableRipple onClick={handleToolsClose}>
-          Server/Site Info Scan
-        </Button>
-      </ListItem>
+      
+    <ListItem>
+      <a href='/mxrecordslookup'  className='anchor'  rel="noreferrer">Mxrecord lookup</a>
+    </ListItem>
+    <ListItem>
+      <a href='/site/serverInfocheck'  className='anchor'  rel="noreferrer">Server/site info</a>
+    </ListItem>
+    <ListItem>
+      <a href='/portavailabilitycheck'  className='anchor'  rel="noreferrer">Port availability check</a>
+    </ListItem>
   </List>
 </Popover>
 </Portal>

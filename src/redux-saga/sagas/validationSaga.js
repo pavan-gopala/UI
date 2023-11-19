@@ -22,6 +22,8 @@ export function* validationSaga() {
     }else if(payload.type === 'login'){
       const {values} = payload;
       yield runlogin(values);
+    }else if(payload.type === 'portcheck'){
+      yield runvalidation(payload);
     }
     yield put(setLoading(false));
     yield put(setshowvalidation(true));

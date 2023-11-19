@@ -11,9 +11,11 @@ const headers = {
 };
 
 export function* runvalidation(payload) {
-  const url = 'https://validate24x7.com/api/validateEmail';
+  const {values,type} = payload;
+  const url = `http://localhost:4000/api/${type}`;
+
   try {
-    const response = yield axios.post(url, { email: payload.data }, { headers });
+    const response = yield axios.post(url, values, { headers });
     yield put(setValidation(response.data));
   } catch (error) {}
 }

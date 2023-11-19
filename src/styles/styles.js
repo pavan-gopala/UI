@@ -10,18 +10,22 @@ export const Toolbarcomponent = styled(Toolbar)({
    flexDirection:'row',
    textAlign:'left',
    zIndex:1,
-
-   position:'fixed',
+    top:'9vh',
+    position:'sticky',
    backgroundColor:'#F9FAFA',
    height:'9vh',
    borderBottom:'1px secondary.main solid',
+
   });
 
 export const DescriptionComponent = styled(Box)({
      textAlign:'center',
-     color:'white',
      backgroundColor:'#F9FAFA',
      color:'black',
+     justifyContent: 'center',
+     alignItems: 'center',
+     width: '80vw',
+     margin: '0 auto',
      padding:4,
      fontSize:'large',
      position:'static',
@@ -42,7 +46,8 @@ export const ButtonComponent = styled(Button)({
         color:'white',
         backgroundColor:'#1D252C',
         marginTop:8,
-        padding:10, marginLeft:4, fontSize:11, width:'130px',transition: 'background-color 0.3s', // Add transition for a smooth effect
+      
+        padding:10, marginLeft:4, fontSize:13, width:'130px',transition: 'background-color 0.3s', // Add transition for a smooth effect
         borderRadius:0,
         '&:hover': {
           backgroundColor: '#00684A', // Change background color on hover
@@ -56,7 +61,7 @@ export const ClearButtonComponent = styled(Button)({
                   width:'130px', 
                   marginTop:8,
                   borderRadius:0,
-                  padding:10, marginLeft:6, fontsize:11, transition:'background-color 0.3s',
+                  padding:10, marginLeft:6, fontSize:13, transition:'background-color 0.3s',
                   '&:hover':{
                     backgroundColor:'#00684A', color:'white'
                   },

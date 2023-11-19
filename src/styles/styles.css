@@ -136,16 +136,18 @@ transform-origin: 0 0; /* see note above */
 /* Assuming your TextField has a class name of 'myTextField' */
 .myTextField .MuiOutlinedInput-root {
   border-radius: 0;
+ 
 }
 
 .myTextField .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
   border-color: rgba(0, 0, 0, 0.23); /* default border color */
-}
+  }
 
 .myTextField .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color:#00684A; /* default border color */
   /* #1CE783; */
 }
+
 
 /* Register Form */
 .registerimage{
@@ -157,5 +159,54 @@ transform-origin: 0 0; /* see note above */
 
 
  
+/* ToolMenu */
+.anchor{
+  text-decoration: none;
+  color:#E7F0F6;
+}
+/*tool description*/
 
- 
+.tooldescription{
+  font-family: 'Peppins';
+  font-size: medium;
+  text-align: center;
+  padding-bottom: 2%;
+  color:#1D252C;
+}
+.toolhead{
+  color:#0065A9;
+  font-family: 'Peppins';
+  font-size: larger;
+  text-align: center;
+  padding:1%;
+  background-color: #E7F0F6;
+
+  display: inline-flex;
+}
+.navauth{
+  text-decoration: none;
+  margin-left: 2px;
+  margin-right: 2px;
+  color: #F9FAFA;
+  font-family: 'Peppins';
+}
+.navbutton{
+  color: #F9FAFA;
+  border: 1px solid #F9FAFA;
+  padding: 5px;
+  font-size: medium;
+  font-weight: bold;
+  background-color: #0065A9;
+  font-family: 'Peppins';
+  height: 5vh;
+  width: 5rem;
+  
+}
+.navtoolbuttonmobile{
+  color: #F9FAFA;
+  border: 1px solid #F9FAFA;
+  background-color: #0065A9;
+  font-family: 'Peppins';
+  height: 5vh;
+  width:5rem
+}
