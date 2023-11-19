@@ -169,9 +169,11 @@ transform-origin: 0 0; /* see note above */
 .tooldescription{
   font-family: 'Peppins';
   font-size: medium;
+  font-weight:normal;
   text-align: center;
   padding-bottom: 2%;
   color:#1D252C;
+
 }
 .toolhead{
   color:#0065A9;

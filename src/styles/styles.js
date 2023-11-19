@@ -26,7 +26,7 @@ export const DescriptionComponent = styled(Box)({
      alignItems: 'center',
      width: '80vw',
      margin: '0 auto',
-     padding:4,
+     padding:20,
      fontSize:'large',
      position:'static',
      fontFamily:'Peppins',
