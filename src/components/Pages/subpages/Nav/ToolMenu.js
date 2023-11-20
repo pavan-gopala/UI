@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux'
 import { setshowTools } from '../../../../redux/EmailValidation/validation';
 import '../../../../styles/styles.css'
-
+import { Link } from 'react-router-dom';
 export const Toolsmenu = () => {
   const theme = useTheme();
   const [anchorEl, setanchorEl] = useState(null);
@@ -63,13 +63,13 @@ export const Toolsmenu = () => {
     </ListItem> */}
    
     <ListItem>
-      <a href='/mxrecordslookup'  className='anchor'  rel="noreferrer">Mxrecord lookup</a>
+      <Link to='/mxrecordslookup'  onClick={handleToolsClose} className='anchor'  rel="noreferrer">Mxrecord lookup</Link>
     </ListItem>
     <ListItem>
-      <a href='/site/serverInfocheck'  className='anchor'  rel="noreferrer">Server/site info</a>
+      <Link  to='/site/serverInfocheck' onClick={handleToolsClose}  className='anchor'  rel="noreferrer">Server/site info</Link>
     </ListItem>
     <ListItem>
-      <a href='/portavailabilitycheck'  className='anchor'  rel="noreferrer">Port availability check</a>
+      <Link  to='/portavailabilitycheck' onClick={handleToolsClose} className='anchor'  rel="noreferrer">Port availability check</Link>
     </ListItem>
     
   </List>

@@ -1,26 +1,29 @@
 import React from 'react'
 import { Button,Box, IconButton } from '@mui/material'
-import { Home, Logout } from '@mui/icons-material'
+import { Home, LoginSharp, Logout } from '@mui/icons-material'
 import { useDispatch } from 'react-redux'
 import { setlogin, setregister } from '../../../../redux/EmailValidation/validation';
 import '../../../../styles/styles.css';
-import { Login } from '@mui/icons-material';
+import { Link } from 'react-router-dom';
 
 export const HomeNavlink = () => {
   return (
-                <a href='/'  style={{textDecoration:'none'}}><span style={{fontSize:'x-large'}}>🏠</span></a>   
+                <Link to='/'  style={{textDecoration:'none'}}><span style={{color:'gray',display:'inline-block',   position:'absolute', bottom:'100%',  left:'80%', }}>Home</span></Link>   
     )
 }
 export const Registerlink = ({handleclose}) => {
   return (
-          <a href='/register' className='navauth' style={{textDecoration:'none',textAlign:'center'}}><button className='navbutton'>Register</button></a>
+          <Link to='/register' className='navauth' style={{textDecoration:'none',textAlign:'center'}}><button className='navbutton'>Register</button></Link>
   )
 }
 
 export const Loginlink = ({handleclose}) => {
   return (
-           <a href='/login' className='navauth' style={{textDecoration:'none'}}><Box display={'flex' } sx={{justifyContent:'center', alignItems:'center'}}><h4>Login</h4><Login/></Box></a>
+    <Link to='/login' className='navauth' style={{textDecoration:'none'}}>
+        <button className='navbutton' style={{border:'0px', backgroundColor:'transparent'}} >Login?</button>
+    </Link>
   )
+   
 }
 
 export const LogoutButton = () => {
@@ -38,7 +41,7 @@ export const LogoutButton = () => {
   }
   return (
           
-    <a onClick={handlelogout} href='/' className='navauth' style={{textDecoration:'none',}}><Box display={'flex' } sx={{justifyContent:'center', alignItems:'center'}}><h4>Logout</h4><Logout/></Box></a>
+    <a onClick={handlelogout} href='/' className='navauth' style={{textDecoration:'none',}}><button className='navbutton' style={{backgroundColor:'gray', border:'0px'}}>Logout</button></a>
       
   )
 }

@@ -44,7 +44,7 @@ export const FormComponent = styled(Paper)({
 
 export const ButtonComponent = styled(Button)({
         color:'white',
-        backgroundColor:'#1D252C',
+        backgroundColor:'#233d4d',
         marginTop:8,
       
         padding:10, marginLeft:4, fontSize:13, width:'130px',transition: 'background-color 0.3s', // Add transition for a smooth effect
@@ -85,7 +85,7 @@ export const  AboutusComponent = styled(Stack)({
 export const FooterComponent = styled(Box)({
            fontFamily:'Peppins',
            padding:10,
-           backgroundColor:'#1D252C',
+           backgroundColor:'#233d4d',
            color:'white',
 
 });
@@ -104,7 +104,7 @@ export const TableCellComponentBody = styled(TableCell)({
 export const TableCellComponentHead = styled(TableCell)({
   border: '1px solid #000',
   fontWeight:'bold',
-  backgroundColor:'lightgray',
+  backgroundColor:'rgb(35, 61, 77,0.5)',
 });
 
 export const Failedresult = styled('span')({

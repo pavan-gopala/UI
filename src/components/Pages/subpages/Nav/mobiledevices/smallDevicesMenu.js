@@ -54,9 +54,7 @@ export const SmallDevicesMenu = () => {
         }
       }}><IconButton onClick={handleclose}  sx={{ marginTop:'2vh', fontWeight:'bold', color:'gray'}}><span style={{fontSize:'x-large'}}>❎</span></IconButton>
           <List >
-            <ListItem sx={{flexDirection:'column', alignItems:'center'}}>
-           <HomeNavlink handleclose={handleclose} mobile={true}/>
-           </ListItem>
+            
             <ListItem sx={{flexDirection:'column', alignItems:'center'}}>
             {!logged&&<Registerlink handleclose={handleclose}/>}
             </ListItem>
@@ -66,7 +64,7 @@ export const SmallDevicesMenu = () => {
                 
                {/* <Box sx={{margin:'auto'}}> <NavLink  to='/toolrequest'><Button sx={{color:'white',borderRadius:0,}} disableRipple onClick={handleclose}>Toolrequest</Button></NavLink></Box>} */}
             <ListItem  sx={{flexDirection:'column', alignItems:'center', width:'98%'}}>
-            <Toolsmenumobile />
+            <Toolsmenumobile handleclose={handleclose}/>
             </ListItem>
             <ListItem sx={{flexDirection:'column', alignItems:'center'}}>
             {logged &&

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Button, Popover, List, ListItem,useTheme, Box, IconButton, Portal,Fade ,Typography} from '@mui/material';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
-import { NavLink } from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux'
 import { setshowTools } from '../../../../../redux/EmailValidation/validation';
+import { Link } from 'react-router-dom';
 
 export const Toolsmenumobile = ({handleclose}) => {
   const theme = useTheme();
@@ -63,13 +63,13 @@ export const Toolsmenumobile = ({handleclose}) => {
       </ListItem> */}
       
     <ListItem>
-      <a href='/mxrecordslookup'  className='anchor'  rel="noreferrer">Mxrecord lookup</a>
+      <Link to='/mxrecordslookup' onClick={handleclose}  className='anchor'  rel="noreferrer">Mxrecord lookup</Link>
     </ListItem>
     <ListItem>
-      <a href='/site/serverInfocheck'  className='anchor'  rel="noreferrer">Server/site info</a>
+      <Link to='/site/serverInfocheck' onClick={handleclose}  className='anchor'  rel="noreferrer">Server/site info</Link>
     </ListItem>
     <ListItem>
-      <a href='/portavailabilitycheck'  className='anchor'  rel="noreferrer">Port availability check</a>
+      <Link to='/portavailabilitycheck' onClick={handleclose}  className='anchor'  rel="noreferrer">Port availability check</Link>
     </ListItem>
   </List>
 </Popover>
