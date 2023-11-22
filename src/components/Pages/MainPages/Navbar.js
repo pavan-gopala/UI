@@ -19,7 +19,7 @@ export const Navbar = () => {
       }else{dispatch(setlogin(false))}
     })
   return (
-    <div style={{backgroundColor: theme.palette.secondary.main, position: 'sticky', top: 0, zIndex: 1000, margin: 0, padding: 2, display:'block',}}>
+    <div style={{backgroundColor: theme.palette.secondary.main, position: 'sticky', top: 0, zIndex: 1000, margin: 0, padding: 4, display:'block',}}>
       <div style={{backgroundColor: theme.palette.secondary.main, position: 'relative',  display:'block'}} >
       <div style={{display: 'inline-block', marginRight:'40%'}}>
   <Link to="/" style={{backgroundColor:'transparent',border:'0px'}} className='navbutton'>
@@ -27,7 +27,7 @@ export const Navbar = () => {
   </Link>
 </div> <Hidden mdDown={true}>
     <div style={{display: 'inline-block',marginLeft:'8%'}}>
-      <Toolsmenu/>
+      <Toolsmenu />
     </div>
   </Hidden>
            

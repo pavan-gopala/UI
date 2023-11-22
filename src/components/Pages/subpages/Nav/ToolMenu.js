@@ -7,7 +7,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import { setshowTools } from '../../../../redux/EmailValidation/validation';
 import '../../../../styles/styles.css'
 import { Link } from 'react-router-dom';
-export const Toolsmenu = () => {
+export const Toolsmenu = (props) => {
   const theme = useTheme();
   const [anchorEl, setanchorEl] = useState(null);
   const showTools = useSelector((state)=>state.mailvalidation.showTools)

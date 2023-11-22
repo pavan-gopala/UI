@@ -26,7 +26,7 @@ export const MxForm = () => {
 
 
     const handleValidation = async(input)=>{
-        const mxRecord = { type: 'mxrecord', data: input };
+        const mxRecord = { type: 'mxrecord', values: {domain:input} };
         if(disable === false){
           dispatch(setisValid(false))
           dispatch(setEmail(mxRecord))

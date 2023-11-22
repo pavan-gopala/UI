@@ -28,12 +28,12 @@ export const SiteInfoForm = () => {
 
 
     const handleValidation = async(input)=>{
-        let domain = input;
+      let domain = input; 
         if(urlPattern.test(input) === true){
              domain = new URL(input).hostname;
         }
         
-        const siteInfo = { type: 'siteinfo', data: domain };
+        const siteInfo = { type: 'domainipcheck', values: {domain:domain} };
         if(disable === false){
           dispatch(setisValid(false))
           dispatch(setEmail(siteInfo))

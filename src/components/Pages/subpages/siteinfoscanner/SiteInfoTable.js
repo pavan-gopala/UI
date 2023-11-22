@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 
 export const SiteInfoTable = () => {
 
-  let data1 = useSelector((state)=>state.mailvalidation.siteinfo);
+  let data1 = useSelector((state)=>state.mailvalidation.validationResult);
    data1 = data1 ? data1.ip:false
   const data = data1 ? data1.info : false;
   const propertiesToDisplay = [

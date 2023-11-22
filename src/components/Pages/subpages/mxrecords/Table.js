@@ -10,7 +10,7 @@ import { grey } from '@mui/material/colors';
 
 export const MxTable = () => {
   const [open, setOpen] = useState({});
-  const  data = useSelector((state)=>state.mailvalidation.mxresult.mxrecords)
+  const  data = useSelector((state)=>state.mailvalidation.validationResult.mxrecords)
   const domain = useSelector((state)=>state.mailvalidation.email.data)
   let datalength = 0
   if(data !== undefined){

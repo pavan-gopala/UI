@@ -7,7 +7,7 @@ import { Successresult } from '../../../../styles/styles.js';
 
 export const PortTable = () => {
   const [open, setOpen] = useState({});
-  const  data = useSelector((state)=>state.mailvalidation?.validationResult?.portcheck)
+  const  data = useSelector((state)=>state.mailvalidation?.validationResult?.portcheck?state.mailvalidation.validationResult.portcheck : '')
   const domain = useSelector((state)=>state.mailvalidation?.email)
  console.log(data.available)
   return (

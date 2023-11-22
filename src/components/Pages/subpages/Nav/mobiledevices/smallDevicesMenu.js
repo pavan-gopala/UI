@@ -56,10 +56,10 @@ export const SmallDevicesMenu = () => {
           <List >
             
             <ListItem sx={{flexDirection:'column', alignItems:'center'}}>
-            {!logged&&<Registerlink handleclose={handleclose}/>}
+            {!logged&&<Registerlink onClick={handleclose}/>}
             </ListItem>
             <ListItem sx={{flexDirection:'column', alignItems:'center'}}>
-           {!logged &&<Loginlink handleclose={handleclose}/>}
+           {!logged &&<Loginlink onClick={handleclose}/>}
             </ListItem>
                 
                {/* <Box sx={{margin:'auto'}}> <NavLink  to='/toolrequest'><Button sx={{color:'white',borderRadius:0,}} disableRipple onClick={handleclose}>Toolrequest</Button></NavLink></Box>} */}

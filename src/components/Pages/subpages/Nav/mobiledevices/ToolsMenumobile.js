@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Popover, List, ListItem,useTheme, Box, IconButton, Portal,Fade ,Typography} from '@mui/material';
 import KeyboardArrowDown from '@mui/icons-material/KeyboardArrowDown';
 import {useDispatch, useSelector} from 'react-redux'
@@ -21,6 +21,7 @@ export const Toolsmenumobile = ({handleclose}) => {
     handleclose();
   };
 
+
   return (
    <>
      
@@ -34,7 +35,7 @@ export const Toolsmenumobile = ({handleclose}) => {
   TransitionComponent={Fade}
   open={Boolean(showTools)}
   anchorEl={showTools}
-  onClose={handleToolsClose}
+  onClose={handleclose}
   disableScrollLock={true}
   anchorOrigin={{
    
@@ -53,7 +54,7 @@ export const Toolsmenumobile = ({handleclose}) => {
       },
     }}
 >
-  <List  onMouseLeave={handleToolsClose} sx={{height:'100%',}}>
+  <List  onClick={()=>handleToolsClose} sx={{height:'100%',}}>
   {/* <ListItem onClick={handleToolsClose}>
       <Button
   component={NavLink}
@@ -63,13 +64,13 @@ export const Toolsmenumobile = ({handleclose}) => {
       </ListItem> */}
       
     <ListItem>
-      <Link to='/mxrecordslookup' onClick={handleclose}  className='anchor'  rel="noreferrer">Mxrecord lookup</Link>
+      <Link to='/mxrecordslookup' onClick={handleToolsClose}  className='anchor'  rel="noreferrer">Mxrecord lookup</Link>
     </ListItem>
     <ListItem>
-      <Link to='/site/serverInfocheck' onClick={handleclose}  className='anchor'  rel="noreferrer">Server/site info</Link>
+      <Link to='/site/serverInfocheck' onClick={handleToolsClose}  className='anchor'  rel="noreferrer">Server/site info</Link>
     </ListItem>
     <ListItem>
-      <Link to='/portavailabilitycheck' onClick={handleclose}  className='anchor'  rel="noreferrer">Port availability check</Link>
+      <Link to='/portavailabilitycheck' onClick={handleToolsClose}  className='anchor'  rel="noreferrer">Port availability check</Link>
     </ListItem>
   </List>
 </Popover>
