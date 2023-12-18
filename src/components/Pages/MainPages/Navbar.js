@@ -1,23 +1,40 @@
-import React from 'react'
-import {  Grid, Hidden, Stack, Typography, useTheme, Box,  Paper } from '@mui/material'
-import { Toolsmenu } from '../subpages/Nav/ToolMenu';
-import { HomeNavlink, Loginlink, PaddingButton, Registerlink } from '../subpages/Nav/HomeNavlink';
-import { SmallDevicesMenu } from '../subpages/Nav/mobiledevices/smallDevicesMenu';
-import { useDispatch, useSelector } from 'react-redux';
-import { LogoutButton } from '../subpages/Nav/HomeNavlink';  
-import { setlogin, setregister } from '../../../redux/EmailValidation/validation';
-import { Link } from 'react-router-dom';
+import React from "react";
+import {
+  Grid,
+  Hidden,
+  Stack,
+  Typography,
+  useTheme,
+  Box,
+  Paper,
+} from "@mui/material";
+import { Toolsmenu } from "../subpages/Nav/ToolMenu";
+import {
+  HomeNavlink,
+  Loginlink,
+  PaddingButton,
+  Registerlink,
+} from "../subpages/Nav/HomeNavlink";
+import { SmallDevicesMenu } from "../subpages/Nav/mobiledevices/smallDevicesMenu";
+import { useDispatch, useSelector } from "react-redux";
+import { LogoutButton } from "../subpages/Nav/HomeNavlink";
+import {
+  setlogin,
+  setregister,
+} from "../../../redux/EmailValidation/validation";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
-  
-    const theme = useTheme();
-    const dispatch  = useDispatch();
-    const logged = useSelector((state)=>state.mailvalidation.login)
-    React.useEffect(()=>{
-      if(document.cookie.includes('jwt')){
-        dispatch(setlogin(true))
-      }else{dispatch(setlogin(false))}
-    })
+  const theme = useTheme();
+  const dispatch = useDispatch();
+  const logged = useSelector((state) => state.mailvalidation.login);
+  React.useEffect(() => {
+    if (document.cookie.includes("jwt")) {
+      dispatch(setlogin(true));
+    } else {
+      dispatch(setlogin(false));
+    }
+  });
   return (
     <div style={{backgroundColor: theme.palette.secondary.main, position: 'sticky', top: 0, zIndex: 1000, margin: 0, padding: 4, display:'block',}}>
       <div style={{backgroundColor: theme.palette.secondary.main, position: 'relative',  display:'block'}} >
