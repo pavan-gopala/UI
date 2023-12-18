@@ -4,7 +4,7 @@ import {
   setValidation,
   setregister,
 } from '../../../redux/EmailValidation/validation';
-const Url = `https://www.validate24x7.com`;
+const Url = `http://localhost:4000`;
 const headers = {
   'Content-Type': 'application/json',
 };

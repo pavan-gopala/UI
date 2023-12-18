@@ -13,7 +13,7 @@ export const HomeNavlink = () => {
 }
 export const Registerlink = ({handleclose}) => {
   return (
-          <Link to='/register' className='navauth' style={{textDecoration:'none',textAlign:'center'}}><button className='navbutton'>Register</button></Link>
+          <Link to='/register' className='navauth' style={{textDecoration:'none',textAlign:'center',}}><button className='navbutton'>Register</button></Link>
   )
 }
 

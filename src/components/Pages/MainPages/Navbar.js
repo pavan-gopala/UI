@@ -23,7 +23,7 @@ export const Navbar = () => {
       <div style={{backgroundColor: theme.palette.secondary.main, position: 'relative',  display:'block'}} >
       <div style={{display: 'inline-block', marginRight:'40%'}}>
   <Link to="/" style={{backgroundColor:'transparent',border:'0px'}} className='navbutton'>
-    Validate24x7
+    Website Performance Check
   </Link>
 </div> <Hidden mdDown={true}>
     <div style={{display: 'inline-block',marginLeft:'8%'}}>
@@ -37,7 +37,7 @@ export const Navbar = () => {
       {logged &&<div style={{display:'inline-block'}}>
             <LogoutButton/>
       </div> }
-       {!logged&&<div style={{display:'inline-flex',}} >
+       {!logged&&<div style={{}} >
           <Registerlink/>
           <Loginlink/>
           </div>}

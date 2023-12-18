@@ -4,15 +4,9 @@ import theme from './Theme';
 import { ThemeProvider } from '@mui/material';
 import { Homepage } from './components/homepage';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import { Aboutus } from './components/Pages/MainPages/Aboutus';
 import { Footer } from './components/Pages/MainPages/Footer';
 import { Navbar } from './components/Pages/MainPages/Navbar';
-import { Bulkvalidation } from './components/Pages/MainPages/bulkvalidation';
 import {Grid} from '@mui/material';
-import { EmailDescription } from './components/Pages/MainPages/Description';
-import {Box} from '@mui/material';
-import { Mxrecordslookup } from './components/Pages/subpages/mxrecords/mxrecordslookup';
-import { SiteInfo } from './components/Pages/subpages/siteinfoscanner/SiteInfo';
 import { Newtoolrequest } from './components/Pages/subpages/Requests/Newtoolrequest';
 import { Register } from './components/Authentication/Register';
 import { Login } from './components/Authentication/Login';
@@ -21,8 +15,8 @@ import { Notfound } from './components/Pages/subpages/Notfound';
 import { setlogin } from './redux/EmailValidation/validation';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { PortCheck } from './components/Pages/subpages/portcheck/Portcheck';
 import { ImportantNote } from './components/Pages/MainPages/ImportantNote';
+import { Toolcomponentcombiner } from './components/Pages/subpages/portcheck/Toolcomponentcombiner.react.js';
 const PageWrapper = ({ children }) => {
   const dispatch = useDispatch();
    useEffect(()=>{
@@ -54,13 +48,14 @@ function App() {
            
             <Route path='/' element={<PageWrapper><Homepage/></PageWrapper>}/>
             {/* <Route path='/emailvalidation' element ={<PrivateRoute><PageWrapper><EmailDescription/></PageWrapper></PrivateRoute>}/> */}
-            <Route path='/mxrecordslookup' element={<PageWrapper><Mxrecordslookup/></PageWrapper>}/>
-            <Route path='/site/serverInfocheck' element={<PageWrapper><SiteInfo/></PageWrapper>}/>
+            <Route path='/mxrecordslookup' element={<Toolcomponentcombiner/>}/>
+            <Route path='/site/serverInfocheck' element={<Toolcomponentcombiner/>}/>
             <Route path='/register' element={<PageWrapper><Register/></PageWrapper>}/>
             <Route path='/login' element={<PageWrapper><Login/></PageWrapper>}/>
             <Route path='*' element={<PageWrapper><Notfound/></PageWrapper>}/>
-            <Route path='/portavailabilitycheck' element={<PageWrapper><PortCheck/></PageWrapper>}/>
-          </Routes>
+            <Route path='/portavailabilitycheck' element={<PageWrapper><Toolcomponentcombiner/></PageWrapper>}/>
+            <Route path='/websiteperformancecheck' element={<Toolcomponentcombiner/>} />
+</Routes>
           <Grid container sx={{width:'100%', alignItems:'center', justifyContent:'center',}}>
       <Grid item xs={12}>
     <Footer/>

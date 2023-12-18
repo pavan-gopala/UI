@@ -8,7 +8,8 @@ import '../../../../styles/styles.css'
 
 export const SiteInfoForm = () => {
     const domainPattern = /^[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-    const urlPattern  = /^(https)\:\/\/[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    const urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$/i;
+
   const isinvalid = useSelector((state)=>state.mailvalidation.isinValid)
     const dispatch = useDispatch();
     const [input, setInput] = useState('')
@@ -80,3 +81,5 @@ export const SiteInfoForm = () => {
     </FormComponent>
   )
 }
+
+

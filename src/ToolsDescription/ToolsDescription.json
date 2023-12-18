@@ -1,0 +1,60 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "form":"mxform",
+            "table":"mxtable",
+            "pathname":"/mxrecordslookup",
+            "name":"Mx Record Lookup",
+            "title": "Mx Record Lookup | Validate 24x7",
+            "metadata":{
+                "name":"description",
+                "content":"Use our MX Record Lookup: Discover the email servers responsible for a domain. Essential for email delivery, MX records show where emails are received."
+    
+            },
+            "description": "MX Record Lookup: Discover the email servers responsible for a domain. Essential for email delivery, MX records show where emails are received."
+          },
+      {
+        "id": 2,
+        "form":"serverinfoform",
+        "table":"serverinfotable",
+        "pathname":"/site/serverInfocheck",
+        "name":"Site/server Info scanner",
+        "title": "Site/server Info scanner | Validate 24x7",
+        "metadata":{
+            "name":"description",
+            "content":"Use our SiteInfoScanner which is a web tool that quickly provides essential details about websites and servers, including IP addresses, geographic location, ISP, and more. It's your go-to resource for web insights in a snap."
+        },
+        "description": "SiteInfoScanner is a web tool that quickly provides essential details about websites and servers, including IP addresses, geographic location, ISP, and more. It's your go-to resource for web insights in a snap."
+      
+      },
+      {
+        "id": 3,
+        "form":"portform",
+        "table":"porttable",
+        "pathname":"/portavailabilitycheck",
+        "name":"Port Availability Check",
+        "title": "Port Availability Check | Validate 24x7",
+        "metadata":{
+            "name":"description",
+            "content":"Use our Port Availability Check tool to check if specific ports on a server or host are open or closed. Essential for understanding your network's security posture or troubleshooting specific network services."
+
+        },
+        "description": "Port Availability Check: This tool allows you to check if a specific port on a server or a host is open or closed. It is useful for understanding your network's security posture or for troubleshooting specific network services. By entering an IP address and a port number, you can see if a connection can be established through that port."
+      },{
+        "id": 4,
+      "form":"websiteperformancecheck",
+      "table":"websitespeedcheck",
+      "pathname":"/websiteperformancecheck",
+      "name":"Website Performance Check",
+      "title": "Website Performance Check | Validate 24x7",
+      "metadata":{
+          "name":"description",
+          "content":"Enhance your website's user experience and optimize its performance with our advanced Website Performance Checker.This tool provides comprehensive insights into your website's speed, accessibility, SEO, and more."
+
+      },
+      "description": "Enhance your website's user experience and optimize its performance with our advanced Website Performance Checker.This tool provides comprehensive insights into your website's speed, accessibility, SEO, and more."
+    }
+    ]
+  }
+

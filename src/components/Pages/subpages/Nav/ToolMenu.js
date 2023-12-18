@@ -71,6 +71,9 @@ export const Toolsmenu = (props) => {
     <ListItem>
       <Link  to='/portavailabilitycheck' onClick={handleToolsClose} className='anchor'  rel="noreferrer">Port availability check</Link>
     </ListItem>
+    <ListItem>
+      <Link to='websiteperformancecheck' onClick={handleToolsClose} className='anchor' rel='noreferrer'>Website performance check</Link>
+    </ListItem>
     
   </List>
 </Popover>
