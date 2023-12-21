@@ -1,5 +1,4 @@
 import react from "react";
-
 const Webcheckpage = () => {
   return (
     <Grid container>
