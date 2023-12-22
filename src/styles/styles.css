@@ -888,7 +888,7 @@ a:hover {
 } 
 
 a:hover { 
-    color: #f44300;
+    color:#00684A;
 } 
 
 .navbar-brand:hover { 
@@ -1070,7 +1070,7 @@ ul {
 } 
 
 .navbar .nav-item .nav-link:hover { 
-    color: #f44300!important;
+    color:#00684A!important;
 } 
 
 .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover { 

@@ -7,6 +7,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { LogoutButton } from '../subpages/Nav/HomeNavlink';  
 import { setlogin, setregister } from '../../../redux/EmailValidation/validation';
 import { Link } from 'react-router-dom';
+import "../../../styles/styles.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Button } from 'react-bootstrap';
+
 
 export const Navbar = () => {
   
@@ -24,9 +28,9 @@ export const Navbar = () => {
       <nav id="mainNavbar" class="navbar navbar-dark bg-info fixed-top navbar-expand-md snipcss-jbp1y">
   <div class="container">
     <div class="container-fluid">
-      <a href="/" target="_self" class="navbar-brand">
-        <img src="https://pc.domains/_nuxt/img/DomainPriceCheck_Logo.6f14792.svg" width="120">
-      </a>
+      <Link to="/" target="_self" class="navbar-brand">
+          <span style={{color:'green', fontFamily:'Peppins'}}>Website Performance Check</span>
+      </Link>
       <button type="button" aria-label="Toggle navigation" class="navbar-toggler collapsed style-zWt8l" aria-expanded="false" aria-controls="nav-collapse" id="style-zWt8l">
         <svg width="1em" height="1em" viewBox="0 0 16 16" fill="#666666" xmlns="http://www.w3.org/2000/svg" class="bi bi-chevron-bar-down">
           <path fill-rule="evenodd" d="M3.646 4.146a.5.5 0 0 1 .708 0L8 7.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zM1 11.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z">
