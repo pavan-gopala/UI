@@ -19,7 +19,43 @@ export const Navbar = () => {
       }else{dispatch(setlogin(false))}
     })
   return (
+    
     <div style={{backgroundColor: theme.palette.secondary.main, position: 'sticky', top: 0, zIndex: 1000, margin: 0, padding: 4, display:'block',}}>
+      <nav id="mainNavbar" class="navbar navbar-dark bg-info fixed-top navbar-expand-md snipcss-jbp1y">
+  <div class="container">
+    <div class="container-fluid">
+      <a href="/" target="_self" class="navbar-brand">
+        <img src="https://pc.domains/_nuxt/img/DomainPriceCheck_Logo.6f14792.svg" width="120">
+      </a>
+      <button type="button" aria-label="Toggle navigation" class="navbar-toggler collapsed style-zWt8l" aria-expanded="false" aria-controls="nav-collapse" id="style-zWt8l">
+        <svg width="1em" height="1em" viewBox="0 0 16 16" fill="#666666" xmlns="http://www.w3.org/2000/svg" class="bi bi-chevron-bar-down">
+          <path fill-rule="evenodd" d="M3.646 4.146a.5.5 0 0 1 .708 0L8 7.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zM1 11.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z">
+          </path>
+        </svg>
+      </button>
+      <div id="nav-collapse" class="navbar-collapse collapse style-xfhxI" align="end">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item uppercase">
+            <a href="/login" target="_self" class="nav-link">
+              Login
+            </a>
+          </li>
+          <li class="nav-item uppercase">
+            <a href="/pricing" target="_self" class="nav-link">
+              Pricing
+            </a>
+          </li>
+          <li class="nav-item uppercase font-weight-bold">
+            <a href="/register" target="_self" class="nav-link">
+              Register for free
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
       <div style={{backgroundColor: theme.palette.secondary.main, position: 'relative',  display:'block'}} >
       <div style={{display: 'inline-block', marginRight:'40%'}}>
   <Link to="/" style={{backgroundColor:'transparent',border:'0px', color:'green'}} className='navbutton'>
