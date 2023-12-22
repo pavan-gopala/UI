@@ -34,7 +34,7 @@ export const DescriptionComponent = styled(Box)({
 });
 
 export const FormComponent = styled(Paper)({
-        backgroundColor:'darkgray',
+        backgroundColor:'inherit',
         position:'relative',
         top:-30, 
         padding:20,

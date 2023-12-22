@@ -566,16 +566,27 @@ transform-origin: 0 0; /* see note above */
 /*form 2 */
 /* website performance check form */
 .newsletter-form {
-  max-width: 400px;
+  max-width: 500px;
   margin: 0 auto;
   padding: 20px;
   border-radius: 0px;
-  background-color: darkgray;
+  background-color: inherit;
   font-family: "Peppins",;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;
   -o-border-radius: 0px;
+}
+.flexrowclass  {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+  font-family: 'Peppins';
+  font-size: medium;
+  font-weight: bold;
+  color: #1D252C;
 }
 
 .heading {
@@ -622,6 +633,25 @@ transform-origin: 0 0; /* see note above */
 .newsletter-form input[type="submit"]:hover {
   background-color: #ff8533;
 }
+
+.webpercheck input {
+  text-align: left;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  &:focus {
+    outline: none;
+    border: 1px solid #00684A;
+    border-radius: 0%;
+    -webkit-border-radius: 0%;
+    -moz-border-radius: 0%;
+    -ms-border-radius: 0%;
+    -o-border-radius: 0%;
+}
+}
+
 
 .testing {
   color: rgb(35, 61, 77);

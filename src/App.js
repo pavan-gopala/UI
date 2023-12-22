@@ -41,12 +41,12 @@ function App() {
     <div className="App">
       <ThemeProvider theme={theme}>
         <Router>
-          <ImportantNote/>
+          
           <Navbar/>
           
           <Routes>
            
-            <Route path='/' element={<PageWrapper><Homepage/></PageWrapper>}/>
+            <Route path='/k' element={<PageWrapper><Homepage/></PageWrapper>}/>
             {/* <Route path='/emailvalidation' element ={<PrivateRoute><PageWrapper><EmailDescription/></PageWrapper></PrivateRoute>}/> */}
             <Route path='/mxrecordslookup' element={<Toolcomponentcombiner/>}/>
             <Route path='/site/serverInfocheck' element={<Toolcomponentcombiner/>}/>
@@ -54,7 +54,7 @@ function App() {
             <Route path='/login' element={<PageWrapper><Login/></PageWrapper>}/>
             <Route path='*' element={<PageWrapper><Notfound/></PageWrapper>}/>
             <Route path='/portavailabilitycheck' element={<PageWrapper><Toolcomponentcombiner/></PageWrapper>}/>
-            <Route path='/websiteperformancecheck' element={<Toolcomponentcombiner/>} />
+            <Route path='/' element={<Toolcomponentcombiner/>} />
 </Routes>
           <Grid container sx={{width:'100%', alignItems:'center', justifyContent:'center',}}>
       <Grid item xs={12}>

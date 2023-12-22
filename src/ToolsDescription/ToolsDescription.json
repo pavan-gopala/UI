@@ -45,7 +45,7 @@
         "id": 4,
       "form":"websiteperformancecheck",
       "table":"websitespeedcheck",
-      "pathname":"/websiteperformancecheck",
+      "pathname":"/",
       "name":"Website Performance Check",
       "title": "Website Performance Check | Validate 24x7",
       "metadata":{

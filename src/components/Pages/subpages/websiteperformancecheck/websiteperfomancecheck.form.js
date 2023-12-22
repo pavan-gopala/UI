@@ -5,6 +5,7 @@ import { FormComponent,ButtonComponent,ClearButtonComponent } from '../../../../
 import { useDispatch } from 'react-redux';
 import {  setEmail,} from '../../../../redux/EmailValidation/validation';
 import '../../../../styles/styles.css';
+import {Button} from '@mui/material';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
@@ -17,7 +18,11 @@ const validationSchema = Yup.object({
     return urlPattern.test(value) ;
   }), 
 });
+
+
 export const UrlValidationForm = () => {
+
+  
   
  //   const netblockPattern = /^(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]?|0)\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]?|0)\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]?|0)\.(25[0-5]|2[0-4][0-9]|1[0-9][0-9]|[1-9][0-9]?|0)\/(0|[1-9]|1[0-9]|2[0-9]|3[0-2])$/
     const dispatch = useDispatch();
@@ -38,30 +43,41 @@ export const UrlValidationForm = () => {
     const handleClearButton = () => {
       formik.resetForm(); // Reset Formik values to initial values
     };
+
     
   return (
-    <FormComponent elevation={0}  >
+    
        <Grid container sx={{width:'100%'}} >
-        <Grid item xs={12} sm={10}  sx={{margin:'auto'}}>
+        <Grid item xs={12} sm={12}  sx={{margin:'auto'}}>
        
         <div class="newsletter-form">
-    <p class="heading">website performance check</p>
-    <form class="form">
-      <TextField value={formik.values.url}
+          <div textAlign="center" style={{display:'flex' , flexDirection:'column', margin:'0px', padding:'0px'}}>
+    <h2 >website performance check</h2>
+   <p2 style={{padding: "10px", }}>Improve your site's speed and SEO with our free check!</p2>
+</div>
+   
+    <form className="webpercheck" >
+      <input value={formik.values.url}
+              className='webpercheck'
+              type='text'
               label='Url'
               name='url'
-              variant='filled'
-              className='myTextField'
+              variant='outlined'
+              placeholder='Enter Url'
              onChange={formik.handleChange}
              error={formik.touched.url && Boolean(formik.errors.url)}
-             helperText={formik.touched.url && formik.errors.url}  placeholder='Enter url' fullWidth/>
-              <ButtonComponent   onClick={formik.handleSubmit} >Check</ButtonComponent>
+            />
     </form>
+    <div style={{textAlign:'left'}}>
+    <label htmlFor='Url' style={{color:'red', fontSize:'medium', fontWeight:'400',}}>{formik.touched.url && formik.errors.url}</label>
+    </div>
+    <Button variant='outlined' onClick={formik.handleSubmit}>Check</Button>
   </div>
+  
   </Grid>
         </Grid>
         
        
-    </FormComponent>
+
   )
 }
