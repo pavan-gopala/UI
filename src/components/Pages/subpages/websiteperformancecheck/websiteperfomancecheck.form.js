@@ -47,7 +47,7 @@ export const UrlValidationForm = () => {
     
   return (
     
-       <Grid container sx={{width:'100%'}} >
+       <Grid container sx={{width:'100%'}} marginTop={4} >
         <Grid item xs={12} sm={12}  sx={{margin:'auto'}}>
        
         <div class="newsletter-form">

@@ -7,15 +7,17 @@ import { useDispatch, useSelector } from 'react-redux';
 import { LogoutButton } from '../subpages/Nav/HomeNavlink';  
 import { setlogin, setregister } from '../../../redux/EmailValidation/validation';
 import { Link } from 'react-router-dom';
-import "../../../styles/styles.css";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
+import "../../../styles/navbar.css";
+import { useState } from 'react';
+
+
 
 
 export const Navbar = () => {
   
     const theme = useTheme();
     const dispatch  = useDispatch();
+    const [isOpen, setIsOpen] = useState(false);
     const logged = useSelector((state)=>state.mailvalidation.login)
     React.useEffect(()=>{
       if(document.cookie.includes('jwt')){
@@ -25,42 +27,52 @@ export const Navbar = () => {
   return (
     
     <div style={{backgroundColor: theme.palette.secondary.main, position: 'sticky', top: 0, zIndex: 1000, margin: 0, padding: 4, display:'block',}}>
-      <nav id="mainNavbar" class="navbar navbar-dark bg-info fixed-top navbar-expand-md snipcss-jbp1y">
-  <div class="container">
-    <div class="container-fluid">
-      <Link to="/" target="_self" class="navbar-brand">
-          <span style={{color:'green', fontFamily:'Peppins'}}>Website Performance Check</span>
-      </Link>
-      <button type="button" aria-label="Toggle navigation" class="navbar-toggler collapsed style-zWt8l" aria-expanded="false" aria-controls="nav-collapse" id="style-zWt8l">
-        <svg width="1em" height="1em" viewBox="0 0 16 16" fill="#666666" xmlns="http://www.w3.org/2000/svg" class="bi bi-chevron-bar-down">
+      
+      <nav id="mainNavbar" className="navbar navbar-dark bg-info fixed-top navbar-expand-md snipcss-jbp1y">
+      <div className="container">
+        <div className="container-fluid">
+          <Link to="/" target="_self" className="navbar-brand">
+            <span className='navbar-brand' style={{ fontFamily:'Peppins'}}>Website Performance Check</span>
+          </Link>
+          <button 
+            type="button" 
+            aria-label="Toggle navigation" 
+            className="navbar-toggler collapsed style-zWt8l" 
+            aria-expanded="false" 
+            aria-controls="nav-collapse" 
+            id="style-zWt8l"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <svg width="1em" height="1em" viewBox="0 0 16 16" fill="#666666" xmlns="http://www.w3.org/2000/svg" className="bi bi-chevron-bar-down">
           <path fill-rule="evenodd" d="M3.646 4.146a.5.5 0 0 1 .708 0L8 7.793l3.646-3.647a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 0-.708zM1 11.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 0 1h-13a.5.5 0 0 1-.5-.5z">
           </path>
         </svg>
-      </button>
-      <div id="nav-collapse" class="navbar-collapse collapse style-xfhxI" align="end">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item uppercase">
-            <a href="/login" target="_self" class="nav-link">
+          </button>
+          <div id="nav-collapse" className={`navbar-collapse collapse  ${isOpen ? 'show' : 'hide'}`} align="end">
+            <ul className="navbar-nav ml-auto">
+            <li className="nav-item uppercase">
+            <a href="/login" target="_self" className="nav-link">
               Login
             </a>
           </li>
-          <li class="nav-item uppercase">
-            <a href="/pricing" target="_self" class="nav-link">
+          {/* <li className="nav-item uppercase">
+            <a href="/pricing" target="_self" className="nav-link">
               Pricing
             </a>
-          </li>
-          <li class="nav-item uppercase font-weight-bold">
-            <a href="/register" target="_self" class="nav-link">
+          </li> */}
+          <li className="nav-item uppercase font-weight-bold">
+            <a href="/register" target="_self" className="nav-link">
               Register for free
             </a>
           </li>
-        </ul>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</nav>
+    </nav>
+    
 
-      <div style={{backgroundColor: theme.palette.secondary.main, position: 'relative',  display:'block'}} >
+      {/* <div style={{backgroundColor: theme.palette.secondary.main, position: 'relative',  display:'block'}} >
       <div style={{display: 'inline-block', marginRight:'40%'}}>
   <Link to="/" style={{backgroundColor:'transparent',border:'0px', color:'green'}} className='navbutton'>
     Website performance check
@@ -88,7 +100,7 @@ export const Navbar = () => {
      <div style={{display:'inline-block'}}>
      <SmallDevicesMenu/>
      </div>
-</div>
+</div> */}
 </div>
       
  
