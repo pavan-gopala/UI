@@ -12,6 +12,7 @@ import { Link } from "react-router-dom/dist";
 import jsondata from "../../../../ToolsDescription/ToolsDescription.json";
 import { getcomponents } from "../../../Functions/getcomponents.functions";
 import { Piechart } from "../websiteperformancecheck/charts/piechart.react";
+import {Webcheckpage} from "../websiteperformancecheck/webcheckpage.react";
 
 export const Toolcomponentcombiner = () => {
   const data = jsondata.data;
@@ -54,18 +55,17 @@ export const Toolcomponentcombiner = () => {
           <meta name={metadata.name} content={metadata.content} />
         </Helmet>
         {name !== "webcheck" && <h1 className="toolhead">{name}</h1>}
-        <h2 className="tooldescription">
+        {name !== "webcheck" &&<h2 className="tooldescription">
           {description} Back to <Link to="/">Home</Link>
-        </h2>
+        </h2>}
       </DescriptionComponent>
       <Grid container>
         <Grid item xs={11} sm={9} margin={"auto"}>
           {formcomponent}
           {loading && <Loader />}
           {showvalidation && tablecomponent}
-          {!showvalidation && <Piechart />}
         </Grid>
-        {name === "check" && <Webcheckpage/>}
+        {name === "webcheck" && <Webcheckpage/>}
       </Grid>
     </div>
   );

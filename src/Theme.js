@@ -9,7 +9,7 @@ const theme = createTheme({
     
     
     secondary: {
-      main: '#233d4d',
+      main: '#FFFFFF',
       // main:'#628395'
        //main: '#1D252C',
     },

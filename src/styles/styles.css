@@ -564,16 +564,14 @@ transform-origin: 0 0; /* see note above */
 }
 
 /*form 2 */
-/* Unique styles for the newsletter form */
+/* website performance check form */
 .newsletter-form {
   max-width: 400px;
   margin: 0 auto;
   padding: 20px;
-  border: 1px solid #233d4d;
   border-radius: 0px;
-  background-color: #f7f7f7;
+  background-color: darkgray;
   font-family: "Peppins",;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   -ms-border-radius: 0px;

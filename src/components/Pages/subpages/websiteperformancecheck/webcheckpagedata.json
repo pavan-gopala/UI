@@ -1,0 +1,34 @@
+
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "restapi",
+            "title":"REST API",
+            "description": "Thanks to the REST API, the Website performance check can be integrated easily into any project."
+          },{
+            "id": 2,
+            "name": "ai",
+            "title":"AI ALGORITHM",
+            "description": "The AI algorithm is constantly trained and is based on a neural network." 
+          },
+          {
+            "id": 3,
+            "name": "accurate",
+            "title":"ACCURATE",
+            "description": "The  AI model provides accurate results and is constantly being improved."
+          },
+          {
+            "id": 4,
+            "name": "free",
+            "title":"FREE OF CHARGE",
+            "description": "The Website performance check is free and can be used by anyone."
+          }
+          ],"Grid2Data":[{
+          "id": "1",
+          "name": "report",
+          "title": "Website Performance Detailed Report",
+          "description" : "Discover the comprehensive report on your website's performance. This detailed analysis provides insights into various aspects of your site, including load times, user engagement, and overall functionality. ",
+          "description2": " Our report is designed to help you understand how your website is performing in real-time, identify potential areas for improvement, and implement strategies to enhance user experience. Stay ahead of the competition by ensuring your website is optimized for peak performance."
+
+        }]}
