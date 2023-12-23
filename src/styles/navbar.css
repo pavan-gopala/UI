@@ -1,6 +1,7 @@
 /*nav styles*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700,800,300i,400i,500i,600i,700i,800i&display=swap'); 
-  body {  
+
+body {  
     color:#212529;
     font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
     font-size:1rem;
@@ -215,7 +216,7 @@ a {
     padding-bottom: .3125rem; 
     padding-top: .3125rem; 
     white-space: nowrap;
-    color: #00684A !important;
+    color:rgb(255, 127, 80) !important;
 } 
 
 .navbar-dark .navbar-brand  { 
@@ -293,22 +294,15 @@ button {
     text-decoration: none;
 } 
 
-.navbar-collapse {
-    align-items: center;
-    flex-basis: 100%;
+.navbar-collapse { 
+    align-items: center; 
+    flex-basis: 100%; 
     flex-grow: 1;
-   
 } 
 
 .collapse:not(.show) { 
     display: none;
 } 
-.collapse.show {
-    display: block;
-    transform: scaleY(1);
-    opacity: 1;
-   
-}
 
 @media (min-width: 768px){ 
   .navbar-expand-md .navbar-collapse  { 
@@ -418,7 +412,7 @@ ul {
 } 
 
 .navbar .nav-item .nav-link:hover { 
-    color:#00684A!important;
+    color:#666!important;
 } 
 
 .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover { 
@@ -434,55 +428,20 @@ ul {
 #style-zWt8l.style-zWt8l {  
    overflow-anchor: none;  
     border: 1px solid rgb(102, 102, 102) !important;  
-}  
-#nav-collapse.show {   
-   max-height: 500px;
-}
-@keyframes slideDown {
+} 
+@keyframes fadeInDown {
     0% {
-      transform: scaleY(0);
-      transform: translate3d(0px, 60px,0);
       opacity: 0;
-      -webkit-transform: translate3d(0px, 60px,0);
-      -moz-transform: translate3d(0px, 60px,0);
-      -ms-transform: translate3d(0px, 60px,0);
-      -o-transform: translate3d(0px, 60px,0);
-}
-    50% {
-      transform: scaleY(0.5);
-      transform: translate3d(10px , 40px,0);
+      transform: translateY(-20px);
+    }
+    100% {
       opacity: 1;
-      -webkit-transform: translate3d(10px , 40px,0);
-      -moz-transform: translate3d(10px , 40px,0);
-      -ms-transform: translate3d(10px , 40px,0);
-      -o-transform: translate3d(10px , 40px,0);
+      transform: translateY(0);
+    }
+  } 
+#nav-collapse.show {  
+   display: show ;  
+   animation: fadeInDown 0.5s ease-out forwards;
 }
-100% {
-    transform: scaleY(1);
-    transform: translate3d(20px , 0px,0);
-    opacity: 1;
-    -webkit-transform: translate3d(20px , 0px,0);
-    -moz-transform: translate3d(20px , 0px,0);
-    -ms-transform: translate3d(20px , 0px,0);
-    -o-transform: translate3d(20px , 0px,0);
-}
-  }
 
-  #nav-collapse {
-    transform-origin: top;
-    transform: scaleY(1);
-    opacity: 1;
-    transition: transform 0.3s cubic-bezier(0.5, 2, 0.5, 1), opacity cubic-bezier(0.5, 2, 0.5, 1);
-    -webkit-transition: transform 0.3s cubic-bezier(0.5, 2, 0.5, 1), opacity cubic-bezier(0.5, 2, 0.5, 1);
-    -moz-transition: transform 0.3s cubic-bezier(0.5, 2, 0.5, 1), opacity cubic-bezier(0.5, 2, 0.5, 1);
-    -ms-transition: transform 0.3s cubic-bezier(0.5, 2, 0.5, 1), opacity cubic-bezier(0.5, 2, 0.5, 1);
-    -o-transition: transform 0.3s cubic-bezier(0.5, 2, 0.5, 1), opacity cubic-bezier(0.5, 2, 0.5, 1);
-}
-  #nav-collapse.show {
-    animation: slideDown 0.3s ease forwards;
-    -webkit-animation: slideDown 0.2s cubic-bezier(0, 0.5, 3, 0.5) forwards;
-}
-#nav-collapse:not(.show){
-   animation: none;
-}
- 
+

@@ -17,7 +17,7 @@ export const Footer = () => {
          </Box>
       </Grid>
       <Grid item xs={12} md={12} >
-      <Typography><IconButton sx={{color:'white'}}><CopyrightIcon/></IconButton>Copyright 2023  <span style={{color:"#00684A", backgroundColor:'white', padding:4, fontWeight:1000}}>validate24x7</span> • All rights reserved</Typography>
+      <Typography><IconButton sx={{color:'white'}}><CopyrightIcon/></IconButton>Copyright 2023  <span style={{color:"rgb(255, 127, 80)", backgroundColor:'white', padding:4, fontWeight:1000}}>validate24x7</span> • All rights reserved</Typography>
     
       </Grid>
     </Grid>

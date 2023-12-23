@@ -67,11 +67,12 @@ export const UrlValidationForm = () => {
              onChange={formik.handleChange}
              error={formik.touched.url && Boolean(formik.errors.url)}
             />
+            <Button variant='outlined' onClick={formik.handleSubmit}>Check</Button>
     </form>
     <div style={{textAlign:'left'}}>
     <label htmlFor='Url' style={{color:'red', fontSize:'small', fontWeight:'400',}}>{formik.touched.url && formik.errors.url}</label>
     </div>
-    <Button variant='outlined' onClick={formik.handleSubmit}>Check</Button>
+    
   </div>
   
   </Grid>

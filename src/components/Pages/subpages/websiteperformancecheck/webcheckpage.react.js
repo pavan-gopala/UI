@@ -7,7 +7,7 @@ import {ReactComponent as Freeicon} from "../../../../Images/svg10.svg";
 import websitedata from  "./webcheckpagedata.json";
 const classes = {
   svgIcon: {
-    fill : "#00684A",
+    fill : "rgb(255, 127, 80)",
     width  : "18%",
     height : "20%",
     padding: "2%",

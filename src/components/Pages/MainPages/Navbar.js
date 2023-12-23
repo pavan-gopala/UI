@@ -9,6 +9,7 @@ import { setlogin, setregister } from '../../../redux/EmailValidation/validation
 import { Link } from 'react-router-dom';
 import "../../../styles/navbar.css";
 import { useState } from 'react';
+ 
 
 
 
@@ -48,10 +49,11 @@ export const Navbar = () => {
           </path>
         </svg>
           </button>
-          <div id="nav-collapse" className={`navbar-collapse collapse  ${isOpen ? 'show' : 'hide'}`} align="end">
-            <ul className="navbar-nav ml-auto">
+          <div  id='nav-collapse'  className={`navbar-collapse collapse  ${isOpen ? 'show' : 'hide'}`} align="end">
+          
+            <ul className="navbar-nav ml-auto" >
            {!logged && <li className="nav-item uppercase">
-            <a href="/login" target="_self" className="nav-link">
+            <a href="/login" target="_self" className="nav-link ">
               Login
             </a>
           </li>}
@@ -61,7 +63,7 @@ export const Navbar = () => {
             </a>
           </li> */}
           {!logged && <li className="nav-item uppercase font-weight-bold">
-            <a href="/register" target="_self" className="nav-link">
+            <a href="/register" target="_self" className="nav-link ">
               Register for free
             </a>
           </li>}
@@ -72,7 +74,8 @@ export const Navbar = () => {
               </li>}
             </ul>
           </div>
-        </div>
+          </div>
+        
       </div>
     </nav>
     
