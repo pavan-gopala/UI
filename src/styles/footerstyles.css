@@ -1,0 +1,67 @@
+
+
+footer { 
+    display: block;
+} 
+
+footer { 
+    background-color:transparent;
+} 
+
+.pt-5 { 
+    padding-top: 3rem!important;
+} 
+
+.text-center { 
+    text-align: center!important;
+} 
+
+.pt-3 { 
+    padding-top: 1rem!important;
+} 
+
+.col { 
+    padding-left: 15px; 
+    padding-right: 15px; 
+    position: relative; 
+    width: 100%;
+} 
+
+.col { 
+    flex-basis: 0; 
+    flex-grow: 1; 
+    max-width: 100%;
+} 
+
+.pb-2 { 
+    padding-bottom: .5rem!important;
+} 
+
+.text-uppercase { 
+    text-transform: uppercase!important;
+} 
+
+.text-accent { 
+    color: #888;
+} 
+
+.text-small { 
+    font-size: 10px;
+} 
+
+
+.mr-3 { 
+    margin-right: 1rem!important;
+} 
+
+.col a:hover { 
+    color: rgb(234, 81, 65);
+} 
+
+
+/* These were inline style tags. Uses id+class to override almost everything */
+#style-12oHw.style-12oHw {  
+   padding-bottom: 50px;  
+}  
+
+  
