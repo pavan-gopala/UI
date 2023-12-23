@@ -56,7 +56,7 @@ export const UrlValidationForm = () => {
    <p2 style={{padding: "10px", }}>Improve your site's speed and SEO with our free check!</p2>
 </div>
    
-    <form className="webpercheck" >
+    <form className="webpercheck" autoFocus={true} >
       <input value={formik.values.url}
           className='webpercheck'
           style={{border: formik.touched.url && formik.errors.url && '1px solid red'}}
