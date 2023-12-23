@@ -49,7 +49,7 @@ export const Webcheckpage = () => {
       {websitedata.Grid2Data.map((item)=>{
         return (
           <Grid item xs={12} md={12} style={classes.Griditem}>
-            <Paper elevation={2} style={{backgroundColor:"white",padding:'5%', textAlign:'left'}}>
+            <Paper elevation={0} style={{backgroundColor:"white",padding:'5%', textAlign:'left'}}>
               <p ><span style={{fontSize:16, fontWeight:"bold",}}>{item.title.toUpperCase()}: </span> </p>
               <p style={{marginTop:'1vh'}}>{item.description2}</p>
               <Button variant="contained">learn more</Button>
