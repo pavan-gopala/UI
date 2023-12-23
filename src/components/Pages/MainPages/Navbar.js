@@ -1,5 +1,5 @@
 import React from 'react'
-import {  Grid, Hidden, Stack, Typography, useTheme, Box,  Paper } from '@mui/material'
+import {  Grid, Hidden, Stack, Typography, useTheme, Box, } from '@mui/material'
 import { Toolsmenu } from '../subpages/Nav/ToolMenu';
 import { HomeNavlink, Loginlink, PaddingButton, Registerlink } from '../subpages/Nav/HomeNavlink';
 import { SmallDevicesMenu } from '../subpages/Nav/mobiledevices/smallDevicesMenu';
@@ -9,13 +9,16 @@ import { setlogin, setregister } from '../../../redux/EmailValidation/validation
 import { Link } from 'react-router-dom';
 import "../../../styles/navbar.css";
 import { useState } from 'react';
-import {ReactComponent as SvgMainIcon} from "../../../Images/webicon.svg";
+import {ReactComponent as SvgMainIcon} from "../../../Images/webpagelogo.svg";
+import { green } from '@mui/material/colors';
  
 
 
 const classes = {
   svgIcon: {
-    fill : "rgb(255, 127, 80)",
+    fill : "rgb(233,72,69)",
+    height:'50px',
+    width:'130px',
     
   },
   Griditem: {
@@ -36,7 +39,7 @@ export const Navbar = () => {
     })
   return (
     
-    <div style={{backgroundColor: theme.palette.secondary.main, position: 'sticky', top: 0, zIndex: 1000, margin: 0, padding: 4, display:'block',}}>
+    // <div style={{backgroundColor: green, position: 'sticky', top: 0, zIndex: 1000, margin: 0, padding: 4, display:'block',}}>
       
       <nav id="mainNavbar" className="navbar navbar-dark bg-info fixed-top navbar-expand-md snipcss-jbp1y">
       <div className="container">
@@ -47,6 +50,7 @@ export const Navbar = () => {
                <div style={{display:'flex', flexDirection:'column'}}>
                 <p></p>
                </div>
+              
              </div>
 
           </Link>
@@ -95,36 +99,36 @@ export const Navbar = () => {
     </nav>
     
 
-      {/* <div style={{backgroundColor: theme.palette.secondary.main, position: 'relative',  display:'block'}} >
-      <div style={{display: 'inline-block', marginRight:'40%'}}>
-  <Link to="/" style={{backgroundColor:'transparent',border:'0px', color:'green'}} className='navbutton'>
-    Website performance check
-  </Link>
-</div> <Hidden mdDown={true}>
-    <div style={{display: 'inline-block',marginLeft:'8%'}}>
-      <Toolsmenu />
-    </div>
-  </Hidden>
+//       {/* <div style={{backgroundColor: theme.palette.secondary.main, position: 'relative',  display:'block'}} >
+//       <div style={{display: 'inline-block', marginRight:'40%'}}>
+//   <Link to="/" style={{backgroundColor:'transparent',border:'0px', color:'green'}} className='navbutton'>
+//     Website performance check
+//   </Link>
+// </div> <Hidden mdDown={true}>
+//     <div style={{display: 'inline-block',marginLeft:'8%'}}>
+//       <Toolsmenu />
+//     </div>
+//   </Hidden>
            
-  <div style={{display: 'inline-block', float: 'right', marginRight: '2%'}}>
-    <Hidden mdDown={true}>
+//   <div style={{display: 'inline-block', float: 'right', marginRight: '2%'}}>
+//     <Hidden mdDown={true}>
      
-      {logged &&<div style={{display:'inline-block'}}>
-            <LogoutButton/>
-      </div> }
-       {!logged&&<div style={{display:'inline-flex', cursor:'pointer'}} >
-          <Registerlink/>
-          <Loginlink/>
-          </div>}
+//       {logged &&<div style={{display:'inline-block'}}>
+//             <LogoutButton/>
+//       </div> }
+//        {!logged&&<div style={{display:'inline-flex', cursor:'pointer'}} >
+//           <Registerlink/>
+//           <Loginlink/>
+//           </div>}
 
       
-    </Hidden>
-  </div>
-     <div style={{display:'inline-block'}}>
-     <SmallDevicesMenu/>
-     </div>
-</div> */}
-</div>
+//     </Hidden>
+//   </div>
+//      <div style={{display:'inline-block'}}>
+//      <SmallDevicesMenu/>
+//      </div>
+// </div> */}
+// </div>
       
  
   )
