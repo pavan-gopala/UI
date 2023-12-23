@@ -9,7 +9,7 @@ import { setlogin, setregister } from '../../../redux/EmailValidation/validation
 import { Link } from 'react-router-dom';
 import "../../../styles/navbar.css";
 import { useState } from 'react';
-import {ReactComponent as SvgMainIcon} from "../../../Images/websitenameicon.svg";
+import {ReactComponent as SvgMainIcon} from "../../../Images/webicon.svg";
  
 
 
@@ -42,7 +42,13 @@ export const Navbar = () => {
       <div className="container">
         <div className="container-fluid">
           <Link to="/" target="_self" className="navbar-brand">
+            <div style={{display:'flex', flexDirection:'row'}}>
              <SvgMainIcon style={classes.svgIcon}/>
+               <div style={{display:'flex', flexDirection:'column'}}>
+                <p></p>
+               </div>
+             </div>
+
           </Link>
           <button 
             type="button" 
