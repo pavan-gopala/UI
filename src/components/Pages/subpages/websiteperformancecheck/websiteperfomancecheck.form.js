@@ -47,7 +47,7 @@ export const UrlValidationForm = () => {
     
   return (
     
-       <Grid container sx={{width:'100%'}} marginTop={4} >
+       <Grid container sx={{width:'100%'}} marginTop={8} >
         <Grid item xs={12} sm={12}  sx={{margin:'auto'}}>
        
         <div class="newsletter-form">
@@ -58,20 +58,22 @@ export const UrlValidationForm = () => {
    
     <form className="webpercheck" >
       <input value={formik.values.url}
-              className='webpercheck'
-              type='text'
-              label='Url'
-              name='url'
-              variant='outlined'
-              placeholder='Enter Url'
-             onChange={formik.handleChange}
-             error={formik.touched.url && Boolean(formik.errors.url)}
-            />
-            <Button variant='outlined' onClick={formik.handleSubmit}>Check</Button>
-    </form>
-    <div style={{textAlign:'left'}}>
+          className='webpercheck'
+          style={{border: formik.touched.url && formik.errors.url && '1px solid red'}}
+          type='text'
+          label='Url'
+          name='url'
+          variant='outlined'
+          placeholder='Enter Url'
+         onChange={formik.handleChange}
+         error={formik.touched.url && Boolean(formik.errors.url)}
+        />
+            <div style={{textAlign:'left'}}>
     <label htmlFor='Url' style={{color:'red', fontSize:'small', fontWeight:'400',}}>{formik.touched.url && formik.errors.url}</label>
     </div>
+            <button className='webperformancebutton' variant='outlined' onClick={formik.handleSubmit}>Check</button>
+    </form>
+    
     
   </div>
   

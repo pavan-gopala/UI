@@ -9,8 +9,9 @@ import { setlogin, setregister } from '../../../redux/EmailValidation/validation
 import { Link } from 'react-router-dom';
 import "../../../styles/navbar.css";
 import { useState } from 'react';
-import {ReactComponent as SvgMainIcon} from "../../../Images/webpagelogo.svg";
-import { green } from '@mui/material/colors';
+import {ReactComponent as SvgMainIcon} from "../../../Images/w1.svg";
+import {ReactComponent as SvgMainIcon2} from "../../../Images/mainfaviicon.svg";
+import logo from "../../../Images/website-performance-check-high-resolution-logo-transparent (1).png";
  
 
 
@@ -45,14 +46,13 @@ export const Navbar = () => {
       <div className="container">
         <div className="container-fluid">
           <Link to="/" target="_self" className="navbar-brand">
-            <div style={{display:'flex', flexDirection:'row'}}>
-             <SvgMainIcon style={classes.svgIcon}/>
-               <div style={{display:'flex', flexDirection:'column'}}>
-                <p></p>
-               </div>
-              
-             </div>
-
+            <Hidden mdDown={true}>
+           <img src={logo} alt='logo' style={{width:'10vw', height:'5vh'}} />
+           </Hidden>
+           <Hidden mdUp={true}>
+            < img src={logo} alt='logo' style={{width:'130px', height:'40px'}}  />  
+            </Hidden>
+        
           </Link>
           <button 
             type="button" 

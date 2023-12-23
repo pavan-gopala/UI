@@ -4,7 +4,7 @@ import { createTheme } from '@mui/material/styles';
 const theme = createTheme({
   palette: {
     primary: {
-      main: 'rgb(255, 127, 80)',
+      main: 'rgb(234, 81, 65)',
     },
     
     

@@ -7,7 +7,7 @@ import {ReactComponent as Freeicon} from "../../../../Images/svg10.svg";
 import websitedata from  "./webcheckpagedata.json";
 const classes = {
   svgIcon: {
-    fill : "rgb(255, 127, 80)",
+    fill : "rgb(234, 81, 65)",
     width  : "18%",
     height : "20%",
     padding: "2%",
@@ -19,7 +19,7 @@ const classes = {
 
 export const Webcheckpage = () => {  
   return (
-    <Grid container style={{justifyContent:'center', alignItems:'center'}}>
+    <Grid container style={{justifyContent:'center', alignItems:'center',}}>
       {websitedata.data.map((item)=>{
         let Icon = "";
           switch (item.name){
@@ -50,9 +50,9 @@ export const Webcheckpage = () => {
         return (
           <Grid item xs={12} md={12} style={classes.Griditem}>
             <Paper elevation={0} style={{backgroundColor:"white",padding:'5%', textAlign:'left'}}>
-              <p ><span style={{fontSize:16, fontWeight:"bold",}}>{item.title.toUpperCase()}: </span> </p>
-              <p style={{marginTop:'1vh'}}>{item.description2}</p>
-              <Button variant="contained">learn more</Button>
+              <p ><span style={{fontSize:16, fontWeight:"bold", paddingBottom:'3%'}}>{item.title.toUpperCase()}: </span> </p>
+              <p style={{marginTop:'1vh', paddingBottom:"10px"}}>{item.description2}</p>
+              <button className="webperformancebutton">learn more</button>
             </Paper>
           </Grid>
         )
