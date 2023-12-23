@@ -50,21 +50,26 @@ export const Navbar = () => {
           </button>
           <div id="nav-collapse" className={`navbar-collapse collapse  ${isOpen ? 'show' : 'hide'}`} align="end">
             <ul className="navbar-nav ml-auto">
-            <li className="nav-item uppercase">
+           {!logged && <li className="nav-item uppercase">
             <a href="/login" target="_self" className="nav-link">
               Login
             </a>
-          </li>
+          </li>}
           {/* <li className="nav-item uppercase">
             <a href="/pricing" target="_self" className="nav-link">
               Pricing
             </a>
           </li> */}
-          <li className="nav-item uppercase font-weight-bold">
+          {!logged && <li className="nav-item uppercase font-weight-bold">
             <a href="/register" target="_self" className="nav-link">
               Register for free
             </a>
-          </li>
+          </li>}
+          {logged && <li className="nav-item uppercase font-weight-bold">
+            <a href="/logout" target="_self" className="nav-link">
+              Logout
+              </a>
+              </li>}
             </ul>
           </div>
         </div>
