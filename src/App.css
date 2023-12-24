@@ -50,4 +50,13 @@ body {
   ::-webkit-scrollbar-thumb:hover {
     background: #00684A; 
   }
+}@media (max-width: 960px) {
+  .hidemddown {
+    display: none;
+  }
+}
+@media (min-width: 960px) {
+  .hidemdup {
+    display: none;
+  }
 }

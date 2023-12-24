@@ -1,7 +1,15 @@
 import React from 'react'
 import '../../../../../styles/performancebar.css';
 import { useSelector } from 'react-redux';
-import { Grid, Typography, containerClasses } from '@mui/material';
+import { Grid, Hidden, IconButton, Typography, containerClasses } from '@mui/material';
+import CheckIcon from '@mui/icons-material/Check';
+import ClearIcon from '@mui/icons-material/Clear';
+import DoneAllIcon from '@mui/icons-material/DoneAll';
+import GppGoodIcon from '@mui/icons-material/GppGood';
+import CategoryIcon from '@mui/icons-material/Category';
+import { light } from '@mui/material/styles/createPalette';
+import GradeIcon from '@mui/icons-material/Grade';
+
 export const PerformanceBar = () => {
   const  data = useSelector((state)=>state.mailvalidation?.validationResult?.data?state.mailvalidation.validationResult.data : '')
   const domain = useSelector((state)=>state.mailvalidation?.email)
@@ -12,7 +20,8 @@ export const PerformanceBar = () => {
        GridClass :{
            alignItems: 'center',
            justifyContent: 'center',
-           margin: 'auto'
+           margin: 'auto',
+           padding:'10px'
        },
        GridClass1 :{
         alignItems: 'center',
@@ -20,7 +29,19 @@ export const PerformanceBar = () => {
         margin: 'auto',
         border:'1px dotted rgb(234, 81, 65)',
         padding:'30px',
-        margin:'10px',
+        margin:'40px',
+       },
+       font: {
+         fontSize:'smaller',
+         fontWeight: light,
+         padding:'0px',
+         margin:'0px'
+       },
+       scorehead :{
+         color:'rgb(234, 81, 65)',
+         border: '1px solid rgb(234, 81, 65)',
+         padding:'5px',
+         marginBottom:'10px',
        }
   }
   let gradient;
@@ -55,7 +76,13 @@ export const PerformanceBar = () => {
  
   return (
     <Grid  container width={"100%"} style={container.GridClass1}>
-
+      <Grid className='hidemdup' item xs={12} style={{marginRight:'0%',marginBottom:'20px'}}>
+      <h3 style={{color:'rgb(234, 81, 65)'}}>DETAILED REPORT:</h3>
+      </Grid>
+      
+      <Grid className='hidemddown' item xs={12} style={{marginRight:'80%',marginBottom:'20px'}}>
+      <h3 style={{color:'rgb(234, 81, 65)'}}>DETAILED REPORT:</h3>
+      </Grid>
              {Object.entries(progressData).map(([key, value])=>{
               
               let score = (value * 100).toFixed(2)
@@ -75,13 +102,14 @@ export const PerformanceBar = () => {
               }
               let categorizeScore = (score) => {
                 if (score < 30) {
-                  return 'Bad';
+                  return {categ:'Bad', Icon:<ClearIcon/>};
                 } else if (score <= 70) {
-                  return 'Average';
+                  return {categ:'Average', Icon:<CheckIcon/>};
                 } else {
-                  return 'Good';
+                  return {categ:'Good',Icon:<GppGoodIcon/>};
                 }
               }
+              const categScore = categorizeScore(score);
               const Grade = assignGrade(score);
               let gradecolor = assignGradeColor(Grade)
               
@@ -90,14 +118,17 @@ export const PerformanceBar = () => {
                       
                             <Grid key={key} item xs={12} md={2} style={container.GridClass}>
                             <div  >
+                              <div style={container.scorehead}>
+                                <h3 >{key}</h3>
+                              </div>
                         <div class="circle" style={performance.s1}>
                             <div class="inner">{score}</div>
                         </div>
-                        <div style={{margin:'20px', textAlign:'left',marginLeft:'20%'}}>
-                          <h4>{key}: {score}</h4>
-                          <h4>Catergory: {categorizeScore(score)}</h4>
-                          <h4>{`Grade: `}<span style={{color:gradecolor, fontSize:'Medium'}}>{Grade}</span></h4>
-                        </div>
+                        <Grid item xs={12} style={{margin:'20px', textAlign:'left',marginLeft:'20%'}}>
+                          <h4 style={container.font}><IconButton style={{color:gradecolor}}>{categScore.Icon}</IconButton>{key}: {score}</h4>
+                          <h4 style={container.font}><IconButton style={{color:'pink'}}><CategoryIcon/></IconButton>Catergory: {categScore.categ}</h4>
+                          <h4 style={container.font}><IconButton style={{color:gradecolor}}><GradeIcon/></IconButton>{`Grade: `}<span style={{color:gradecolor, fontSize:'Medium'}}>{Grade}</span></h4>
+                        </Grid>
                         </div>
                         </Grid>
                    

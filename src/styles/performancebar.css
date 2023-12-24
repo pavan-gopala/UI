@@ -23,8 +23,8 @@ body {
 .circle {
   position: relative;
   border:1px solid gray;
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   margin: 0.5rem;
   border-radius: 50%;
   background: #008000;
@@ -50,11 +50,11 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 115px;
-  height: 115px;
-  background:rgb(15, 14, 14);
+  width: 90px;
+  height: 90px;
+  background:rgb(10, 14, 34);
   border-radius: 50%;
-  font-size: 1.85em;
+  font-size: 1.25em;
   font-weight: 300;
   color: rgba(255, 255, 255, 0.75);
 }
