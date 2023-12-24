@@ -13,10 +13,11 @@ import { Login } from './components/Authentication/Login';
 import { PrivateRoute } from './PrivateRoutes/Privateroutes';
 import { Notfound } from './components/Pages/subpages/Notfound';
 import { setlogin } from './redux/EmailValidation/validation';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { ImportantNote } from './components/Pages/MainPages/ImportantNote';
 import { Toolcomponentcombiner } from './components/Pages/subpages/portcheck/Toolcomponentcombiner.react.js';
+import { Websiteperformanccheck } from './components/loader/Websiteperformanccheck.loader.js';
 const PageWrapper = ({ children }) => {
   const dispatch = useDispatch();
    useEffect(()=>{
@@ -37,11 +38,14 @@ const PageWrapper = ({ children }) => {
 
 
 function App() {
+  const toolname = useSelector((state) => state.mailvalidation.toolname);
+  const loading = useSelector((state) => state.mailvalidation.isLoading);
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
+      {loading && toolname === 'webcheck'&&<Websiteperformanccheck/>}
         <Router>
-          
+         
           <Navbar/>
           
           <Routes>

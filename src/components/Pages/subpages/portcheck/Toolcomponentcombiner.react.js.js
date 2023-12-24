@@ -6,6 +6,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   setValidation,
   setshowvalidation,
+  settoolname,
 } from "../../../../redux/EmailValidation/validation";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom/dist";
@@ -13,8 +14,11 @@ import jsondata from "../../../../ToolsDescription/ToolsDescription.json";
 import { getcomponents } from "../../../Functions/getcomponents.functions";
 import { Piechart } from "../websiteperformancecheck/charts/piechart.react";
 import {Webcheckpage} from "../websiteperformancecheck/webcheckpage.react";
+import { Websiteperformanccheck } from "../../../loader/Websiteperformanccheck.loader";
+import { PerformanceBar } from "../websiteperformancecheck/charts/performance.bar";
 
 export const Toolcomponentcombiner = () => {
+  const dispatch = useDispatch();
   const data = jsondata.data;
   let title = "";
   let name = "";
@@ -36,13 +40,14 @@ export const Toolcomponentcombiner = () => {
       table = item.table;
     }
   });
+  dispatch(settoolname(name));
   const components = getcomponents(form, table);
   const { formcomponent, tablecomponent } = components;
   const loading = useSelector((state) => state.mailvalidation.isLoading);
   const showvalidation = useSelector(
     (state) => state.mailvalidation.showvalidation,
   );
-  const dispatch = useDispatch();
+  
   useEffect(() => {
     dispatch(setshowvalidation(false));
   }, []);
@@ -62,10 +67,12 @@ export const Toolcomponentcombiner = () => {
       <Grid container>
         <Grid item xs={11} sm={9} margin={"auto"}>
           {formcomponent}
-          {loading && <Loader />}
-          {showvalidation && tablecomponent}
+          {loading && name !== "webcheck" && <Loader />}
+          {showvalidation && name !== "webcheck" && tablecomponent}
+        
         </Grid>
         {name === "webcheck" && <Webcheckpage/>}
+        {name === "webcheck" && <PerformanceBar/>}
       </Grid>
     </div>
   );
