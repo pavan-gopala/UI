@@ -9,6 +9,7 @@ import GppGoodIcon from '@mui/icons-material/GppGood';
 import CategoryIcon from '@mui/icons-material/Category';
 import { light } from '@mui/material/styles/createPalette';
 import GradeIcon from '@mui/icons-material/Grade';
+import {ReactComponent as Gradesvg}  from '../../../../../Images/websiteperformancecheck/best.svg';
 
 export const PerformanceBar = () => {
   const  data = useSelector((state)=>state.mailvalidation?.validationResult?.data?state.mailvalidation.validationResult.data : '')
@@ -127,7 +128,7 @@ export const PerformanceBar = () => {
                         <Grid item xs={12} style={{margin:'20px', textAlign:'left',marginLeft:'20%'}}>
                           <h4 style={container.font}><IconButton style={{color:gradecolor}}>{categScore.Icon}</IconButton>{key}: {score}</h4>
                           <h4 style={container.font}><IconButton style={{color:'pink'}}><CategoryIcon/></IconButton>Catergory: {categScore.categ}</h4>
-                          <h4 style={container.font}><IconButton style={{color:gradecolor}}><GradeIcon/></IconButton>{`Grade: `}<span style={{color:gradecolor, fontSize:'Medium'}}>{Grade}</span></h4>
+                          <h4 style={container.font}><Gradesvg style={{fill:gradecolor,height:'5vh', width:'5vw'}}/>{`Grade: `}<span style={{color:gradecolor, fontSize:'Medium'}}>{Grade}</span></h4>
                         </Grid>
                         </div>
                         </Grid>
