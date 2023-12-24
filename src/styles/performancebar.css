@@ -22,14 +22,15 @@ body {
 
 .circle {
   position: relative;
+  border:1px solid gray;
   width: 150px;
   height: 150px;
   margin: 0.5rem;
   border-radius: 50%;
-  background: #FFCDB2;
+  background: #008000;
   overflow: hidden;
 }
-.circle.per-25 {
+/* .circle.per-25 {
   background-image: conic-gradient(#B5838D 25%, #FFCDB2 0);
 }
 .circle.per-50 {
@@ -40,7 +41,7 @@ body {
 }
 .circle.per-100 {
   background-image: conic-gradient(#B5838D 100%, #FFCDB2 0);
-}
+} */
 .circle .inner {
   display: flex;
   justify-content: center;
@@ -51,7 +52,7 @@ body {
   transform: translate(-50%, -50%);
   width: 115px;
   height: 115px;
-  background: #000;
+  background:rgb(15, 14, 14);
   border-radius: 50%;
   font-size: 1.85em;
   font-weight: 300;
