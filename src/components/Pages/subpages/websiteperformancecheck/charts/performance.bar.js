@@ -10,6 +10,7 @@ import CategoryIcon from '@mui/icons-material/Category';
 import { light } from '@mui/material/styles/createPalette';
 import GradeIcon from '@mui/icons-material/Grade';
 import {ReactComponent as Gradesvg}  from '../../../../../Images/websiteperformancecheck/best.svg';
+import {ReactComponent as Categsvg} from '../../../../../Images/websiteperformancecheck/categorise.svg';
 
 export const PerformanceBar = () => {
   const  data = useSelector((state)=>state.mailvalidation?.validationResult?.data?state.mailvalidation.validationResult.data : '')
@@ -44,6 +45,7 @@ export const PerformanceBar = () => {
          padding:'5px',
          marginBottom:'10px',
        }
+      
   }
   let gradient;
   const setGradient = (score)=>{  
@@ -74,6 +76,7 @@ export const PerformanceBar = () => {
       return ('#ff0000')
     }
   }
+
  
   return (
     <Grid  container width={"100%"} style={container.GridClass1}>
@@ -118,19 +121,17 @@ export const PerformanceBar = () => {
                     
                       
                             <Grid key={key} item xs={12} md={2} style={container.GridClass}>
-                            <div  >
-                              <div style={container.scorehead}>
-                                <h3 >{key}</h3>
-                              </div>
+                            
+                              
                         <div class="circle" style={performance.s1}>
                             <div class="inner">{score}</div>
                         </div>
-                        <Grid item xs={12} style={{margin:'20px', textAlign:'left',marginLeft:'20%'}}>
-                          <h4 style={container.font}><IconButton style={{color:gradecolor}}>{categScore.Icon}</IconButton>{key}: {score}</h4>
-                          <h4 style={container.font}><IconButton style={{color:'pink'}}><CategoryIcon/></IconButton>Catergory: {categScore.categ}</h4>
-                          <h4 style={container.font}><Gradesvg style={{fill:gradecolor,height:'5vh', width:'5vw'}}/>{`Grade: `}<span style={{color:gradecolor, fontSize:'Medium'}}>{Grade}</span></h4>
+                        <Grid className='ParentIconContainer' item xs={12} >
+                          <div className='IconContainer'><IconButton style={{color:gradecolor}}>{categScore.Icon}</IconButton><p className='keyhead'>{key}: </p><p className='valuehead'>{score}</p></div>
+                          <div className='IconContainer'><Categsvg style={{ fill:'rgb(189, 64, 137)',height:'4vh', width:'4vw'}}/><p className='keyhead'>CATEGORY: </p><p className='valuehead' >{categScore.categ}</p></div>
+                          <div className='IconContainer' ><Gradesvg style={{fill:gradecolor,height:'4vh', width:'4vw'}}/><p className='keyhead'>GRADE: </p><p className='valuehead' style={{color:gradecolor}}>{Grade}</p></div>
                         </Grid>
-                        </div>
+                        
                         </Grid>
                    
              )}            

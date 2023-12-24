@@ -58,3 +58,40 @@ body {
   font-weight: 300;
   color: rgba(255, 255, 255, 0.75);
 }
+
+/* Icon container */
+.IconContainer {
+    display:flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    margin-bottom: 14px;
+    margin-top: 20px;
+
+}
+.keyhead{
+    font-size:small;
+    color: gray;
+    font-style: normal;
+    margin-left: 2px;
+    margin-right: 2px;
+    text-transform: lowercase;
+    font-weight: 700;
+}
+.valuehead {
+    font-size: small;
+    color: #000;
+    font-style: normal;
+    font-weight: 700;
+}
+.ParentIconContainer {
+
+    margin:0px;
+    padding:0px; text-align: left; margin-left: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+
+
+}
