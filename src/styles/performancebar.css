@@ -63,35 +63,116 @@ body {
 .IconContainer {
     display:flex;
     flex-direction: row;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    margin-bottom: 14px;
-    margin-top: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    
 
 }
 .keyhead{
-    font-size:small;
-    color: gray;
+    font-size:2vh;
+    margin-left: 4px;
+    color: rgb(234, 81, 65);
     font-style: normal;
-    margin-left: 2px;
+    margin-left: 4px;
     margin-right: 2px;
-    text-transform: lowercase;
+    margin-top: 3px;
+    text-transform: none;
     font-weight: 700;
+    white-space: nowrap; /* Prevents the text from wrapping onto the next line */
+    overflow: hidden; /* Hides the overflowed text */
+    text-overflow: ellipsis; /* Adds an ellipsis (...) when the text overflows */
+    max-width: 200px; /* Adjust this value to suit your needs */
 }
 .valuehead {
-    font-size: small;
-    color: #000;
+    font-size: 1.8vh;
+    color: black;
     font-style: normal;
     font-weight: 700;
+    margin-top: 4px;
+    margin-left: 2px;
+   
+    
 }
 .ParentIconContainer {
 
-    margin:0px;
-    padding:0px; text-align: left; margin-left: 10px;
+    
+    padding:0px; text-align: center; 
     display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 
 
+}
+
+/* Mui Tablecell */
+.MuiTableCell-root {
+    padding: 0px;
+    padding-bottom: 2px;
+    padding-top: 2px;
+    
+}
+.tableheadMain{
+    margin-top: 15px;
+    
+    
+  
+} 
+.tableRow {
+    padding:0px;
+    
+}
+.tableCell{
+    padding:0px;
+   
+}
+
+.TableRowDev td {
+  border-bottom: 0;
+  margin-bottom: 0;
+  background-color:rgb(249, 250, 250,0.9) ;
+ 
+  
+}
+@media screen and (min-width: 950px) {
+  .TableRowDev td {
+    border-radius: 0px;
+    /* border-left: 2px solid #F9FAFA lightblue ;
+    border-right: 2px solid #F9FAFA ; */
+   
+  
+    
+  
+}
+ 
+}
+.TableRowDev td:hover {
+  background-color: white;
+  border: 1px solid lightblue;
+}
+
+@media screen and (max-width:950px) {
+   .inRow{
+    margin-left: 20%;
+    border-bottom: 0px;
+   }
+  
+}
+.Detailitemcard{
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2), 0px 2px 5px 0px rgba(0, 0, 0, 0.19);
+  background-color: rgb(234, 81, 65,0.8);
+}
+
+.TableHeaderDev{
+  color:rgb(250, 248, 245,4);
+  background-color: rgb(255, 255, 255,0);
+  padding:2px;
+  font-weight:bold;
+  font-size: 14;
+  width:130px;
+  margin:auto;
+  text-transform:uppercase;
+  
 }
