@@ -16,8 +16,10 @@ import { Piechart } from "../websiteperformancecheck/charts/piechart.react";
 import {Webcheckpage} from "../websiteperformancecheck/webcheckpage.react";
 import { Websiteperformanccheck } from "../../../loader/Websiteperformanccheck.loader";
 import { PerformanceBar } from "../websiteperformancecheck/charts/performance.bar";
+import { useNavigate } from "react-router-dom/dist";
 
 export const Toolcomponentcombiner = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const data = jsondata.data;
   let title = "";
@@ -52,6 +54,7 @@ export const Toolcomponentcombiner = () => {
     dispatch(setshowvalidation(false));
   }, []);
 
+
   return (
     <div style={{ minHeight: "80vh" }}>
       <DescriptionComponent>
@@ -72,7 +75,8 @@ export const Toolcomponentcombiner = () => {
         
         </Grid>
         {name === "webcheck" && <Webcheckpage/>}
-        {name === "webcheck" && <PerformanceBar/>}
+        {name === "webcheck" && showvalidation && navigate('/performancecheck') }
+       
       </Grid>
     </div>
   );

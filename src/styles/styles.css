@@ -305,7 +305,7 @@ transform-origin: 0 0; /* see note above */
   }
 
 .myTextField .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
-  border-color:#00684A; /* default border color */
+  border-color:rgb(234, 81, 65);; /* default border color */
   /* #1CE783; */
 }
 

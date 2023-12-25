@@ -12,7 +12,6 @@ import { useState } from 'react';
 import {ReactComponent as SvgMainIcon} from "../../../Images/w1.svg";
 import {ReactComponent as SvgMainIcon2} from "../../../Images/mainfaviicon.svg";
 import logo from "../../../Images/website-performance-check-high-resolution-logo-transparent (1).png";
- 
 
 
 const classes = {
@@ -72,9 +71,9 @@ export const Navbar = () => {
           
             <ul className="navbar-nav ml-auto" >
            {!logged && <li className="nav-item uppercase">
-            <a href="/login" target="_self" className="nav-link ">
+            <Link to="/login" href="/login" target="_self" className="nav-link ">
               Login
-            </a>
+            </Link>
           </li>}
           {/* <li className="nav-item uppercase">
             <a href="/pricing" target="_self" className="nav-link">
@@ -82,14 +81,14 @@ export const Navbar = () => {
             </a>
           </li> */}
           {!logged && <li className="nav-item uppercase font-weight-bold">
-            <a href="/register" target="_self" className="nav-link ">
+            <Link to="/register" target="_self" className="nav-link ">
               Register for free
-            </a>
+            </Link>
           </li>}
           {logged && <li className="nav-item uppercase font-weight-bold">
-            <a href="/logout" target="_self" className="nav-link">
+            <Link to="/" onClick={()=>LogoutButton()} target="_self" className="nav-link">
               Logout
-              </a>
+              </Link>
               </li>}
             </ul>
           </div>

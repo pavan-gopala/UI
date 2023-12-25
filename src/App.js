@@ -1,7 +1,7 @@
 
 import './App.css';
 import theme from './Theme';
-import { ThemeProvider } from '@mui/material';
+import { Hidden, ThemeProvider } from '@mui/material';
 import { Homepage } from './components/homepage';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import { Footer } from './components/Pages/MainPages/Footer';
@@ -12,14 +12,17 @@ import { Register } from './components/Authentication/Register';
 import { Login } from './components/Authentication/Login';
 import { PrivateRoute } from './PrivateRoutes/Privateroutes';
 import { Notfound } from './components/Pages/subpages/Notfound';
-import { setlogin } from './redux/EmailValidation/validation';
+import { setlogin, setshowvalidation } from './redux/EmailValidation/validation';
 import { useDispatch,useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { ImportantNote } from './components/Pages/MainPages/ImportantNote';
 import { Toolcomponentcombiner } from './components/Pages/subpages/portcheck/Toolcomponentcombiner.react.js';
 import { Websiteperformanccheck } from './components/loader/Websiteperformanccheck.loader.js';
+import { PerformanceBar } from './components/Pages/subpages/websiteperformancecheck/charts/performance.bar.js';
+import { useLocation } from 'react-router-dom';
 const PageWrapper = ({ children }) => {
   const dispatch = useDispatch();
+
    useEffect(()=>{
     if(document.cookie.includes('jwt')){
       dispatch(setlogin(true))
@@ -37,16 +40,17 @@ const PageWrapper = ({ children }) => {
 
 
 
+
 function App() {
   const toolname = useSelector((state) => state.mailvalidation.toolname);
   const loading = useSelector((state) => state.mailvalidation.isLoading);
+  const showvalidation = useSelector((state) => state.mailvalidation.showvalidation);
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
       {loading && toolname === 'webcheck'&&<Websiteperformanccheck/>}
         <Router>
-         
-          <Navbar/>
+         {window.location.pathname !== '/performancecheck' && <Navbar/>}
           
           <Routes>
            
@@ -59,6 +63,7 @@ function App() {
             <Route path='*' element={<PageWrapper><Notfound/></PageWrapper>}/>
             <Route path='/portavailabilitycheck' element={<PageWrapper><Toolcomponentcombiner/></PageWrapper>}/>
             <Route path='/' element={<Toolcomponentcombiner/>} />
+           {showvalidation&& <Route path='/performancecheck' element={<PageWrapper><PerformanceBar/></PageWrapper>}/>}
 </Routes>
           <Grid container sx={{width:'100%', alignItems:'center', justifyContent:'center',}}>
       <Grid item xs={12}>

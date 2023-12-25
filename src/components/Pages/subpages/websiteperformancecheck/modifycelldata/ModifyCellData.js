@@ -20,7 +20,7 @@ export function TableRowCustom(props) {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
         className='TableRowDev'
-        style={{...rowstyles.row,  backgroundColor: isHovered ? 'white':'',marginBottom:'0px',borderBottom:'0px'   }}
+        style={{...rowstyles.row,  backgroundColor: isHovered ? 'white':'', }}
       />
     );
   }

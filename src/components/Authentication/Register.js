@@ -6,11 +6,9 @@ import { RegistrationForm } from './registerForm'
 
 export const Register = () => {
   return (
-      <Grid container sx={{justifyContent:'center', alignItems:'center' }}>
-           <Grid item sm={6} >
-                <img src={registerImage} alt="register"  className='registerimage'/>
-           </Grid>  
-           <Grid item sm={5} marginTop={'5vh'} marginBottom={'3vh'}>
+      <Grid container sx={{justifyContent:'center', alignItems:'center', margin:'auto' }}>
+            
+           <Grid item xs={10} md={4} marginTop={'15vh'} marginBottom={'3vh'}>
              <RegistrationForm/>
            </Grid>
         </Grid>

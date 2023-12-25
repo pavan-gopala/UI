@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react'
 import '../../../../../styles/performancebar.css';
 import { useSelector } from 'react-redux';
-import { Grid, Hidden, IconButton, TableRow,TableContainer,TableCell, TableBody, TableHead,  Typography, containerClasses, Paper } from '@mui/material';
+import { Grid,styled, Hidden, IconButton, TableRow,TableContainer,TableCell, TableBody, TableHead,  Typography, containerClasses, Paper } from '@mui/material';
 import CheckIcon from '@mui/icons-material/Check';
 import ClearIcon from '@mui/icons-material/Clear';
 import DoneAllIcon from '@mui/icons-material/DoneAll';
@@ -15,8 +15,11 @@ import {ReactComponent as Dislikesvg} from '../../../../../Images/websiteperform
 import {ReactComponent as Shieldsvg} from '../../../../../Images/websiteperformancecheck/shield (1).svg';
 import {ReactComponent as Averagesvg} from '../../../../../Images/websiteperformancecheck/check.svg';
 import { TableCellComponent, TableHeaderCellComponent } from '../modifycelldata/ModifyCellData';
+import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
+import { useNavigate } from 'react-router-dom';
 import '../../../../../styles/styles.css';
 import chromePng from '../../../../../Images/websiteperformancecheck/chrome.png';
+import infoPng from '../../../../../Images/websiteperformancecheck/mode.png';
 import {
   Grid as DataGrid,
   Table,
@@ -26,8 +29,10 @@ import {
 import { TableRowCustom } from '../modifycelldata/ModifyCellData';
 export const PerformanceBar = () => {
   const  data = useSelector((state)=>state.mailvalidation?.validationResult?.data?state.mailvalidation.validationResult.data : '')
-  const domain = useSelector((state)=>state.mailvalidation?.email)
-  const progressData = data.necessaryData?.scores?? "";
+  let domain = useSelector((state)=>state.mailvalidation?.email? state.mailvalidation?.email.values?.url ?? '':'')
+  const navigate = useNavigate();
+  // domain = domain??"";
+  const progressData = data.necessaryData?.scores ?? "";
   const [columnWidths, setColumnWidths] = useState([
     {columnName: '', width:150}
   ])
@@ -41,15 +46,17 @@ export const PerformanceBar = () => {
            border:'1px solid orange',
            padding:'8px',
            marginLeft:'8px',
-           marginRight:'8px'
+           marginRight:'8px',  
            
        },
        GridClass1 :{
+        width:'90vw',
+        height:'auto',
         alignItems: 'center',
         justifyContent: 'center',
         border:'1px dotted rgb(234, 81, 65)',
         padding:'25px',
-        margin:'20px',
+        margin:'auto',
 
         
         
@@ -73,6 +80,19 @@ export const PerformanceBar = () => {
        }
       
   }
+  
+  const TooltipInfo = styled(({ className, ...props }: TooltipProps) => (
+    <Tooltip {...props} classes={{ popper: className }} placement='top-end'/>
+  ))(({ theme }) => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+      backgroundColor: 'lightgrey',
+      color: 'rgba(0, 0, 0, 0.87)',
+      maxWidth: 220,
+      fontSize: theme.typography.pxToRem(12),
+      border: '1px solid #dadde9',
+      borderRadius: '0px',
+    },
+  }));
   let gradient;
   const setGradient = (score)=>{  
   if (score < 30) {
@@ -107,19 +127,19 @@ export const PerformanceBar = () => {
  let index = 0;
  
   return (
-    <Grid  container width={"100%"}  style={{...container.GridClass1 ,}} >
-      <Grid className='hidemdup' item xs={12} style={{marginRight:'0%',marginBottom:'20px'}} >
-      <h4 style={{color:'rgb(234, 81, 65)'}}>Url:{domain.values.url}</h4>
+    <Grid  container   style={{...container.GridClass1 ,}} >
+      <Grid className='hidemdup' item xs={10} style={{marginRight:'0%',marginBottom:'20px'}} >
+      <h4 style={{color:'rgb(234, 81, 65)'}}>Url: {domain}</h4>
       </Grid>
+      <Grid className='hidemddown' item xs={10} style={{marginRight:'0%',marginBottom:'20px'}} >
       <div className='hidemddown'  style={{marginBottom:'20px', display:'flex', flexDirection:'row',justifyContent:'space-around', width:'100%' }} >
-      <h4 style={{color:'rgb(234, 81, 65)'}}>Url:{domain.values.url}</h4>
-      <button className='webperformancebutton'>Check Again</button>
+      <h4 style={{color:'rgb(234, 81, 65)', textAlign:'center',margin:'auto', backgroundColor:'lightgrey', padding:'8px'}}>Url: {domain}</h4>
+      <button className='webperformancebutton' onClick={()=>navigate('/')}>Check Again</button>
       </div>
-      <Grid className='hidemddown' item xs={8} style={{marginRight:'0%',marginBottom:'20px'}} >
      
         </Grid>
-        <Grid className='hidemdup' item xs={8} style={{marginRight:'0%',marginBottom:'20px'}} >
-      <button className='webperformancebutton'>Check Again</button>
+        <Grid className='hidemdup' item xs={12} style={{marginRight:'0%',marginBottom:'20px'}} >
+      <button className='webperformancebutton' onClick={()=>navigate('/')}>Check Again</button>
         </Grid>
       <Grid className='hidemdup' item xs={12} style={{marginRight:'0%',marginBottom:'20px'}}>
       <h3 style={{color:'rgb(234, 81, 65)'}}>DETAILED REPORT:</h3>
@@ -223,7 +243,16 @@ export const PerformanceBar = () => {
                 case key === 'Pwa':
                   columnName = "pwa"
                   columnsData[0].name = columnName
-                  columnsData[0].title = <p className ='TableHeaderDev'>{key}</p>
+                  columnsData[0].title = <div className ='TableHeaderDev'><p>{key}</p><TooltipInfo
+                  title={
+                    <React.Fragment>
+                      <Typography color="inherit">Progressive Web Application</Typography>
+                       <b>{"is a modern web application that delivers a native app-like experience.It offers features like offline access , push notifications and fastloading"}</b>
+                    </React.Fragment>
+                  }
+                >
+                  <img src={infoPng} alt='info' style={{width:'20px', height:'18px'}}/>
+                </TooltipInfo></div>
                   
                   break;
               }
@@ -234,11 +263,11 @@ export const PerformanceBar = () => {
               
               let rows = tableData.map((data) => ({
                 [columnName]: (
-                  <div className='inRow' style={{ margin: '2px', display:'flex', direction:'row',justifyContent:'flex-start', }}>
+                  <div className='inRow' style={{ margin: '0px',padding:'0px', display:'flex', direction:'row',justifyContent:'start', }}>
              
-                    <div>{data.icon}</div>
-                    <div>{data.key}</div>
-                    <div>{data.score}</div>
+                    <div style={{display:'inline-flex'}}>{data.icon}</div>
+                    <div style={{display:'inline-flex'}}>{data.key}</div>
+                    <div style={{display:'inline-flex'}}>{data.score}</div>
                   
                   </div>
                 ),
