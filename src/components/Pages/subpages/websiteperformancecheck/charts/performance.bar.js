@@ -15,7 +15,8 @@ import {ReactComponent as Dislikesvg} from '../../../../../Images/websiteperform
 import {ReactComponent as Shieldsvg} from '../../../../../Images/websiteperformancecheck/shield (1).svg';
 import {ReactComponent as Averagesvg} from '../../../../../Images/websiteperformancecheck/check.svg';
 import { TableCellComponent, TableHeaderCellComponent } from '../modifycelldata/ModifyCellData';
-
+import '../../../../../styles/styles.css';
+import chromePng from '../../../../../Images/websiteperformancecheck/chrome.png';
 import {
   Grid as DataGrid,
   Table,
@@ -107,6 +108,19 @@ export const PerformanceBar = () => {
  
   return (
     <Grid  container width={"100%"}  style={{...container.GridClass1 ,}} >
+      <Grid className='hidemdup' item xs={12} style={{marginRight:'0%',marginBottom:'20px'}} >
+      <h4 style={{color:'rgb(234, 81, 65)'}}>Url:{domain.values.url}</h4>
+      </Grid>
+      <div className='hidemddown'  style={{marginBottom:'20px', display:'flex', flexDirection:'row',justifyContent:'space-around', width:'100%' }} >
+      <h4 style={{color:'rgb(234, 81, 65)'}}>Url:{domain.values.url}</h4>
+      <button className='webperformancebutton'>Check Again</button>
+      </div>
+      <Grid className='hidemddown' item xs={8} style={{marginRight:'0%',marginBottom:'20px'}} >
+     
+        </Grid>
+        <Grid className='hidemdup' item xs={8} style={{marginRight:'0%',marginBottom:'20px'}} >
+      <button className='webperformancebutton'>Check Again</button>
+        </Grid>
       <Grid className='hidemdup' item xs={12} style={{marginRight:'0%',marginBottom:'20px'}}>
       <h3 style={{color:'rgb(234, 81, 65)'}}>DETAILED REPORT:</h3>
       </Grid>
@@ -145,6 +159,20 @@ export const PerformanceBar = () => {
                 }
               }
               const categScore = categorizeScore(score);
+             const chromeStatus = (score) => {
+                if (score>0 && score < 30) {
+                  return <CheckIcon style={{color:'red'}}/>;
+                } 
+                else if (score === 0){
+                  return <ClearIcon style={{color:'red'}}/>;
+                }else if (score <= 70) {
+                  return <CheckIcon style={{color:'green'}}/>;
+                } else {
+                  return <DoneAllIcon style={{color:'green'}}/>;
+                }
+             }
+
+             const statusIcon = chromeStatus(score);
               let tableData = [
 
                 {
@@ -153,9 +181,9 @@ export const PerformanceBar = () => {
                   score: <p className='valuehead'>{score}</p>,
                 },
                 {
-                  icon: <Categsvg style={{ fill:'rgb(189, 64, 137)',...container.Icons}}/>,
-                  key: <p className='keyhead'>Category: </p>,
-                  score: <p className='valuehead'>{categScore.categ}</p>,
+                  icon: <div>{statusIcon}</div>,
+                  key: <p className='keyhead'>Browser: </p>,
+                  score: <div className='valuehead'><img src={chromePng}  alt='chrome' style={{height:'20px', width:'20px'}}/></div>,
                 },
                 {
                   icon: <Gradesvg style={{fill:'rgb(3, 63, 99)',...container.Icons}}/>,
@@ -221,7 +249,7 @@ export const PerformanceBar = () => {
                             <div class="circle" style={performance.s1}>
                             <div class="inner">{score}</div>
                         </div> 
-                        <Grid className='ParentIconContainer' item  >
+                        {/* <Grid className='ParentIconContainer' item  > */}
 
                         <DataGrid
                            rows={rows}
@@ -231,7 +259,7 @@ export const PerformanceBar = () => {
                         <TableColumnResizing  />
                        <TableHeaderRow />
                         </DataGrid>
-                        </Grid>
+                        {/* </Grid> */}
                         
                         
                         </Grid>
