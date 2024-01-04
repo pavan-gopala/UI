@@ -32,7 +32,7 @@ export const PerformanceBar = () => {
   let domain = useSelector((state)=>state.mailvalidation?.email? state.mailvalidation?.email.values?.url ?? '':'')
   const navigate = useNavigate();
   // domain = domain??"";
-  const progressData = data.necessaryData?.scores ?? {Performance:0.5, Accessibility:0.3, Seo:0.2, BestPractices:0.8,Pwa:0.8};
+  let progressData = data.necessaryData?.scores ?? {Performance:0.5, Accessibility:0.3, Seo:0.2, BestPractices:0.8,Pwa:0.8};
   const [columnWidths, setColumnWidths] = useState([
     {columnName: '', width:150}
   ])
@@ -122,6 +122,7 @@ export const PerformanceBar = () => {
       return ('#ff0000')
     }
   }
+
 
   
  
@@ -284,7 +285,10 @@ export const PerformanceBar = () => {
                            rows={rows}
                            columns={columnsData}
                                     > 
-                        <Table rowComponent={TableRowCustom}  headerCellComponent={TableHeaderCellComponent}/>
+                        <Table 
+                        rowComponent={TableRowCustom}
+                        headerCellComponent={TableHeaderCellComponent}
+                        />
                         <TableColumnResizing  />
                        <TableHeaderRow />
                         </DataGrid>
