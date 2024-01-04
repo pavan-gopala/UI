@@ -32,7 +32,7 @@ export const PerformanceBar = () => {
   let domain = useSelector((state)=>state.mailvalidation?.email? state.mailvalidation?.email.values?.url ?? '':'')
   const navigate = useNavigate();
   // domain = domain??"";
-  const progressData = data.necessaryData?.scores ?? "";
+  const progressData = data.necessaryData?.scores ?? {Performance:0.5, Accessibility:0.3, Seo:0.2, BestPractices:0.8,Pwa:0.8};
   const [columnWidths, setColumnWidths] = useState([
     {columnName: '', width:150}
   ])
@@ -124,7 +124,7 @@ export const PerformanceBar = () => {
   }
 
   
- let index = 0;
+ 
  
   return (
     <Grid  container   style={{...container.GridClass1 ,}} >
